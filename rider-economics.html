@@ -822,6 +822,32 @@ body .ehero.paused .ehero-ctl .i-play{display:block}body .ehero.paused .ehero-ct
 body .ehero-ctl:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 body .cgrid .ent .corp{display:inline!important;padding:0!important}
 
+/* ---------- Vietnamese headings: room for stacked diacritics above each line ---------- */
+html[lang="vi"] body h1{line-height:1.2!important;padding-top:.06em}
+html[lang="vi"] body .hero h1,html[lang="vi"] body .vhero h1,html[lang="vi"] body .ehero h1,html[lang="vi"] body .chero h1{line-height:1.2!important}
+
+/* ---------- language key: VI lights up red when it is the active language ---------- */
+body .langsw button[data-l="vi"].on,html[lang="vi"] body .langsw button.on{background:var(--red)!important;color:#fff!important}
+
+/* ---------- header Contact key: red, darker on hover, same as the primary buttons ---------- */
+body .navr .navcta,body nav .navcta{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important;box-shadow:0 10px 24px -12px rgba(226,35,26,.75)}
+body .navr .navcta:hover,body nav .navcta:hover{background:var(--red-d)!important;border-color:var(--red-d)!important;color:#fff!important}
+
+/* ---------- page pager: the index style everywhere, plain rule-lined rows on sand ---------- */
+body .pager{background:var(--sand-l)!important;border:0!important;padding:0!important}
+body .pager .wrap{display:block!important;gap:0!important;max-width:var(--max,1280px)!important;margin:0 auto!important;padding:0 32px!important}
+body .pager a,body .pager a:not(:only-child),body .pager a:only-child{
+  --ink:#141413;--ink2:#46423B;--ink3:#7A7366;--line:rgba(20,20,19,.14);--line2:rgba(20,20,19,.26);
+  display:flex!important;align-items:center;justify-content:space-between;gap:24px;
+  padding:38px 0!important;background:transparent!important;color:var(--ink)!important;outline:0!important;
+  border:0!important;border-top:1px solid var(--line2)!important;border-radius:0!important;box-shadow:none!important;transform:none!important;text-align:left!important}
+body .pager a:last-child{border-bottom:1px solid var(--line2)!important}
+body .pager a .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3)!important;margin:0!important;display:inline!important}
+body .pager a b{font-family:var(--hero);font-weight:var(--hw,400);text-transform:uppercase;font-size:clamp(24px,2.6vw,38px)!important;line-height:1;color:var(--ink)!important;transition:color .25s}
+body .pager a:hover b{color:var(--red)!important}
+body .pager a:hover{transform:none!important;box-shadow:none!important}
+@media(max-width:560px){body .pager .wrap{padding:0 20px!important}body .pager a{padding:28px 0!important}}
+
 </style>
 </head><body>
 <nav id="nav">
