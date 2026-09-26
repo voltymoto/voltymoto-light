@@ -848,6 +848,24 @@ body .pager a:hover b{color:var(--red)!important}
 body .pager a:hover{transform:none!important;box-shadow:none!important}
 @media(max-width:560px){body .pager .wrap{padding:0 20px!important}body .pager a{padding:28px 0!important}}
 
+/* ---------- pager, one row: previous on the left, next on the right ---------- */
+body .pager .wrap{display:grid!important;grid-template-columns:1fr 1fr;align-items:center;column-gap:32px!important}
+body .pager .wrap>a{position:relative;border:0!important;border-top:1px solid var(--line2)!important;border-bottom:1px solid var(--line2)!important;justify-content:flex-start!important;gap:18px!important;align-items:baseline!important}
+body .pager .wrap>a.next{justify-content:flex-end!important;text-align:right!important}
+body .pager .wrap>a:only-child{grid-column:1/-1;justify-content:space-between!important;align-items:center!important}
+body .pager .wrap>a.only{grid-column:1/-1;justify-content:flex-end!important}
+@media(max-width:640px){
+  body .pager .wrap{column-gap:16px!important}
+  body .pager .wrap>a{flex-direction:column!important;align-items:flex-start!important;gap:8px!important}
+  body .pager .wrap>a.next{align-items:flex-end!important}
+  body .pager .wrap>a:only-child{flex-direction:row!important;align-items:center!important}
+  body .pager a b{font-size:clamp(18px,5vw,24px)!important}
+}
+/* one continuous rule above and below the row, halves share one height */
+body .pager .wrap{border-top:1px solid var(--line2)!important;border-bottom:1px solid var(--line2)!important;align-items:stretch!important;--line2:rgba(20,20,19,.26)}
+body .pager .wrap>a{border:0!important}
+body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1/-1;justify-content:space-between!important;align-items:center!important;flex-direction:row!important}
+
 </style>
 </head><body>
 <nav id="nav">
