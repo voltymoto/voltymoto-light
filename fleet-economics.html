@@ -813,6 +813,14 @@ body .chart{border-radius:var(--r)!important}
 /* hero film: crop a hair off every edge so no scaled edge row can show as a light line */
 body .vhero .vhero-video,body .hero video{object-view-box:inset(0.5% 0.4% 0.5% 0.4%)}
 
+/* ---------- economics heroes: film in a black bezel with a pause key ---------- */
+body .ehero video.hbg{aspect-ratio:16/9!important;object-fit:cover;display:block;object-view-box:inset(0.5% 0.4% 0.5% 0.4%);background:#141413}
+body .ehero-ctl{position:absolute;z-index:7;width:46px;height:46px;border-radius:4px;border:0;background:var(--red);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 22px -10px rgba(226,35,26,.9)}
+body .ehero-ctl svg{width:14px;height:14px;fill:#fff}
+body .ehero-ctl .i-play{display:none}
+body .ehero.paused .ehero-ctl .i-play{display:block}body .ehero.paused .ehero-ctl .i-pause{display:none}
+body .ehero-ctl:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+
 </style>
 </head><body>
 <nav id="nav">
@@ -853,7 +861,7 @@ body .vhero .vhero-video,body .hero video{object-view-box:inset(0.5% 0.4% 0.5% 0
   <a class="sub" href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
   <a href="/contact.html" data-en="Contact" data-vi="Liên hệ">Contact</a>
 </div>
-<section class="ehero"><div class="hbg" style="background-image:url('/econ-fleet-hero.jpg');background-position:58% 48%"></div>
+<section class="ehero"><video class="hbg" id="ehVideo" autoplay muted loop playsinline preload="auto" poster="/econ-fleet-hero-poster.webp" aria-label="A petrol motorcycle loaded with produce passes a street pole and the U1 appears in its place"><source src="/econ-fleet-hero.webm" type="video/webm"><source src="/econ-fleet-hero.mp4" type="video/mp4"></video><button class="ehero-ctl" id="ehCtl" type="button" aria-label="Pause video"><svg class="i-pause" viewBox="0 0 14 14"><rect height="12" width="3.5" x="2" y="1"/><rect height="12" width="3.5" x="8.5" y="1"/></svg><svg class="i-play" viewBox="0 0 14 14"><path d="M3 1l10 6-10 6z"/></svg></button>
 <div class="hglow" style="background:radial-gradient(58% 52% at 58% 52%,rgba(226,35,26,.12),transparent 70%)"></div>
 <div class="hsweep"></div><div class="hscrim"></div><div class="hgrain"></div>
 <div class="wrap">
@@ -1152,5 +1160,14 @@ var __titleEn = null;
   b.setAttribute('aria-expanded','false');b.setAttribute('aria-controls','mpanel');
   new MutationObserver(function(){b.setAttribute('aria-expanded',m.classList.contains('show')?'true':'false')}).observe(m,{attributes:true,attributeFilter:['class']});
 })();
+</script>
+<script>/* fleet economics hero film: pause key pinned to the film corner, reduced motion respected */
+(function(){var h=document.querySelector('.ehero'),v=document.getElementById('ehVideo'),c=document.getElementById('ehCtl');if(!h||!v||!c)return;
+function st(p){h.classList.toggle('paused',p);c.setAttribute('aria-label',p?'Play video':'Pause video');}
+function place(){var hr=h.getBoundingClientRect(),vr=v.getBoundingClientRect();c.style.top=(vr.bottom-hr.top-c.offsetHeight-22)+'px';c.style.left=(vr.right-hr.left-c.offsetWidth-22)+'px';}
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();st(true);}
+c.addEventListener('click',function(){if(v.paused){v.play();st(false);}else{v.pause();st(true);}});
+v.addEventListener('error',function(){c.style.display='none';});
+addEventListener('resize',place);v.addEventListener('loadedmetadata',place);addEventListener('load',place);place();})();
 </script>
 </body></html>
