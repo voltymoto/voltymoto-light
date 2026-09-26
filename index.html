@@ -463,6 +463,9 @@ body .sim .stats .stat{border-color:var(--blk)!important}
 body .aud>div:hover,body .prin>div:hover,body .cfg>figure:hover,body .path:hover,body .route:hover,body .dcell:hover,body .knum:hover,body .story>div:hover{transform:translate(-2px,-2px)!important;box-shadow:4px 4px 0 var(--ink)!important}
 body .knum:hover,body .story>div:hover,body .paths .path:first-child:hover,body .routes .route:first-child:hover{box-shadow:none!important}
 body .chart{border-radius:var(--r)!important}
+
+/* hero film: crop a hair off every edge so no scaled edge row can show as a light line */
+body .vhero .vhero-video,body .hero video{object-view-box:inset(0.5% 0.4% 0.5% 0.4%)}
 </style>
 </head>
 <body>

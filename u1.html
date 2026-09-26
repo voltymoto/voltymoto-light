@@ -606,7 +606,10 @@ body .eyebrow{justify-content:flex-start!important;width:auto!important;text-ali
 
 /* ---------- section grounds ---------- */
 body .band-w{background:var(--card)!important}body .band-b{background:var(--paper)!important}body .band-k{background:var(--paper2)!important}
-body .means .shot img{aspect-ratio:5/4!important;object-position:50% 55%!important}
+body .means .grid{align-items:stretch!important;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr)!important}
+body .means .shot{height:100%;display:flex}
+body .means .shot img{height:100%!important;width:100%!important;aspect-ratio:auto!important;object-fit:cover!important;object-position:50% 78%!important}
+@media(max-width:900px){body .means .grid{grid-template-columns:minmax(0,1fr)!important}body .means .shot{height:auto}body .means .shot img{height:auto!important;aspect-ratio:4/3!important}}
 body .bclip{margin:8px 0 64px;background:var(--card);border-radius:36px;padding:12px;box-shadow:inset 0 1px 0 #fff,0 44px 90px -50px rgba(21,21,20,.5),0 2px 0 rgba(21,21,20,.05)}
 body .bclip .scr{position:relative;border-radius:26px;overflow:hidden;aspect-ratio:16/9;background:#15171a}
 body .bclip video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
@@ -869,6 +872,9 @@ body .aud>div:hover,body .prin>div:hover,body .cfg>figure:hover,body .path:hover
 body .knum:hover,body .story>div:hover,body .paths .path:first-child:hover,body .routes .route:first-child:hover{box-shadow:none!important}
 body .chart{border-radius:var(--r)!important}
 
+/* hero film: crop a hair off every edge so no scaled edge row can show as a light line */
+body .vhero .vhero-video,body .hero video{object-view-box:inset(0.5% 0.4% 0.5% 0.4%)}
+
 </style>
 </head><body>
 <nav id="nav">
@@ -933,7 +939,7 @@ body .chart{border-radius:var(--r)!important}
         <img src="/u1-idea-1200.webp"
              srcset="/u1-idea-800.webp 800w, /u1-idea-1200.webp 1200w, /u1-idea-1600.webp 1600w"
              sizes="(max-width:900px) 100vw, 40vw"
-             alt="Volty U1 prototype on a workshop lift, side panel and rear rack fitted" width="1200" height="960">
+             alt="Volty U1 prototype on the workshop turntable, seen from the rear with the rack and side panel fitted" width="1200" height="1333">
       </div>
       <div>
         <div class="eyebrow" data-en="The idea" data-vi="Ý tưởng">The idea</div>
@@ -1336,4 +1342,8 @@ var __titleEn = null;
   }
 })();
 </script>
+<script data-k="HEROCTL-ON">/* keep the hero play/pause key on the film's bottom right corner */
+(function(){var h=document.querySelector('.vhero'),v=h&&h.querySelector('.vhero-video'),c=h&&h.querySelector('.vhero-ctl');if(!v||!c)return;
+function place(){var hr=h.getBoundingClientRect(),vr=v.getBoundingClientRect();c.style.setProperty('top',(vr.bottom-hr.top-c.offsetHeight-22)+'px','important');c.style.setProperty('left',(vr.right-hr.left-c.offsetWidth-22)+'px','important');c.style.setProperty('right','auto','important');c.style.setProperty('bottom','auto','important');}
+addEventListener('resize',place);v.addEventListener('loadedmetadata',place);addEventListener('load',place);place();})();</script>
 </body></html>
