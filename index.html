@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Volty U1 | Electric utility motorcycle by NUEN MOTO</title>
+<script src="/volty-lang.js" defer></script>
+<meta name="description" content="Volty U1. Network-agnostic battery swap electric utility motorcycle. 195 km max range, 200 kg maximum payload including rider and passenger, swaps in under 2 minutes. Built for delivery, ride-hailing and B2B fleets in Vietnam.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#0a0a0b">
+<style>
+@font-face{font-family:'Sora';src:url('/sora-latin-300-normal.woff2') format('woff2');font-weight:300;font-style:normal;font-display:swap;}
+@font-face{font-family:'Sora';src:url('/sora-latin-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Sora';src:url('/sora-latin-600-normal.woff2') format('woff2');font-weight:600;font-style:normal;font-display:swap;}
+@font-face{font-family:'Saira Condensed';src:url('/saira-condensed-vietnamese-800-normal.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Saira Condensed';src:url('/saira-condensed-latin-800-normal.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Space Mono';src:url('/space-mono-latin-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Space Mono';src:url('/space-mono-latin-700-normal.woff2') format('woff2');font-weight:700;font-style:normal;font-display:swap;}
+@font-face{font-family:'Be Vietnam Pro';src:url('/be-vietnam-pro-vietnamese-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Be Vietnam Pro';src:url('/be-vietnam-pro-vietnamese-800-normal.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Be Vietnam Pro';src:url('/be-vietnam-pro-latin-400-normal.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+@font-face{font-family:'Be Vietnam Pro';src:url('/be-vietnam-pro-latin-800-normal.woff2') format('woff2');font-weight:800;font-style:normal;font-display:swap;}
+@font-face{font-family:'Name Smile';src:url('/name-smile.woff2') format('woff2');font-weight:400;font-style:normal;font-display:swap;}
+</style>
+<style>
+/* =====================================================================
+   VOLTY, LIGHT EDITION (review draft)
+   Design brief: Dieter Rams. Less, but better. Warm paper, graphite ink,
+   one signal red, pastel surfaces that behave like colored plastics on a
+   Braun product. Rounded rectangles, fine rules, dot grilles, dials.
+   The red is the only color that ever means "act". Pastels never do.
+   ===================================================================== */
+:root{
+  --red:#E2231A; --red-d:#B8170F;
+  --paper:#F3EFE7;          /* page: warm beige paper            */
+  --paper2:#E9E3D7;         /* deeper beige for bands            */
+  --card:#FFFFFF;           /* pure white product plates         */
+  --ink:#151514;            /* text and the few black objects    */
+  --ink2:#4B4944;           /* body copy                         */
+  --ink3:#8C887E;           /* labels, captions                  */
+  --line:rgba(21,21,20,.12); --line2:rgba(21,21,20,.22);
+  /* pastels: surfaces only, never calls to action */
+  --sage:#D8E3D0; --sky:#D5E2EC; --butter:#F2E4BC; --blush:#F3D8CE; --lilac:#E2DCEC; --mint:#D3E9E0;
+  --graphite:#2B2A28; --graphite2:#3A3935;
+  /* legacy names still used by inline styles in the markup */
+  --muted:var(--ink2); --faint:var(--ink3); --bg1:var(--card); --white:var(--ink);
+
+  --hero:'Name Smile','Saira Condensed',sans-serif; --hw:400;
+  --disp:'Saira Condensed',sans-serif;
+  --mono:'Space Mono',monospace;
+  --body:'Sora',sans-serif;
+  --max:1280px; --nav-h:68px; --r:26px;
+}
+/* Name Smile, Sora and Space Mono carry no Vietnamese glyphs. */
+html[lang="vi"]{--hero:'Saira Condensed',sans-serif;--hw:800;--mono:'Be Vietnam Pro',sans-serif;--body:'Be Vietnam Pro',sans-serif}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);font-weight:300;line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--red);color:#fff}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 32px}
+@media(max-width:560px){.wrap{padding:0 20px}}
+.pad{padding:clamp(80px,10vw,150px) 0}
+
+/* display type: big, black, never synthesised bold */
+h1,h2{font-family:var(--hero);font-weight:var(--hw);text-transform:uppercase;letter-spacing:.005em;line-height:.94;color:var(--ink)}
+html[lang="vi"] h1,html[lang="vi"] h2{letter-spacing:-.015em;line-height:1.02}
+h3,h4{font-family:var(--disp);font-weight:800;text-transform:uppercase;letter-spacing:-.005em;line-height:1;color:var(--ink)}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--ink)}
+.eyebrow::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--red);flex:none}
+.eyebrow.dim{color:var(--ink2)}
+.lead{font-size:clamp(17px,1.55vw,21px);color:var(--ink2);max-width:60ch}
+.shead{display:flex;flex-direction:column;gap:20px;margin-bottom:56px;max-width:960px}
+.shead h2{font-size:clamp(48px,7.2vw,112px)}
+
+/* ---------- buttons: Braun keys ---------- */
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+  padding:17px 26px;border-radius:14px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;cursor:pointer;
+  transition:transform .18s,box-shadow .18s,background .2s,color .2s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn:active{transform:translateY(1px)}
+.btn.prime{background:var(--red);border-color:var(--red);color:#fff;box-shadow:0 1px 0 rgba(0,0,0,.08),0 10px 24px -12px rgba(226,35,26,.75)}
+.btn.prime:hover{background:var(--red-d);border-color:var(--red-d)}
+.btn.light{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.btn.light:hover{background:var(--red);border-color:var(--red);color:#fff}
+
+/* ---------- nav ---------- */
+nav{position:fixed;inset:0 0 auto 0;z-index:80;height:var(--nav-h);display:flex;align-items:center;justify-content:space-between;padding:0 32px;
+  background:rgba(243,239,231,.72);backdrop-filter:saturate(1.3) blur(14px);-webkit-backdrop-filter:saturate(1.3) blur(14px);border-bottom:1px solid transparent;transition:border-color .3s,background .3s}
+nav.scrolled{border-bottom-color:var(--line);background:rgba(243,239,231,.9)}
+.brand{display:flex;align-items:baseline;gap:10px;z-index:90}
+.brand .wm{font-family:'Name Smile',sans-serif;font-size:25px;line-height:1;letter-spacing:.04em;text-transform:uppercase;color:var(--red)}
+.brand .by{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.2em;color:var(--ink3);text-transform:uppercase}
+html[lang="vi"] .brand .by{font-family:'Be Vietnam Pro',sans-serif}
+@media(max-width:560px){.brand .by{display:none}}
+.navlinks{display:flex;gap:6px;align-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2)}
+.navlinks>a,.navlinks .drop>button,.navlinks .soon{padding:9px 12px;border-radius:10px;transition:background .2s,color .2s}
+.navlinks>a:hover,.navlinks .drop>button:hover{background:rgba(21,21,20,.06);color:var(--ink)}
+.navlinks a.on{color:var(--ink);position:relative}
+.navlinks a.on::after{content:'';position:absolute;left:50%;bottom:1px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--red)}
+.navlinks .drop{position:relative}
+.navlinks .drop>button{background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.navlinks .drop>button::after{content:'';width:5px;height:5px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+.navlinks .drop.open>button::after{transform:rotate(-135deg)}
+.dropmenu{position:absolute;top:calc(100% + 10px);left:0;min-width:220px;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:8px;
+  box-shadow:0 24px 48px -24px rgba(21,21,20,.35);opacity:0;visibility:hidden;transform:translateY(-6px);transition:.18s;z-index:95}
+.navlinks .drop.open .dropmenu,.navlinks .drop:hover .dropmenu{opacity:1;visibility:visible;transform:none}
+.dropmenu a{display:block;padding:12px 14px;border-radius:10px;color:var(--ink2);font-size:11.5px}
+.dropmenu a:hover{background:var(--paper);color:var(--red)}
+.soon{color:var(--ink3);cursor:default;display:inline-flex;align-items:center;gap:7px}
+.soon .tag{font-size:8.5px;letter-spacing:.12em;padding:3px 6px;border-radius:6px;background:var(--butter);color:var(--ink2)}
+.navr{display:flex;align-items:center;gap:12px}
+.navcta{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px;border-radius:12px;background:var(--ink);color:var(--paper);transition:background .2s}
+.navcta:hover{background:var(--red)}
+/* language switch: a two position slide switch */
+.langsw{display:flex;padding:3px;border-radius:12px;background:var(--paper2);border:1px solid var(--line)}
+.langsw button{font-family:'Space Mono',monospace;font-size:11px;font-weight:700;letter-spacing:.08em;padding:7px 11px;border-radius:9px;background:none;border:0;color:var(--ink3);cursor:pointer;transition:.2s}
+.langsw button.on{background:var(--card);color:var(--red);box-shadow:0 1px 2px rgba(0,0,0,.12)}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;z-index:90;padding:8px}
+.burger span{width:22px;height:2px;border-radius:2px;background:var(--ink)}
+.mpanel{position:fixed;inset:0;z-index:79;background:var(--paper);display:none;flex-direction:column;justify-content:center;gap:4px;padding:calc(var(--nav-h) + 24px) 32px 40px}
+.mpanel.show{display:flex}
+.mpanel a,.mpanel .soon{font-family:var(--hero);font-weight:var(--hw);font-size:32px;text-transform:uppercase;color:var(--ink);padding:10px 0;border-bottom:1px solid var(--line)}
+.mpanel a.on{color:var(--red)}
+.mpanel .grp{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--red);margin:18px 0 2px}
+.mpanel .sub{padding-left:18px;font-size:24px}
+@media(max-width:1040px){.navlinks,.navcta{display:none}.burger{display:flex}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;padding:calc(var(--nav-h) + clamp(28px,5vw,72px)) 0 clamp(40px,6vw,80px);overflow:hidden;
+  background:radial-gradient(circle,rgba(21,21,20,.11) 1px,transparent 1.4px) 0 0/22px 22px,var(--paper)}
+.hero::after{content:'';position:absolute;left:0;right:0;bottom:0;height:40%;background:linear-gradient(0deg,var(--paper),transparent);pointer-events:none}
+.hero-grid{position:relative;z-index:2;max-width:1440px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);
+  grid-template-areas:"eb eb" "h1 h1" "sub plate" "btns plate" ". plate";grid-template-rows:auto auto auto auto 1fr;column-gap:clamp(28px,4vw,72px)}
+.hero-copy{display:contents}
+.hero-copy .eyebrow{grid-area:eb;margin-bottom:22px;justify-self:start}
+.hero h1{grid-area:h1;font-size:clamp(46px,7.4vw,118px);margin-bottom:clamp(28px,3.4vw,52px);max-width:15.5em}
+html[lang="vi"] .hero h1{font-size:clamp(44px,6.4vw,104px);max-width:17em}
+.hero .sub{grid-area:sub;align-self:start;font-size:clamp(17px,1.5vw,21px);color:var(--ink2);max-width:40ch;margin:clamp(8px,2vw,34px) 0 34px;
+  padding-top:22px;border-top:1.5px solid var(--ink)}
+.hero .btns{grid-area:btns;align-self:start}
+.plate{grid-area:plate}
+.scrollcue{position:absolute;left:32px;bottom:26px;z-index:3;display:flex;align-items:center;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--ink3)}
+.scrollcue::before{content:'';width:44px;height:1px;background:var(--ink3)}
+/* product plate */
+.plate{position:relative;margin:0;background:var(--card);border-radius:36px;padding:clamp(56px,6vw,84px) clamp(18px,2vw,30px) clamp(64px,6vw,88px);
+  box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 40px 80px -48px rgba(21,21,20,.45),0 2px 0 rgba(21,21,20,.04)}
+.plate img{width:100%;height:auto;aspect-ratio:1800/1052;object-fit:contain;position:relative;z-index:1;mix-blend-mode:multiply} /* the render's off-white disappears into the plate */
+.plate .pl-top{position:absolute;top:24px;left:28px;right:28px;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3)}
+.plate .pl-top b{color:var(--ink);font-weight:700;display:inline-flex;align-items:center;gap:9px}
+.plate .pl-top b::before{content:'';width:14px;height:14px;border-radius:4px;background:var(--red)}
+/* grille: a Braun speaker, drawn with dots */
+.plate .grille{position:absolute;z-index:2;top:62px;right:30px;width:92px;height:92px;border-radius:50%;
+  background:radial-gradient(circle,rgba(21,21,20,.22) 1.6px,transparent 2px) 0 0/9px 9px;
+  -webkit-mask:radial-gradient(circle,#000 62%,transparent 64%);mask:radial-gradient(circle,#000 62%,transparent 64%);opacity:.8}
+/* technical ruler along the base of the plate */
+.plate .ruler{position:absolute;left:30px;right:210px;bottom:30px;height:18px;
+  background:repeating-linear-gradient(90deg,var(--ink3) 0 1px,transparent 1px 12px) bottom/100% 7px no-repeat,
+             repeating-linear-gradient(90deg,var(--ink) 0 1px,transparent 1px 60px) bottom/100% 13px no-repeat;opacity:.55}
+.plate .ruler::before{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:var(--ink3)}
+.play{position:absolute;right:26px;bottom:18px;z-index:3;display:flex;align-items:center;gap:12px;background:none;border:0;cursor:pointer;
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.play i{width:58px;height:58px;border-radius:50%;background:var(--red);display:grid;place-items:center;box-shadow:0 12px 26px -12px rgba(226,35,26,.9);transition:transform .2s}
+.play i::before{content:'';margin-left:4px;border-left:15px solid #fff;border-top:9px solid transparent;border-bottom:9px solid transparent}
+.play:hover i{transform:scale(1.07)}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr;grid-template-areas:"eb" "h1" "plate" "sub" "btns";grid-template-rows:auto}.hero{min-height:0}.hero .sub{margin-top:30px}}
+@media(max-width:960px){.scrollcue{display:none}}
+@media(max-width:640px){.plate{border-radius:26px;padding:48px 14px 70px}.plate .grille{display:none}.plate .pl-top{top:18px;left:18px;right:18px}
+  .plate .ruler{left:18px;right:18px;bottom:16px}.play{right:16px;bottom:30px}.play i{width:48px;height:48px}}
+/* film lightbox (the original hero video, now opt-in) */
+.film{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:24px}
+.film[hidden]{display:none}
+.film-bg{position:absolute;inset:0;background:rgba(243,239,231,.86);backdrop-filter:blur(10px)}
+.film-box{position:relative;width:min(1200px,100%);border-radius:28px;overflow:hidden;background:#000;box-shadow:0 50px 120px -40px rgba(0,0,0,.6)}
+.film-box video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.film-x{position:absolute;top:14px;right:14px;z-index:2;width:44px;height:44px;border-radius:50%;border:0;background:var(--card);color:var(--ink);font-size:22px;cursor:pointer}
+
+/* ---------- development stage: a butter label strip ---------- */
+.stage{padding:0 0 clamp(40px,5vw,64px)}
+.stage .in{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;background:var(--butter);border-radius:var(--r);padding:24px 28px}
+.stage .tag{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;white-space:nowrap;background:var(--card);padding:9px 14px;border-radius:10px}
+.stage .tag::before{content:'';width:8px;height:8px;border-radius:50%;background:var(--red);animation:blink 1.6s ease-in-out infinite}
+@keyframes blink{50%{opacity:.25}}
+.stage p{color:var(--ink2);font-size:14.5px;max-width:92ch}
+.stage a{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap;border-bottom:1.5px solid var(--ink);padding-bottom:3px}
+.stage a:hover{color:var(--red);border-color:var(--red)}
+@media(max-width:860px){.stage .in{grid-template-columns:1fr;gap:14px}}
+
+/* ---------- spec strip: three dials ---------- */
+.specs{max-width:var(--max);margin:0 auto;padding:0 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.spec{position:relative;border-radius:var(--r);padding:30px 32px 30px;display:flex;flex-direction:column;justify-content:space-between;gap:34px;min-height:250px;overflow:hidden}
+.spec:nth-child(1){background:var(--sky)}.spec:nth-child(2){background:var(--sage)}.spec:nth-child(3){background:var(--blush)}
+.spec .num{font-family:'Name Smile','Saira Condensed',sans-serif;font-size:clamp(60px,6.4vw,100px);line-height:.86;color:var(--ink);white-space:nowrap}
+.spec .num .u{font-family:'Space Mono',monospace;font-size:.2em;letter-spacing:.1em;color:var(--red);vertical-align:top;margin-left:6px}
+.spec span.l{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink2);max-width:calc(100% - 96px)}
+.spec .dial{position:absolute;bottom:22px;right:22px;width:78px;height:78px}
+@media(max-width:860px){.specs{grid-template-columns:1fr}.spec{min-height:0}}
+@media(max-width:560px){.specs{padding:0 20px}}
+
+/* ---------- machine ---------- */
+.split{display:grid;grid-template-columns:1.25fr .95fr;gap:22px;align-items:stretch}
+.vshow{margin:0;border-radius:var(--r);overflow:hidden;background:var(--paper2);position:relative}
+.vshow img{width:100%;height:100%;min-height:440px;object-fit:cover;object-position:55% 60%;transition:transform 1s cubic-bezier(.2,.7,.2,1)}
+.vshow:hover img{transform:scale(1.035)}
+.speclist{list-style:none;background:var(--card);border-radius:var(--r);padding:14px 30px}
+.speclist li{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:19px 0;border-bottom:1px dashed var(--line2)}
+.speclist li:last-child{border-bottom:0}
+.speclist span{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink3)}
+.speclist b{font-family:var(--disp);font-weight:800;font-size:26px;text-align:right;color:var(--ink)}
+@media(max-width:900px){.split{grid-template-columns:1fr}.vshow img{min-height:300px}}
+
+/* ---------- economics ---------- */
+.econ{background:var(--paper2)}
+.econ .grid{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:clamp(28px,4vw,64px);align-items:start}
+.econ h2{font-size:clamp(34px,3.7vw,58px)}
+.price{margin-top:34px;background:var(--card);border-radius:var(--r);padding:32px 34px;display:grid;grid-template-columns:1fr;gap:22px}
+.price .fig{font-family:'Name Smile','Saira Condensed',sans-serif;font-size:clamp(34px,4vw,60px);line-height:.9;color:var(--red);white-space:nowrap}
+.price .l{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3);margin-top:12px}
+.price p{color:var(--ink2);font-size:14.5px;border-top:1px dashed var(--line2);padding-top:20px}
+
+/* the calculator: a nod to the Braun ET66, the one dark object on the page */
+.calc{background:var(--graphite);border-radius:34px;padding:22px;color:#EDE8DE;box-shadow:0 40px 80px -40px rgba(21,21,20,.6),inset 0 1px 0 rgba(255,255,255,.08)}
+.calc-display{background:#C9CFBF;border-radius:16px;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;box-shadow:inset 0 2px 6px rgba(0,0,0,.28);margin-bottom:26px;
+  font-family:'Space Mono',monospace;color:#2A2E26}
+.calc-display span{font-size:10px;letter-spacing:.2em;text-transform:uppercase}
+.calc-display b{font-size:26px;letter-spacing:.06em;font-weight:700}
+.calc-display b::after{content:'';display:inline-block;width:12px;height:22px;background:#2A2E26;margin-left:6px;vertical-align:-3px;animation:blink 1.1s steps(1) infinite}
+.calc h3{color:#F6F2EA;font-size:26px!important;padding:0 8px;margin-bottom:12px!important}
+.calc>p{color:#BDB7AB!important;padding:0 8px;font-size:14.5px}
+.routes{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.routes a{display:grid;grid-template-columns:1fr auto;grid-template-rows:auto 1fr;gap:10px 12px;padding:20px 20px 22px;border-radius:20px;background:#EDE7DA;color:var(--ink);
+  box-shadow:0 4px 0 rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.7);transition:transform .15s,box-shadow .15s}
+.routes a:nth-child(2){background:var(--red);color:#fff}
+.routes a:hover{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.5)}
+.routes .rt{font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:21px;line-height:1}
+.routes .ar{font-family:var(--mono);font-size:20px;line-height:1}
+.routes .rd{grid-column:1/-1;font-size:13px;line-height:1.55;opacity:.8}
+.keys{display:flex;gap:10px;padding:22px 8px 4px}
+.keys i{width:30px;height:30px;border-radius:50%;box-shadow:0 3px 0 rgba(0,0,0,.35)}
+.keys i:nth-child(1){background:var(--sage)}.keys i:nth-child(2){background:var(--butter)}.keys i:nth-child(3){background:var(--sky)}.keys i:nth-child(4){background:var(--blush)}
+.keys i:last-child{margin-left:auto;background:#55534E}
+@media(max-width:900px){.econ .grid{grid-template-columns:minmax(0,1fr)}}
+@media(max-width:560px){.price .fig{white-space:normal;font-size:44px}}
+@media(max-width:560px){.routes{grid-template-columns:1fr}}
+
+/* ---------- audience: six pastel plastics ---------- */
+.aud{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.aud>div{border-radius:var(--r);padding:30px 30px 34px;display:flex;flex-direction:column;gap:14px;min-height:280px;transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.aud>div:hover{transform:translateY(-4px)}
+.aud>div:nth-child(1){background:var(--sky)}.aud>div:nth-child(2){background:var(--butter)}.aud>div:nth-child(3){background:var(--sage)}
+.aud>div:nth-child(4){background:var(--blush)}.aud>div:nth-child(5){background:var(--lilac)}.aud>div:nth-child(6){background:var(--mint)}
+.aud .k{width:44px;height:44px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--ink)}
+.aud>div:nth-child(1) .k{background:var(--red);color:#fff}
+.aud h3{font-size:30px;margin-top:40px}
+.aud p{color:var(--ink2);font-size:14.5px;line-height:1.7}
+@media(max-width:1040px){.aud{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:640px){.aud{grid-template-columns:1fr}.aud>div{min-height:0}}
+
+/* ---------- follow ---------- */
+.follow .grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:end;background:var(--sky);border-radius:40px;padding:clamp(40px,5vw,72px);position:relative;overflow:hidden}
+.follow .grid::before{content:'';position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;
+  background:radial-gradient(circle,rgba(21,21,20,.18) 1.6px,transparent 2px) 0 0/10px 10px;-webkit-mask:radial-gradient(circle,#000 62%,transparent 64%);mask:radial-gradient(circle,#000 62%,transparent 64%)}
+.follow h2{font-size:clamp(48px,6.6vw,104px)}
+.consent{font-family:var(--mono);font-size:11px;color:var(--ink2);margin-top:18px;line-height:1.8;max-width:52ch}
+@media(max-width:900px){.follow .grid{grid-template-columns:1fr;gap:26px}}
+
+/* ---------- pager ---------- */
+.pager .wrap{padding-top:0;padding-bottom:0}
+.pager a{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:38px 0;border-top:1px solid var(--line2);border-bottom:1px solid var(--line2)}
+.pager .k{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink3)}
+.pager b{font-family:var(--hero);font-weight:var(--hw);text-transform:uppercase;font-size:clamp(34px,4.4vw,64px);line-height:1;transition:color .25s}
+.pager a:hover b{color:var(--red)}
+
+/* ---------- contact + footer ---------- */
+.contact .h-big{font-size:clamp(56px,9vw,150px);margin-top:18px}
+.cbtn{margin-top:34px}
+.cgrid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;margin-top:70px;padding-top:44px;border-top:1px solid var(--line2)}
+.cgrid h4{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.2em;color:var(--ink3);margin-bottom:16px}
+.cgrid a{display:block;color:var(--ink2);padding:5px 0;font-size:14.5px}
+.cgrid a:hover{color:var(--red)}
+.cgrid .ent{color:var(--ink2);font-size:14.5px;line-height:1.85}
+.cgrid .ent b{color:var(--ink);font-weight:600}
+.corp{display:inline!important;padding:0!important;color:inherit;border-bottom:1px solid var(--line2);transition:.2s}
+.corp:hover{color:var(--red);border-bottom-color:var(--red)}
+.csocials{display:flex;gap:10px;margin-top:20px}
+.csocials a{width:42px;height:42px;border-radius:12px;background:var(--card);display:grid;place-items:center;padding:0;color:var(--ink);transition:.2s}
+.csocials a:hover{background:var(--red);color:#fff}
+.csocials svg{width:18px;height:18px;fill:currentColor}
+.csocials svg[fill="none"]{fill:none;stroke:currentColor}
+footer{padding:28px 0 34px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;border-top:1px solid var(--line)}
+footer .wrap>*{padding-top:26px}
+.fbrand{display:flex;align-items:center;gap:10px;font-family:'Name Smile',sans-serif;font-size:19px;letter-spacing:.03em;text-transform:uppercase;color:var(--red)}
+.fbrand svg{width:26px;height:26px}
+.flinks{display:flex;gap:22px}
+.flinks a,.fmeta{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--ink3);text-transform:uppercase}
+.flinks a:hover{color:var(--red)}
+@media(max-width:900px){.cgrid{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){.cgrid{grid-template-columns:1fr}}
+
+/* ---------- motion ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.2,.7,.2,1),transform .8s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.08s}.rv.d2{transition-delay:.16s}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.rv{opacity:1;transform:none;transition:none}.stage .tag::before,.calc-display b::after{animation:none}}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav id="nav">
+  <a class="brand" href="/" aria-label="Volty home"><span class="wm">Volty</span><span class="by">by NUEN MOTO</span></a>
+  <div class="navlinks">
+    <a class="on" href="/" data-en="Home" data-vi="Trang chủ">Home</a>
+    <a href="/u1.html" data-en="The U1" data-vi="Xe U1">The U1</a>
+    <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
+    <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
+    <a href="/audience.html" data-en="Audience" data-vi="Đối tượng">Audience</a>
+    <div class="drop" id="drop">
+      <button type="button" aria-haspopup="true" aria-expanded="false" data-en="Economics" data-vi="Bài toán chi phí">Economics</button>
+      <div class="dropmenu">
+        <a href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
+        <a href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
+      </div>
+    </div>
+  </div>
+  <div class="navr">
+    <a class="navcta" href="/contact.html" data-en="Contact" data-vi="Liên hệ">Contact</a>
+    <div class="langsw" role="group" aria-label="Language">
+      <button type="button" class="lb on" data-l="en">EN</button>
+      <button type="button" class="lb" data-l="vi">VI</button>
+    </div>
+    <button type="button" class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mpanel" id="mpanel">
+  <a class="on" href="/" data-en="Home" data-vi="Trang chủ">Home</a>
+  <a href="/u1.html" data-en="The U1" data-vi="Xe U1">The U1</a>
+  <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
+  <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
+  <a href="/audience.html" data-en="Audience" data-vi="Đối tượng">Audience</a>
+  <div class="grp" data-en="Economics" data-vi="Bài toán chi phí">Economics</div>
+  <a class="sub" href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
+  <a class="sub" href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
+  <a href="/contact.html" data-en="Contact" data-vi="Liên hệ">Contact</a>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-copy">
+    <p class="eyebrow" data-en="Volty U1 | A modular utility motorcycle" data-vi="Volty U1 | Xe máy đa dụng mô đun">Volty U1 | A modular utility motorcycle</p>
+    <h1 data-en="Built for people who ride for a living" data-vi="Tối ưu cho công việc. Sẵn sàng cho mọi hành trình.">Built for people who ride for a living</h1>
+    <p class="sub" data-en="One bike, every swap network. 195 km of range, 200 kg of maximum payload including rider and passenger, and a battery you change in under two minutes." data-vi="Xe máy điện đa dụng trang bị pin tháo rời và khung xe chịu tải đến 200 kg. Quãng đường di chuyển lên tới 195 km, hỗ trợ đổi pin nhanh dưới 2 phút.">One bike, every swap network. 195 km of range, 200 kg of maximum payload including rider and passenger, and a battery you change in under two minutes.</p>
+    <div class="btns">
+      <a href="/u1.html" class="btn prime" data-en="Explore the U1" data-vi="Khám phá U1">Explore the U1</a>
+      <a href="/rider-economics.html" class="btn" data-en="For riders" data-vi="Dành cho cá nhân">For riders</a>
+      <a href="/fleet-economics.html" class="btn" data-en="For fleets" data-vi="Dành cho doanh nghiệp">For fleets</a>
+    </div>
+  </div>
+    <figure class="plate">
+      <div class="pl-top"><b>Volty U1</b><span data-en="Side elevation" data-vi="Hình chiếu cạnh">Side elevation</span></div>
+      <div class="grille" aria-hidden="true"></div>
+      <img src="/u1-studio-side-1800.webp" srcset="/u1-studio-side-1000.webp 1000w, /u1-studio-side-1800.webp 1800w" sizes="(max-width:960px) 100vw, 54vw" width="1800" height="1052" alt="Volty U1 in side view, configured with full length transport rails" fetchpriority="high">
+      <div class="ruler" aria-hidden="true"></div>
+      <button type="button" class="play" id="playFilm" aria-controls="film"><span data-en="Watch the film" data-vi="Xem video">Watch the film</span><i aria-hidden="true"></i></button>
+    </figure>
+  </div>
+  <span class="scrollcue" data-en="Scroll" data-vi="Cuộn">Scroll</span>
+</section>
+<div class="film" id="film" hidden role="dialog" aria-modal="true" aria-label="Volty U1 film">
+  <div class="film-bg" data-close></div>
+  <div class="film-box">
+    <button type="button" class="film-x" data-close aria-label="Close">&times;</button>
+    <video id="filmVideo" muted loop playsinline preload="none" controls poster="/hero-poster.webp">
+    <source src="/volty-hero.webm" type="video/webm">
+    <source src="/volty-hero.mp4" type="video/mp4">
+  </video>
+  </div>
+</div>
+
+<!-- ================= DEVELOPMENT STAGE ================= -->
+<section class="stage">
+  <div class="wrap"><div class="in">
+    <span class="tag" data-en="In development" data-vi="Sản phẩm đang được phát triển">In development</span>
+    <p data-en="The Volty U1 is a working prototype under validation. Whole-vehicle type approval from the Vietnam Register is required before any unit can be delivered, and no delivery date is published until that approval is scheduled." data-vi="Volty U1 là nguyên mẫu đang vận hành trong quá trình kiểm chứng. Chứng nhận kiểu loại toàn xe từ Cục Đăng kiểm Việt Nam là điều kiện bắt buộc trước khi bàn giao bất kỳ chiếc nào, và chúng tôi chưa công bố thời điểm giao xe cho tới khi lịch chứng nhận được xác định.">The Volty U1 is a working prototype under validation. Whole-vehicle type approval from the Vietnam Register is required before any unit can be delivered, and no delivery date is published until that approval is scheduled.</p>
+    <a href="/u1.html" data-en="Program status" data-vi="Tiến độ chương trình">Program status</a>
+  </div></div>
+</section>
+
+<!-- ================= SPEC STRIP ================= -->
+<section class="specs">
+  <div class="spec"><svg class="dial" viewBox="0 0 78 78" aria-hidden="true"><circle cx="39" cy="39" r="37" fill="#fff"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(-120 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-100 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-80 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(-60 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-40 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-20 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(0 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(20 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(40 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(60 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(80 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(100 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(120 39 39)"/><line x1="39" y1="39" x2="39" y2="14" stroke="#E2231A" stroke-width="2.4" stroke-linecap="round" transform="rotate(72 39 39)"/><circle cx="39" cy="39" r="4" fill="#151514"/></svg><span class="num">195<span class="u"> km</span></span><span class="l" data-en="Max range" data-vi="Quãng đường di chuyển tối đa, 140 đến 160 km khi chở tải">Max range</span></div>
+  <div class="spec"><svg class="dial" viewBox="0 0 78 78" aria-hidden="true"><circle cx="39" cy="39" r="37" fill="#fff"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(-120 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-100 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-80 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(-60 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-40 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-20 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(0 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(20 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(40 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(60 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(80 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(100 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(120 39 39)"/><line x1="39" y1="39" x2="39" y2="14" stroke="#E2231A" stroke-width="2.4" stroke-linecap="round" transform="rotate(100 39 39)"/><circle cx="39" cy="39" r="4" fill="#151514"/></svg><span class="num">200<span class="u"> kg</span></span><span class="l" data-en="Payload" data-vi="Tải trọng tối đa">Payload</span></div>
+  <div class="spec"><svg class="dial" viewBox="0 0 78 78" aria-hidden="true"><circle cx="39" cy="39" r="37" fill="#fff"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(-120 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-100 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-80 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(-60 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-40 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(-20 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(0 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(20 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(40 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(60 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(80 39 39)"/><line x1="39" y1="6" x2="39" y2="9" stroke="#151514" stroke-width="1" transform="rotate(100 39 39)"/><line x1="39" y1="6" x2="39" y2="12" stroke="#151514" stroke-width="1.6" transform="rotate(120 39 39)"/><line x1="39" y1="39" x2="39" y2="14" stroke="#E2231A" stroke-width="2.4" stroke-linecap="round" transform="rotate(-64 39 39)"/><circle cx="39" cy="39" r="4" fill="#151514"/></svg><span class="num">2<span class="u"> min</span></span><span class="l" data-en="Battery swap" data-vi="Thời gian đổi pin">Battery swap</span></div>
+</section>
+
+<!-- ================= MACHINE ================= -->
+<section class="pad">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="eyebrow rv" data-en="The machine" data-vi="Tại sao nên chọn U1">The machine</div>
+      <h2 data-en="Built for work" data-vi="Bền bỉ cho công việc. Linh hoạt cho cuộc sống.">Built for work</h2>
+      <p class="lead" data-en="A flat, modular utility deck. A swappable battery bay. One chassis that takes a front rack, a rear rack, or side frames, depending on what the job needs that week." data-vi="Sàn chở hàng phẳng dạng mô-đun. Khoang pin hoán đổi. Một khung xe lắp được giá trước, giá sau hoặc khung hông, tùy công việc tuần đó cần gì.">A flat, modular utility deck. A swappable battery bay. One chassis that takes a front rack, a rear rack, or side frames, depending on what the job needs that week.</p>
+    </div>
+    <div class="split">
+      <figure class="vshow"><img src="/u1-delivery-1200.webp" alt="Volty U1 electric utility motorcycle, NUEN MOTO workshop, Thu Duc" loading="lazy"></figure>
+      <ul class="speclist">
+        <li><span data-en="Max range" data-vi="Tầm hoạt động tối đa">Max range</span><b>195 km</b></li>
+        <li><span data-en="Max torque" data-vi="Mô-men xoắn tối đa">Max torque</span><b>152 Nm</b></li>
+        <li><span data-en="Max payload, rider and cargo" data-vi="Tải trọng tối đa, gồm người lái và hàng hóa">Max payload, rider and cargo</span><b>200 kg</b></li>
+        <li><span data-en="Range, dual pack loaded" data-vi="Tầm hoạt động, hai pin có tải">Range, dual pack loaded</span><b>140 to 160 km</b></li>
+        <li><span data-en="Charge time per pack" data-vi="Thời gian sạc mỗi pin">Charge time per pack</span><b>2 to 3 hrs</b></li>
+        <li><span data-en="Swap time" data-vi="Thời gian đổi pin">Swap time</span><b data-en="Under 2 min" data-vi="Dưới 2 phút">Under 2 min</b></li>
+      </ul>
+    </div>
+    <div class="btns" style="margin-top:34px">
+      <a href="/u1.html" class="btn" data-en="Full specifications" data-vi="Thông số đầy đủ">Full specifications</a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ECONOMICS =================
+     Two numbers, deliberately handled differently. The price is an estimated
+     range we are willing to stand behind. Cost per working day is still
+     modelled rather than measured, so it is not printed here as a single
+     figure. It opens in the rider and fleet calculators, where the visitor
+     supplies their own distance and load. Do not print a per-kilometre number
+     on this page without Gia's sign-off.
+     The confirmed First 250 price sits below the floor shown here. If the
+     confirmed price or the range changes, change both together. -->
+<section class="econ pad">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow rv" data-en="The numbers" data-vi="Những con số">The numbers</div>
+        <h2 style="margin:14px 0 18px" data-en="Estimated cost of the U1, and cost per working day" data-vi="Chi phí dự kiến của U1 và chi phí mỗi ngày làm việc">Estimated cost of the U1, and cost per working day</h2>
+        <p class="lead" data-en="Two numbers decide whether an electric bike is worth it. What it costs to buy, and what it costs to run for a day of work. The first we can now put a range on. The second depends entirely on your route, so we let you run it yourself rather than quote you an average." data-vi="Có hai con số quyết định một chiếc xe điện có đáng hay không. Chi phí mua xe, và chi phí vận hành cho một ngày làm việc. Con số thứ nhất hiện đã có thể đưa ra khoảng giá. Con số thứ hai phụ thuộc hoàn toàn vào tuyến đường của bạn, nên chúng tôi để bạn tự tính thay vì đưa ra một mức trung bình.">Two numbers decide whether an electric bike is worth it. What it costs to buy, and what it costs to run for a day of work. The first we can now put a range on. The second depends entirely on your route, so we let you run it yourself rather than quote you an average.</p>
+
+        <div class="price">
+          <div>
+            <div class="fig">&#8363;35M to &#8363;45M</div>
+            <div class="l" data-en="Estimated, includes 10% VAT" data-vi="Dự kiến, đã bao gồm VAT 10%">Estimated, includes 10% VAT</div>
+          </div>
+          <p data-en="An estimated range for the first batch, not a confirmed price. Where a unit sits inside it depends on the battery and rack configuration you choose. We are publishing the range now because it is firm enough to plan around, and a rider deciding between bikes deserves a real number rather than a blank." data-vi="Đây là khoảng giá dự kiến cho lô đầu tiên, không phải giá chính thức. Vị trí của một chiếc xe trong khoảng này phụ thuộc vào cấu hình pin và giá chở mà bạn chọn. Chúng tôi công bố khoảng giá này vì nó đã đủ chắc để bạn lên kế hoạch, và một người đang cân nhắc giữa các dòng xe xứng đáng có một con số thật thay vì một khoảng trống.">An estimated range for the first batch, not a confirmed price. Where a unit sits inside it depends on the battery and rack configuration you choose. We are publishing the range now because it is firm enough to plan around, and a rider deciding between bikes deserves a real number rather than a blank.</p>
+        </div>
+
+        <p style="color:var(--muted);margin-top:22px" data-en="The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list and you will hear the confirmed price, the opening of ordering, and test ride sessions before any of it is announced publicly." data-vi="Giá chính thức được chốt khi chi phí sản xuất được xác định và lịch chứng nhận kiểu loại được ấn định. Đăng ký nhận tin để biết giá chính thức, thời điểm mở đặt xe và các buổi chạy thử trước khi những thông tin này được công bố rộng rãi.">The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list and you will hear the confirmed price, the opening of ordering, and test ride sessions before any of it is announced publicly.</p>
+
+        <div class="btns" style="margin-top:26px">
+          <a class="btn light" href="/contact.html#routes" data-en="Join the list" data-vi="Đăng ký nhận tin">Join the list</a>
+          <a href="/contact.html#routes" class="btn" data-en="Talk to fleet sales" data-vi="Liên hệ bộ phận đội xe">Talk to fleet sales</a>
+        </div>
+      </div>
+
+      <div>
+        <div class="calc rv d1"><div class="calc-display" aria-hidden="true"><span data-en="Cost per working day" data-vi="Chi phí mỗi ngày làm việc">Cost per working day</span><b>&#8363;</b></div>
+          <h3 data-en="Run it against your own day" data-vi="Tính trên chính ngày làm việc của bạn">Run it against your own day</h3>
+          <p data-en="Cost per working day is energy, maintenance, depreciation and insurance, set against the petrol bike being ridden today. It moves with distance, load and shift pattern, which is why an average helps nobody. Both calculators start from your own numbers." data-vi="Chi phí mỗi ngày làm việc gồm năng lượng, bảo dưỡng, khấu hao và bảo hiểm, so với chiếc xe xăng đang chạy hiện nay. Con số này thay đổi theo quãng đường, tải trọng và cách chia ca, nên một mức trung bình không giúp được ai. Cả hai công cụ tính đều bắt đầu từ số liệu của chính bạn.">Cost per working day is energy, maintenance, depreciation and insurance, set against the petrol bike being ridden today. It moves with distance, load and shift pattern, which is why an average helps nobody. Both calculators start from your own numbers.</p>
+          <div class="routes">
+            <a href="/rider-economics.html">
+              <span class="rt" data-en="Rider economics" data-vi="Bài toán của tài xế">Rider economics</span>
+              <span class="ar">&#8594;</span>
+              <span class="rd" data-en="You own the bike and ride it yourself. Fuel saved per day, what a pack costs to charge, and how long the switch takes to pay back." data-vi="Bạn sở hữu xe và tự chạy. Tiền xăng tiết kiệm mỗi ngày, chi phí sạc một viên pin, và bao lâu thì hoàn vốn khi chuyển sang xe điện.">You own the bike and ride it yourself. Fuel saved per day, what a pack costs to charge, and how long the switch takes to pay back.</span>
+            </a>
+            <a href="/fleet-economics.html">
+              <span class="rt" data-en="Fleet economics" data-vi="Bài toán của đội xe">Fleet economics</span>
+              <span class="ar">&#8594;</span>
+              <span class="rd" data-en="You run vehicles other people ride. Cost per working day across the fleet, uptime against a charging cycle, and what downtime is costing you now." data-vi="Bạn vận hành đội xe cho người khác chạy. Chi phí mỗi ngày làm việc trên toàn đội, thời gian hoạt động so với chu kỳ sạc, và chi phí thời gian xe nằm hiện nay.">You run vehicles other people ride. Cost per working day across the fleet, uptime against a charging cycle, and what downtime is costing you now.</span>
+            </a>
+          </div>
+          <div class="keys" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= AUDIENCE ================= -->
+<section class="pad">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="eyebrow rv" data-en="Audience" data-vi="Khách hàng">Audience</div>
+      <h2 data-en="Who it is for" data-vi="U1 dành cho ai">Who it is for</h2>
+      <p class="lead" data-en="Fleet operators are who we build for first. Riders who buy their own bike get the same machine. In both cases the vehicle stays our responsibility, not the swap network's." data-vi="Trước hết chúng tôi làm xe cho nhà vận hành đội xe. Người mua xe riêng nhận đúng chiếc xe đó. Trong cả hai trường hợp, trách nhiệm về xe thuộc về chúng tôi, không phải mạng lưới đổi pin.">Fleet operators are who we build for first. Riders who buy their own bike get the same machine. In both cases the vehicle stays our responsibility, not the swap network's.</p>
+    </div>
+    <div class="aud rv d1">
+      <div><span class="k">01</span><h3 data-en="Ride hailing" data-vi="Xe công nghệ">Ride hailing</h3><p data-en="High daily kilometers on thin margins per trip. A swap under two minutes keeps the bike earning where a charge stops it." data-vi="Số ki lô mét mỗi ngày cao, biên lợi nhuận mỗi chuyến mỏng. Đổi pin dưới hai phút giúp xe tiếp tục chạy, trong khi sạc thì phải dừng.">High daily kilometers on thin margins per trip. A swap under two minutes keeps the bike earning where a charge stops it.</p></div>
+      <div><span class="k">02</span><h3 data-en="Last mile delivery" data-vi="Giao hàng chặng cuối">Last mile delivery</h3><p data-en="Stop and start duty, loaded racks, riders handing over between shifts. 200 kg maximum payload, rider included, and mounts front, mid and rear." data-vi="Chạy dừng liên tục, giá chở có tải, tài xế giao ca cho nhau. Tải trọng tối đa 200 kg đã gồm người lái, cùng giá lắp phía trước, giữa và phía sau.">Stop and start duty, loaded racks, riders handing over between shifts. 200 kg maximum payload, rider included, and mounts front, mid and rear.</p></div>
+      <div><span class="k">03</span><h3 data-en="B2B fleets" data-vi="Đội xe doanh nghiệp">B2B fleets</h3><p data-en="Emission inspection becomes mandatory in July 2027 and Hanoi is already piloting a low emission zone. The dates are public." data-vi="Kiểm định khí thải bắt buộc từ tháng 7 năm 2027 và Hà Nội đang thí điểm vùng phát thải thấp. Các mốc thời gian đều đã công bố.">Emission inspection becomes mandatory in July 2027 and Hanoi is already piloting a low emission zone. The dates are public.</p></div>
+      <div><span class="k">04</span><h3 data-en="Multi fleet riders" data-vi="Tài xế chạy nhiều nền tảng">Multi fleet riders</h3><p data-en="You ride for whoever pays best this hour. The bike is yours, not the fleet's, and it swaps on whichever network is nearest." data-vi="Bạn chạy cho bên nào trả tốt nhất trong giờ đó. Xe là của bạn chứ không phải của đội xe, và đổi pin ở mạng lưới nào gần nhất.">You ride for whoever pays best this hour. The bike is yours, not the fleet's, and it swaps on whichever network is nearest.</p></div>
+      <div><span class="k">05</span><h3 data-en="Commuters" data-vi="Đi làm hằng ngày">Commuters</h3><p data-en="Two trips a day, plus errands and the school run. Run one pack or two, and carry a pack inside to charge, not the bike." data-vi="Hai lượt mỗi ngày, thêm việc vặt và đưa đón con. Chạy một hoặc hai pin, và mang pin vào nhà để sạc thay vì mang cả xe.">Two trips a day, plus errands and the school run. Run one pack or two, and carry a pack inside to charge, not the bike.</p></div>
+      <div><span class="k">06</span><h3 data-en="Adventure riders" data-vi="Chạy đường dài cuối tuần">Adventure riders</h3><p data-en="Weekend distance outside the city, gear on the rack. 195 km maximum range, 140 to 160 km loaded, swap where you find one." data-vi="Đi xa khỏi thành phố cuối tuần, đồ đạc buộc trên giá. Tầm hoạt động tối đa 195 km, 140 đến 160 km khi có tải, đổi pin khi gặp trạm.">Weekend distance outside the city, gear on the rack. 195 km maximum range, 140 to 160 km loaded, swap where you find one.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOLLOW ================= -->
+<section class="follow pad" id="follow">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="eyebrow dim" data-en="Keep in touch" data-vi="Giữ liên lạc">Keep in touch</div>
+        <h2 style="margin-top:14px" data-en="Follow Volty" data-vi="Theo dõi Volty">Follow Volty</h2>
+        <p class="lead" style="margin-top:16px" data-en="News, product updates and new releases across every Volty product. No noise." data-vi="Tin tức, cập nhật sản phẩm và những mẫu xe mới trên toàn bộ dòng sản phẩm Volty. Không làm phiền.">News, product updates and new releases across every Volty product. No noise.</p>
+      </div>
+      <div>
+        <a class="btn prime" href="/contact.html#routes" data-en="Join the list" data-vi="Đăng ký nhận tin">Join the list</a>
+        <p class="consent" data-en="The form lives on the contact page. Email is required so we can reach you about product news and service, and we handle your data under Decree 13/2023." data-vi="Biểu mẫu nằm ở trang liên hệ. Email là bắt buộc để chúng tôi liên hệ về tin tức sản phẩm và dịch vụ, và dữ liệu được xử lý theo Nghị định 13/2023.">The form lives on the contact page. Email is required so we can reach you about product news and service, and we handle your data under Decree 13/2023.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pager"><div class="wrap"><a class="next only" href="/u1.html"><span class="k" data-en="Next →" data-vi="Trang sau →">Next →</span><b data-en="The U1" data-vi="Xe U1">The U1</b></a></div></section>
+<!-- ================= CONTACT + FOOTER ================= -->
+<section class="contact pad" id="contact">
+  <div class="wrap">
+    <div class="eyebrow rv" data-en="Get in touch" data-vi="Sẵn sàng đồng hành">Get in touch</div>
+    <h2 class="h-big" data-en="Let's build the fleet" data-vi="Liên hệ ngay">Let's build the fleet</h2>
+    <div class="cbtn"><a class="btn prime" href="/contact.html" data-en="Contact us" data-vi="Liên hệ với chúng tôi">Contact us</a></div>
+    <div class="cgrid rv d1">
+      <div>
+        <h4 data-en="Company" data-vi="Công ty">Company</h4>
+        <p class="ent">
+          <b><a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a> Company Limited</b><br>
+          Tax ID 0317847638<br>
+          11 Đường số 10, Khu đô thị Sala,<br>
+          Tp. Thủ Đức, Tp. Hồ Chí Minh<br>
+          <a href="tel:+84766204468" style="display:inline;padding:0">+84 766 204 468</a><br>
+          <a href="mailto:ride@nuenmoto.com" style="display:inline;padding:0">ride@nuenmoto.com</a>
+        </p>
+        <div class="csocials">
+          <a href="https://www.facebook.com/nuenmoto" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.78-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.45 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://www.instagram.com/nuenmoto/" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.youtube.com/@nuenmoto" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 12s0-3.2-.4-4.7a2.5 2.5 0 0 0-1.77-1.77C19.34 5.1 12 5.1 12 5.1s-7.34 0-8.83.43A2.5 2.5 0 0 0 1.4 7.3C1 8.8 1 12 1 12s0 3.2.4 4.7a2.5 2.5 0 0 0 1.77 1.77c1.49.43 8.83.43 8.83.43s7.34 0 8.83-.43a2.5 2.5 0 0 0 1.77-1.77C23 15.2 23 12 23 12zM9.75 15.02V8.98L15.5 12z"/></svg></a>
+          <a href="https://www.tiktok.com/@nuenmoto" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.6 5.82a4.28 4.28 0 0 1-1.06-2.82h-3.1v12.4a2.52 2.52 0 1 1-2.52-2.52c.26 0 .52.04.76.12V9.8a5.62 5.62 0 0 0-.76-.05 5.62 5.62 0 1 0 5.62 5.62V9.01a7.3 7.3 0 0 0 4.26 1.36V7.27a4.28 4.28 0 0 1-3.2-1.45z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h4 data-en="Product" data-vi="Sản phẩm">Product</h4>
+        <a href="/u1.html" data-en="The U1" data-vi="Xe U1">The U1</a>
+        <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
+        <a href="/u1.html#specs" data-en="Specifications" data-vi="Thông số">Specifications</a>
+        <a href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
+        <a href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
+        <a href="/rider-economics.html#estimator" data-en="Payment estimator" data-vi="Ước tính trả góp">Payment estimator</a>
+      </div>
+      <div>
+        <h4 data-en="Business" data-vi="Doanh nghiệp">Business</h4>
+        <a href="/contact.html#partner" data-en="Partner with us" data-vi="Hợp tác cùng chúng tôi">Partner with us</a>
+        <a href="/contact.html" data-en="Contact us" data-vi="Liên hệ">Contact us</a>
+        <a href="/faq.html" data-en="FAQ" data-vi="Câu hỏi thường gặp">FAQ</a>
+      </div>
+      <div>
+        <h4 data-en="Legal" data-vi="Pháp lý">Legal</h4>
+        <a href="/privacy.html" data-en="Privacy Policy" data-vi="Chính sách bảo mật">Privacy Policy</a>
+        <a href="/terms.html" data-en="Terms of Use" data-vi="Điều khoản sử dụng">Terms of Use</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fbrand">
+      <svg viewBox="100 0 1600 1600" aria-hidden="true"><rect x="100" y="0" width="1600" height="1600" rx="300" fill="#E2231A"/><g transform="translate(0,1600) scale(1,-1)"><path d="M100 1600H500V783L883 400H917L1300 783V1600H1700V617L1083 0H717L100 617Z" fill="#f5f5f6" transform="translate(900,800) scale(.72) translate(-900,-800)"/></g></svg>
+      Volty
+    </div>
+    <div class="flinks">
+      <a href="/terms.html" data-en="Terms of Use" data-vi="Điều khoản sử dụng">Terms of Use</a>
+      <a href="/privacy.html" data-en="Privacy Policy" data-vi="Chính sách bảo mật">Privacy Policy</a>
+    </div>
+    <div class="fmeta"><span data-en="A brand by" data-vi="Một thương hiệu của">A brand by</span> <a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a> <span data-en="Company Limited. 2026." data-vi="Company Limited. 2026.">Company Limited. 2026.</span></div>
+  </div>
+</footer>
+
+<script>
+/* setLang now lives in volty-lang.js */
+
+var nv=document.getElementById('nav');
+addEventListener('scroll',function(){nv.classList.toggle('scrolled',scrollY>40)},{passive:true});
+var bg=document.getElementById('burger'),mp=document.getElementById('mpanel');
+bg.addEventListener('click',function(){mp.classList.toggle('show')});
+mp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){mp.classList.remove('show')})});
+
+
+/* Latest dropdown: hover on pointer devices, tap on touch */
+(function(){
+  var d=document.getElementById('drop'); if(!d) return;
+  var b=d.querySelector('button');
+  b.addEventListener('click',function(e){
+    e.stopPropagation();
+    var open=d.classList.toggle('open');
+    b.setAttribute('aria-expanded',open?'true':'false');
+  });
+  document.addEventListener('click',function(){d.classList.remove('open');b.setAttribute('aria-expanded','false')});
+  addEventListener('keydown',function(e){if(e.key==='Escape'){d.classList.remove('open');b.setAttribute('aria-expanded','false')}});
+})();
+
+/* Scroll reveal, same behaviour and thresholds as the audience page. */
+(function(){
+  var els=document.querySelectorAll('.rv'); if(!els.length) return;
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  els.forEach(function(el){io.observe(el)});
+})();
+</script>
+<script>
+/* burger reports its state to assistive tech */
+(function(){var b=document.getElementById('burger'),m=document.getElementById('mpanel');if(!b||!m)return;
+  b.setAttribute('aria-expanded','false');b.setAttribute('aria-controls','mpanel');
+  new MutationObserver(function(){b.setAttribute('aria-expanded',m.classList.contains('show')?'true':'false')}).observe(m,{attributes:true,attributeFilter:['class']});
+})();
+</script>
+<script>
+/* Browser-tab title in Vietnamese. volty-lang.js reads this dictionary; the page
+   has no loose text nodes to translate, so the title is its only entry. */
+var __VI_LABELS={"Volty U1 | Electric utility motorcycle by NUEN MOTO":"Volty U1 | Xe máy điện đa dụng của NUEN MOTO"};window.__VI_LABELS=__VI_LABELS;
+</script>
+<script>
+/* Film player. The hero clip used to autoplay behind the headline on black.
+   On the light edition it plays only when asked, full frame, with controls. */
+(function(){
+  var f=document.getElementById('film'),v=document.getElementById('filmVideo'),b=document.getElementById('playFilm');
+  if(!f||!v||!b)return; var last=null;
+  function open(){last=document.activeElement;f.hidden=false;document.body.style.overflow='hidden';try{v.currentTime=0;v.play()}catch(e){};f.querySelector('.film-x').focus()}
+  function close(){v.pause();f.hidden=true;document.body.style.overflow='';if(last)last.focus()}
+  b.addEventListener('click',open);
+  f.querySelectorAll('[data-close]').forEach(function(x){x.addEventListener('click',close)});
+  addEventListener('keydown',function(e){if(e.key==='Escape'&&!f.hidden)close()});
+})();
+</script>
+</body>
+</html>
