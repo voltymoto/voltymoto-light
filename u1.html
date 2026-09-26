@@ -607,6 +607,105 @@ body .eyebrow{justify-content:flex-start!important;width:auto!important;text-ali
 /* ---------- section grounds ---------- */
 body .band-w{background:var(--card)!important}body .band-b{background:var(--paper)!important}body .band-k{background:var(--paper2)!important}
 
+/* =====================================================================
+   VOLTY LIGHT EDITION: index card system carried to every inner page.
+   The dark pages built grids as 1px hairlines between square cells.
+   Here every grid becomes separate rounded cards with a 16px gap,
+   pastels rotate in the index order (sky, butter, sage, blush, lilac,
+   mint), and neutral cards turn beige when they sit on a white band.
+   ===================================================================== */
+body section{--cardbg:var(--card)}
+body section.band-w{--cardbg:var(--paper)}
+
+/* ---------- 1. grids: hairlines out, gaps in ---------- */
+body .knum-grid,body .mlist,body .swap,body .prin,body .cfg,body .paths,body .mbox,
+body .sim,body .stats,body .story,body .routes,body .dgrid,body .pager .wrap{
+  background:transparent!important;border:0!important;gap:16px!important;box-shadow:none!important}
+body .pager .wrap{padding:0 32px!important}
+
+/* ---------- 2. the card shape (index .aud / .spec) ---------- */
+body .knum,body .mlist li,body .swap>div,body .prin>div,body .cfg>figure,body .path,body .mbox>div,
+body .sim>div,body .stat,body .story>div,body .route,body .dcell,body .pager a,body .fmedia,body .mfig,
+body .hlist,body .faq,body .note,body .state{
+  border-radius:var(--r)!important;border:0!important;overflow:hidden;
+  transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+body .prin>div:hover,body .cfg>figure:hover,body .path:hover,body .route:hover,body .dcell:hover,
+body .story>div:hover,body .knum:hover{transform:translateY(-4px)}
+
+/* ---------- 3. pastel rotation ---------- */
+body .knum:nth-child(6n+1),body .prin>div:nth-child(6n+1),body .cfg>figure:nth-child(6n+1),body .path:nth-child(6n+1),
+body .story>div:nth-child(6n+1),body .route:nth-child(6n+1),body .dcell:nth-child(6n+1),body .mlist li:nth-child(6n+1){background:var(--sky)!important}
+body .knum:nth-child(6n+2),body .prin>div:nth-child(6n+2),body .cfg>figure:nth-child(6n+2),body .path:nth-child(6n+2),
+body .story>div:nth-child(6n+2),body .route:nth-child(6n+2),body .dcell:nth-child(6n+2),body .mlist li:nth-child(6n+2){background:var(--butter)!important}
+body .knum:nth-child(6n+3),body .prin>div:nth-child(6n+3),body .cfg>figure:nth-child(6n+3),body .path:nth-child(6n+3),
+body .story>div:nth-child(6n+3),body .route:nth-child(6n+3),body .dcell:nth-child(6n+3),body .mlist li:nth-child(6n+3){background:var(--sage)!important}
+body .knum:nth-child(6n+4),body .prin>div:nth-child(6n+4),body .cfg>figure:nth-child(6n+4),
+body .story>div:nth-child(6n+4),body .route:nth-child(6n+4),body .dcell:nth-child(6n+4){background:var(--blush)!important}
+body .knum:nth-child(6n+5),body .prin>div:nth-child(6n+5),body .cfg>figure:nth-child(6n+5),
+body .story>div:nth-child(6n+5),body .dcell:nth-child(6n+5){background:var(--lilac)!important}
+body .knum:nth-child(6n+6),body .prin>div:nth-child(6n+6),body .cfg>figure:nth-child(6n+6),
+body .story>div:nth-child(6n+6),body .dcell:nth-child(6n+6){background:var(--mint)!important}
+
+/* the three stat readouts echo the index spec dials: sky, sage, blush */
+body .stat:nth-child(1){background:var(--sky)!important}
+body .stat:nth-child(2){background:var(--sage)!important}
+body .stat:nth-child(3){background:var(--blush)!important}
+body .stat.hi .v{color:var(--ink)!important}
+
+/* ---------- 4. neutral cards: white, beige on white bands ---------- */
+body .swap>div,body .mbox>.mq,body .sim>div,body .pager a,body .hlist,body .faq,body .fmedia{background:var(--cardbg)!important}
+body .pager{background:transparent!important;border:0!important;padding:0 0 64px!important}
+body .pager a{padding:34px 36px!important;border-left:0!important}
+body .pager a:hover{transform:translateY(-4px)}
+
+/* status notes read like the index development strip */
+body .note,body .state{background:var(--butter)!important;padding:30px 34px!important}
+body .notewrap{border:0!important;background:transparent!important}
+
+/* ---------- 5. inner details ---------- */
+body .knum{padding:26px 26px 24px!important}
+body .knum .k,body .knum .v small{color:var(--ink2)!important}
+body .mlist li{padding:18px 22px!important}
+body .mlist .t{color:var(--ink)!important}
+body .prin>div{padding:34px 30px 36px!important}
+body .cfg img{border-radius:18px;width:calc(100% - 20px)!important;margin:10px 10px 0}
+body .cfg figcaption{padding:20px 26px 28px!important}
+body .fmedia .fr{border-radius:var(--r);overflow:hidden}
+body .fmedia figcaption{background:transparent!important}
+body .mres{border-radius:var(--r)!important}
+body .hlist>div{border-bottom:1px dashed var(--line2)!important}
+body .hlist>div:last-child{border-bottom:0!important}
+body .faq details{border-bottom:1px dashed var(--line2)!important}
+body .faq details:last-child{border-bottom:0!important}
+body .path,body .route,body .dcell{padding:32px 32px 34px!important}
+body .prin p,body .cfg p,body .path p,body .route p,body .dcell p,body .story .k,body .stat .k,body .stat .v small,body .route li{color:var(--ink2)!important}
+@media(max-width:640px){
+  body .knum-grid,body .mlist,body .swap,body .prin,body .cfg,body .paths,body .mbox,body .sim,body .stats,body .story,body .routes,body .dgrid,body .pager .wrap{gap:12px!important}
+  body .pager .wrap{padding:0 16px!important}
+  body .path,body .route,body .dcell,body .prin>div,body .swap>div,body .sim>div{padding:24px 22px!important}
+}
+
+/* ---------- 6. the U1 number strip sits inside the page gutter ---------- */
+body .knums{border:0!important;background:transparent!important;padding:8px 32px 24px!important}
+body .knum-grid{max-width:1280px;margin:0 auto;border:0!important}
+@media(max-width:640px){body .knums{padding:8px 16px 20px!important}}
+
+/* ---------- 7. media and charts share the card radius ---------- */
+body .shot,body .simg{border-radius:var(--r)!important;border:0!important;overflow:hidden}
+body .chart{border-radius:20px!important;border:0!important;background:var(--card)!important}
+body .stat:nth-child(4){background:var(--lilac)!important}
+body .mpanelbox{border-radius:var(--r)!important;overflow:hidden;border:0!important}
+
+/* ---------- 8. small controls: rounded keys, pill chips ---------- */
+body .mtabs{border-radius:18px!important;overflow:hidden;border:0!important;gap:4px!important;background:var(--paper2)!important;padding:4px!important}
+body .mtabs button{border-radius:14px!important;border:0!important;background:var(--card)!important}
+body .mtabs button[aria-pressed=true]{background:var(--red)!important;color:#fff!important}
+body .opts button,body .segbtns button,body .swap-net button,body .mnav button,body .swap-run{border-radius:12px!important}
+body .opts button{background:var(--card)!important}
+body .opts button[aria-pressed=true],body .segbtns button[aria-pressed=true]{background:var(--blush)!important;border-color:var(--red)!important}
+body .rtags span,body .tag,body .mchip span{border-radius:999px!important;border:0!important;background:var(--paper2)!important;color:var(--ink2)!important;padding:5px 11px!important}
+body section.band-w .chart:not(.sim .chart){background:var(--paper)!important}
+
 </style>
 </head><body>
 <nav id="nav">
@@ -647,7 +746,7 @@ body .band-w{background:var(--card)!important}body .band-b{background:var(--pape
   <a href="/contact.html" data-en="Contact" data-vi="Liên hệ">Contact</a>
 </div>
 <section class="vhero" id="top">
-<video aria-label="Both battery packs lifting clear of the Volty U1 frame and settling back into the bay" autoplay="" class="vhero-video" id="vhVideo" loop="" muted="" playsinline="" poster="/u1-hero-poster.webp" preload="metadata">
+<video aria-label="The Volty U1 turning slowly in a dark warehouse, seen from the front, side and rear" autoplay="" class="vhero-video" id="vhVideo" loop="" muted="" playsinline="" poster="/u1-hero-poster.webp" preload="metadata">
 <source src="/u1-hero.webm" type="video/webm">
       <source src="/u1-hero.mp4" type="video/mp4"/>
 </video>
