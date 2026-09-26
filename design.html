@@ -546,6 +546,7 @@ body .eyebrow{justify-content:flex-start!important;width:auto!important;text-ali
 
 /* ---------- section grounds ---------- */
 body .band-w{background:var(--card)!important}body .band-b{background:var(--paper)!important}body .band-k{background:var(--paper2)!important}
+body .ucta .eyebrow.rv.in{display:inline-flex!important;grid-template-columns:none!important;gap:10px!important}
 body .note p{font-family:var(--body)!important;font-size:15px!important;line-height:1.7!important;letter-spacing:0!important;color:var(--ink2)!important}
 
 /* =====================================================================
@@ -848,7 +849,7 @@ body .chart{border-radius:var(--r)!important}
 
 <!-- ================= HERO ================= -->
 <section class="hero">
-  <video autoplay muted loop playsinline preload="auto" poster="/design-hero-poster.webp">
+  <video autoplay muted loop playsinline preload="auto" poster="/design-hero-poster.webp" aria-label="The U1 seen from above as its side panels and battery covers unbolt and slide away from the frame">
     <source src="/design-hero.webm" type="video/webm">
     <source src="/design-hero.mp4" type="video/mp4">
   </video>
@@ -870,7 +871,7 @@ body .chart{border-radius:var(--r)!important}
     </div>
 
     <div class="step rv d1">
-      <div class="simg"><img src="/dsn-loadcase-1200.webp" srcset="/dsn-loadcase-800.webp 800w, /dsn-loadcase-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw" alt="The U1 frame from above with both battery packs lifted clear of the bay and the rear deck bolted on" width="1200" height="800" loading="lazy"></div>
+      <div class="simg"><img src="/dsn-step1-1200.webp" srcset="/dsn-step1-800.webp 800w, /dsn-step1-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw" alt="CAD side view of the U1: frame, battery box, seat and rear rack laid out in the model" width="1200" height="800" loading="lazy"></div>
       <div>
         <div class="sno">01</div>
         <h3 data-en="Define the load case" data-vi="Xác định trạng thái tải">Define the load case</h3>
@@ -880,7 +881,7 @@ body .chart{border-radius:var(--r)!important}
     </div>
 
     <div class="step rv d1 flip">
-      <div class="simg"><img src="/dsn-explode-1200.webp" srcset="/dsn-explode-800.webp 800w, /dsn-explode-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw" alt="The U1 with its body panels, front deck and rear rack unbolted and pulled away from the frame" width="1200" height="800" loading="lazy"></div>
+      <div class="simg"><img src="/dsn-step2-1200.webp" srcset="/dsn-step2-800.webp 800w, /dsn-step2-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw" alt="CAD exploded view of the U1 battery box and side panels, each part numbered" width="1200" height="800" loading="lazy"></div>
       <div>
         <div class="sno">02</div>
         <h3 data-en="Break it into parts that can be made here" data-vi="Chia thành các chi tiết có thể làm tại Việt Nam">Break it into parts that can be made here</h3>
@@ -890,7 +891,7 @@ body .chart{border-radius:var(--r)!important}
     </div>
 
     <div class="step rv d1">
-      <div class="simg"><img src="/dsn-bay-1200.webp" srcset="/dsn-bay-800.webp 800w, /dsn-bay-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw" alt="The U1 front bay with its side panel and skid plate off, the extra battery box open to reach" width="1200" height="800" loading="lazy"></div>
+      <div class="simg"><img src="/dsn-step3-1200.webp" srcset="/dsn-step3-800.webp 800w, /dsn-step3-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw" alt="CAD view of the U1 front bay with its lid open, the controller and wiring reachable from above" width="1200" height="800" loading="lazy"></div>
       <div>
         <div class="sno">03</div>
         <h3 data-en="Put the parts where a mechanic can reach them" data-vi="Đặt mọi bộ phận ở nơi thợ với tới được">Put the parts where a mechanic can reach them</h3>
@@ -899,8 +900,8 @@ body .chart{border-radius:var(--r)!important}
       </div>
     </div>
 
-    <div class="step rv d1">
-      <div class="simg"><img src="/dsn-parts-1200.webp" srcset="/dsn-parts-800.webp 800w, /dsn-parts-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw" alt="Every prototype part of the U1 laid out before assembly: wheels, frame, battery bays, racks, brackets and body panels" width="1200" height="862" loading="lazy"></div>
+    <div class="step rv d1 flip">
+      <div class="simg"><img src="/dsn-step4-1200.webp" srcset="/dsn-step4-800.webp 800w, /dsn-step4-1200.webp 1200w" sizes="(max-width:900px) 100vw, 50vw" alt="Every prototype part of the U1 laid out before assembly: wheels, frame, battery bays, racks, brackets and body panels" width="1200" height="800" loading="lazy"></div>
       <div>
         <div class="sno">04</div>
         <h3 data-en="Prove it before committing tooling" data-vi="Chứng minh trước khi chốt khuôn">Prove it before committing tooling</h3>
@@ -1001,7 +1002,7 @@ body .chart{border-radius:var(--r)!important}
   </div>
 </section>
 
-<section class="pager"><div class="wrap"><a class="prev" href="/index.html"><span class="k" data-en="← Previous" data-vi="← Trang trước">← Previous</span><b data-en="Home" data-vi="Trang chủ">Home</b></a><a class="next" href="/u1.html"><span class="k" data-en="Next →" data-vi="Trang sau →">Next →</span><b data-en="The U1" data-vi="Xe U1">The U1</b></a></div></section>
+<section class="pager"><div class="wrap"><a class="prev" href="/u1.html"><span class="k" data-en="← Previous" data-vi="← Trang trước">← Previous</span><b data-en="The U1" data-vi="Xe U1">The U1</b></a><a class="next" href="/audience.html"><span class="k" data-en="Next →" data-vi="Trang sau →">Next →</span><b data-en="Audience" data-vi="Đối tượng">Audience</b></a></div></section>
 <!-- ================= CONTACT + FOOTER ================= -->
 <section class="contact pad" id="contact">
   <div class="wrap">
