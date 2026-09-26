@@ -26,7 +26,7 @@
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#F3EFE7">
-<script src="/volty-lang.js" defer></script>
+
 <style>
 :root{
   --red:#E2231A; --red-d:#9c130c;
@@ -802,6 +802,15 @@ body .chart{border-radius:var(--r)!important}
 /* hero film: crop a hair off every edge so no scaled edge row can show as a light line */
 body .vhero .vhero-video,body .hero video{object-view-box:inset(0.5% 0.4% 0.5% 0.4%)}
 
+/* ---------- economics heroes: film in a black bezel with a pause key ---------- */
+body .ehero video.hbg{aspect-ratio:16/9!important;object-fit:cover;display:block;object-view-box:inset(0.5% 0.4% 0.5% 0.4%);background:#141413}
+body .ehero-ctl{position:absolute;z-index:7;width:46px;height:46px;border-radius:4px;border:0;background:var(--red);display:grid;place-items:center;cursor:pointer;box-shadow:0 10px 22px -10px rgba(226,35,26,.9)}
+body .ehero-ctl svg{width:14px;height:14px;fill:#fff}
+body .ehero-ctl .i-play{display:none}
+body .ehero.paused .ehero-ctl .i-play{display:block}body .ehero.paused .ehero-ctl .i-pause{display:none}
+body .ehero-ctl:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+body .cgrid .ent .corp{display:inline!important;padding:0!important}
+
 </style>
 </head>
 
@@ -1016,8 +1025,8 @@ body .vhero .vhero-video,body .hero video{object-view-box:inset(0.5% 0.4% 0.5% 0
       <div>
         <h4 data-en="Company" data-vi="Công ty">Company</h4>
         <p class="ent">
-          <b><a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a> Company Limited</b><br>
-          Tax ID 0317847638<br>
+          <b><span data-en="" data-vi="Công ty TNHH ">​</span><a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a><span data-en=" Company Limited" data-vi="​"> Company Limited</span></b><br>
+          <span data-en="Tax ID" data-vi="Mã số thuế">Tax ID</span> 0317847638<br>
           11 Đường số 10, Khu đô thị Sala,<br>
           Tp. Thủ Đức, Tp. Hồ Chí Minh<br>
           <a href="tel:+84766204468" style="display:inline;padding:0">+84 766 204 468</a><br>
@@ -1056,15 +1065,16 @@ body .vhero .vhero-video,body .hero video{object-view-box:inset(0.5% 0.4% 0.5% 0
 
 <footer>
   <div class="wrap">
-    <div class="fbrand">
+    <a class="fbrand" href="/index.html" aria-label="Volty home">
       <svg viewBox="100 0 1600 1600" aria-hidden="true"><rect x="100" y="0" width="1600" height="1600" rx="300" fill="#E2231A"/><g transform="translate(0,1600) scale(1,-1)"><path d="M100 1600H500V783L883 400H917L1300 783V1600H1700V617L1083 0H717L100 617Z" fill="#FFFFFE" transform="translate(900,800) scale(.72) translate(-900,-800)"/></g></svg>
       Volty
-    </div>
+    </a>
     <div class="flinks">
       <a href="/terms.html" data-en="Terms of Use" data-vi="Điều khoản sử dụng">Terms of Use</a>
       <a href="/privacy.html" data-en="Privacy Policy" data-vi="Chính sách bảo mật">Privacy Policy</a>
+      <a href="https://volty.info/company-overview" target="_blank" rel="noopener" data-en="For Investors" data-vi="Dành cho nhà đầu tư">For Investors</a>
     </div>
-    <div class="fmeta"><span data-en="A brand by" data-vi="Một thương hiệu của">A brand by</span> <a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a> <span data-en="Company Limited. 2026." data-vi="Company Limited. 2026.">Company Limited. 2026.</span></div>
+    <div class="fmeta"><span data-en="A brand by" data-vi="Một thương hiệu của Công ty TNHH">A brand by</span> <a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a><span data-en=" Company Limited. 2026." data-vi=". 2026."> Company Limited. 2026.</span></div>
   </div>
 </footer>
 
@@ -1112,6 +1122,123 @@ mp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function
 /* Browser-tab title in Vietnamese. volty-lang.js reads this dictionary; the page
    has no loose text nodes to translate, so the title is its only entry. */
 var __VI_LABELS={"Our Design | Volty by NUEN MOTO":"Thiết kế | Volty by NUEN MOTO"};window.__VI_LABELS=__VI_LABELS;
+</script>
+<script data-k="VOLTY-LANG-INLINE">
+/* =====================================================================
+   Volty language switch. One implementation, loaded by every page.
+   ---------------------------------------------------------------------
+   Why this file exists:
+   The site had shipped two incompatible switchers. Pages built first
+   (index, design) defined setLang() and swapped textContent from
+   data-en / data-vi. Pages built later (u1, audience, contact, both
+   economics pages) defined __setLang(), swapped innerHTML from data-vi,
+   walked the text nodes against a __VI_LABELS dictionary, and wrote the
+   choice to localStorage. The first group neither wrote nor read that
+   key, so a reader who chose VI and then opened Home or Our Design was
+   silently put back into English, and a reader who chose VI on those two
+   pages lost the choice on the next click. That is the reported fault.
+
+   Rules this file keeps:
+   - Both names are exported. Any inline onclick left in older markup
+     still works, whichever name it calls.
+   - The control is bound by delegation and calls preventDefault and
+     stopPropagation, so a language button can never navigate, submit,
+     or bubble into a parent link.
+   - The choice is written to localStorage on every switch and restored
+     on every page load, before first paint of the body content.
+   - __VI_LABELS is optional. A page without one still translates every
+     data-vi element; the dictionary only adds the loose text nodes.
+   - English is restored from a snapshot of the live markup, not from
+     data-en, so nested links and <em> survive a round trip.
+   ===================================================================== */
+(function () {
+  var KEY = 'voltyLang';
+  var titleEn = null;
+
+  function dict() {
+    return (typeof window.__VI_LABELS !== 'undefined' && window.__VI_LABELS) ? window.__VI_LABELS : null;
+  }
+
+  function apply(lang) {
+    lang = (lang === 'vi') ? 'vi' : 'en';
+    var D = dict();
+
+    /* Snapshot English markup BEFORE the text-node pass can rewrite it.
+       Without this, an element whose English text is also a dictionary key
+       gets its "English" copy saved already translated, and switching back
+       leaves Vietnamese on the page. */
+    document.querySelectorAll('[data-vi]').forEach(function (el) {
+      if (el.__enHtml === undefined) el.__enHtml = el.innerHTML;
+    });
+
+    if (D) {
+      var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null, false), n;
+      while ((n = w.nextNode())) {
+        var raw = n.nodeValue, k = raw.trim();
+        if (!k) continue;
+        if (lang === 'vi') {
+          var vi = D[k];
+          if (vi) { if (n.__en === undefined) n.__en = raw; n.nodeValue = raw.replace(k, vi); }
+        } else if (n.__en !== undefined) {
+          n.nodeValue = n.__en;
+        }
+      }
+    }
+
+    document.querySelectorAll('[data-vi]').forEach(function (el) {
+      if (lang === 'vi') { el.innerHTML = el.getAttribute('data-vi'); }
+      else if (el.__enHtml !== undefined) { el.innerHTML = el.__enHtml; }
+    });
+
+    document.querySelectorAll('[data-ph-' + lang + ']').forEach(function (el) {
+      el.placeholder = el.getAttribute('data-ph-' + lang);
+    });
+
+    if (titleEn === null) titleEn = document.title;
+    document.title = (lang === 'vi' && D && D[titleEn]) ? D[titleEn] : titleEn;
+
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll('.langsw .lb, .langsw button[data-l]').forEach(function (b) {
+      b.classList.toggle('on', b.getAttribute('data-l') === lang);
+    });
+
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+
+    /* Content drawn by script rather than markup: the swap simulator, the
+       mode configurator, and anything a page registers itself. Each is
+       optional and each failure is contained. */
+    ['__swapRerender', '__modeRerender', '__viHook'].forEach(function (h) {
+      if (typeof window[h] === 'function') { try { window[h](lang); } catch (e) {} }
+    });
+  }
+
+  window.setLang = apply;
+  window.__setLang = apply;
+
+  function bind() {
+    document.addEventListener('click', function (e) {
+      var t = e.target;
+      if (!t || !t.closest) return;
+      var b = t.closest('.langsw .lb, .langsw button[data-l]');
+      if (!b) return;
+      e.preventDefault();
+      e.stopPropagation();
+      apply(b.getAttribute('data-l'));
+    }, true);
+
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    apply(saved === 'vi' ? 'vi' : 'en');
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bind);
+  } else {
+    bind();
+  }
+})();
+
 </script>
 </body>
 </html>
