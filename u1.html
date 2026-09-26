@@ -38,7 +38,7 @@
   --red:#E2231A; --red-d:#9c130c; --red-l:#ff4133;
   --bg:#F3EFE7; --bg1:#FFFFFF; --bg2:#EFE9DE;
   --white:#151514; --muted:#4B4944; --faint:#8C887E;
-  --blue:#56a6f2; --green:#3F8A45; --amber:#ff7a4d;
+  --blue:#56a6f2; --green:#3F8A45; --amber:#C8561E;
   --line:rgba(21,21,20,.10); --line2:rgba(21,21,20,.18);
   --disp:"Saira Condensed",sans-serif; --wordmark:"Name Smile","Saira Condensed",sans-serif; --mono:"Space Mono",monospace; --body:"Sora",sans-serif;
   --max:1240px;
@@ -718,6 +718,157 @@ body .opts button[aria-pressed=true],body .segbtns button[aria-pressed=true]{bac
 body .rtags span,body .tag,body .mchip span{border-radius:999px!important;border:0!important;background:var(--paper2)!important;color:var(--ink2)!important;padding:5px 11px!important}
 body section.band-w .chart:not(.sim .chart){background:var(--paper)!important}
 
+/* =====================================================================
+   VOLTY UTILITY EDITION: sand, black, one signal red.
+   Loaded last on every page. Pastels are retired: every pastel token now
+   resolves to a sand tile, so nothing soft is left anywhere. Corners are
+   cut back to 6px. Black carries numbers, status strips, CTAs, video
+   frames and the contact footer. Dark photography sits on black grounds,
+   bright studio shots sit on sand.
+   ===================================================================== */
+:root{
+  --red:#E2231A; --red-d:#B8170F; --red-l:#E2231A;
+  --sand:#E6DDCC; --sand-l:#F1EBE0; --sand-d:#D8CDB8; --tile:#F6F2EA;
+  --blk:#141413; --blk2:#1F1E1C; --blk3:#2A2926;
+  --paper:#E6DDCC; --paper2:#D8CDB8; --card:#F6F2EA;
+  --bg:#E6DDCC; --bg1:#F6F2EA; --bg2:#D8CDB8;
+  --ink:#141413; --ink2:#46423B; --ink3:#7A7366;
+  --white:#141413; --muted:#46423B; --faint:#7A7366;
+  --line:rgba(20,20,19,.14); --line2:rgba(20,20,19,.26);
+  --graphite:#141413; --graphite2:#2A2926;
+  --r:6px;
+}
+/* every pastel becomes the local tile colour */
+section,.hero,footer{--sky:var(--tile);--butter:var(--tile);--sage:var(--tile);--blush:var(--tile);--lilac:var(--tile);--mint:var(--tile);--cardbg:var(--tile)}
+html body{background:var(--sand)}
+
+/* ---------- grounds ---------- */
+body .band-w,body .stage,body .specband,body .econ,body .pager{background:var(--sand-l)!important}
+body .band-b,body .audience,body .hero{background-color:var(--sand)!important}
+body .band-k,body .follow{background:var(--sand-d)!important}
+body .band-w{--tile:#E3D9C7}
+body .stage,body .specband,body .econ,body .pager{--tile:#E3D9C7}
+body nav{background:rgba(230,221,204,.8)!important}
+body nav.scrolled{background:rgba(230,221,204,.95)!important}
+.hero{background:radial-gradient(circle,rgba(20,20,19,.12) 1px,transparent 1.4px) 0 0/22px 22px,var(--sand)!important}
+
+/* ---------- black scope: flips the tokens for anything inside ---------- */
+body .dk,body .contact,body footer,body .machine,
+body .knum,body .spec,body .stat,body .story>div,body .stage .in,body .note,body .state,
+body .follow .grid,body .paths .path:first-child,body .routes .route:first-child,body .pager a:not(:only-child),
+body .housing,body .bclip,body .calc{
+  --ink:#EEE7DA;--ink2:#B5AC9C;--ink3:#8A8273;--white:#EEE7DA;--muted:#B5AC9C;--faint:#8A8273;
+  --line:rgba(238,231,218,.14);--line2:rgba(238,231,218,.26);
+  --card:#23221F;--tile:#23221F;--cardbg:#23221F;--paper:#1B1A18;--paper2:#23221F;--bg:#141413;--bg1:#23221F;--bg2:#23221F;
+  --sky:#23221F;--butter:#23221F;--sage:#23221F;--blush:#23221F;--lilac:#23221F;--mint:#23221F;
+  color:var(--ink)}
+body .contact,body footer,body .machine,body .dk{background:var(--blk)!important}
+body .knum,body .spec,body .stat,body .story>div,body .stage .in,body .note,body .state,
+body .follow .grid,body .paths .path:first-child,body .routes .route:first-child,body .pager a:not(:only-child){background:var(--blk)!important}
+body footer .wrap{border-top-color:rgba(238,231,218,.14)!important}
+body .contact .cgrid{border-top-color:rgba(238,231,218,.2)!important}
+body .csocials a{background:var(--blk3)!important;color:#EEE7DA!important}
+body .csocials a:hover{background:var(--red)!important}
+
+/* ---------- corners: cut back ---------- */
+body .btn,body .navcta,body .langsw,body .swap-run,body .opts button,body .segbtns button,body .swap-net button,body .mnav button,
+body .dropmenu,body .routes a,body input,body select,body textarea{border-radius:4px!important}
+body .langsw button,body .dropmenu a,body .navlinks>a,body .navlinks .drop>button{border-radius:3px!important}
+body .soon .tag,body .rtags span,body .tag,body .mchip span,body .basis span{border-radius:2px!important}
+body .mtabs{border-radius:6px!important}body .mtabs button{border-radius:4px!important}
+body .cfg img{border-radius:3px!important}
+body .follow .grid{border-radius:8px!important}
+body .follow .grid::before{display:none}
+body .calc{border-radius:10px!important}body .calc-display{border-radius:4px!important}
+body .csocials a{border-radius:4px!important}
+body .aud>div,body .spec,body .speclist,body .price,body .vshow,body .stage .in{border-radius:var(--r)!important}
+
+/* ---------- video frames: a black bezel, not a white plastic body ---------- */
+body .housing,body .bclip{background:var(--blk)!important;border-radius:10px!important;padding:8px!important;
+  box-shadow:0 40px 80px -46px rgba(20,20,19,.7)!important}
+body .screen,body .screen::after,body .bclip .scr{border-radius:5px!important}
+body .hstrip b{color:#EEE7DA!important}
+body .hstrip .grille{background:radial-gradient(circle,rgba(238,231,218,.28) 1.5px,transparent 1.9px) 0 50%/9px 9px!important}
+body .vtoggle,body .bclip-ctl,body .vhero-ctl{border-radius:4px!important}
+@media(max-width:560px){body .housing,body .bclip{border-radius:8px!important;padding:6px!important}}
+
+/* ---------- details in black ---------- */
+body .eyebrow::before,body .crumb::before,body .ecrumb::before,body .xh-crumb::before{border-radius:1px!important;width:8px!important;height:8px!important}
+body .aud .k{border-radius:3px!important;background:var(--blk)!important;color:#EEE7DA!important}
+body .aud>div:nth-child(1) .k{background:var(--red)!important;color:#fff!important}
+body .aud>div{border-top:3px solid var(--blk)!important}
+body .prin>div,body .cfg>figure,body .route,body .dcell,body .mlist li,body .path{border-top:3px solid var(--blk)!important}
+body .paths .path:first-child,body .routes .route:first-child{border-top-color:var(--red)!important}
+body .stage .tag{background:var(--blk3)!important;border-radius:3px!important}
+body .keys i{border-radius:3px!important}
+body .keys i:nth-child(1),body .keys i:nth-child(2),body .keys i:nth-child(3){background:#55534E!important}
+body .keys i:nth-child(4){background:var(--red)!important}
+body .routes a{background:#2A2926!important;color:#EEE7DA!important}
+body .routes a:nth-child(2){background:var(--red)!important;color:#fff!important}
+body .speclist{background:#23221F!important}
+body .price{background:var(--tile)!important}
+body .price .fig{color:var(--red)}
+body .stat.hi .v{color:#EEE7DA!important}
+body .spec .dial *{stroke:currentColor}
+body .opts button[aria-pressed=true],body .segbtns button[aria-pressed=true]{background:rgba(226,35,26,.10)!important}
+body .mtabs{background:var(--blk)!important}
+body .mtabs button{background:#23221F!important;color:#EEE7DA!important}
+body .mtabs button small{color:#8A8273!important}
+body .mtabs button[aria-pressed=true]{background:var(--red)!important;color:#fff!important}
+body .mtabs button[aria-pressed=true] small{color:rgba(255,255,255,.8)!important}
+body .pager a b{color:#EEE7DA}
+body .pager a:hover b{color:var(--red)!important}
+body .navr .navcta{background:var(--blk)!important;border-color:var(--blk)!important}
+body .langsw{background:var(--sand-d)!important}
+body .langsw button.on,body .langsw button[aria-pressed=true]{background:var(--blk)!important;color:#fff!important}
+body .btn.light{background:var(--blk)!important;border-color:var(--blk)!important;color:#EEE7DA!important}
+.dk .btn:not(.prime),body .contact .btn:not(.prime),body .follow .grid .btn:not(.prime),body .path .navcta,body .route .navcta{border-color:currentColor!important}
+.dk .btn:not(.prime):hover,body .contact .btn:not(.prime):hover,body .follow .grid .btn:not(.prime):hover{background:#EEE7DA!important;color:var(--blk)!important}
+
+/* ---------- inner page heroes: black bezel on the film ---------- */
+body .hero video,body .hero .poster,body .vhero .vhero-video,body .ehero .hbg{border:8px solid var(--blk)!important;border-radius:10px!important;box-shadow:0 40px 80px -46px rgba(20,20,19,.7)!important}
+body .housing video,body .housing .poster{border:0!important;border-radius:0!important;box-shadow:none!important}
+@media(max-width:960px){body .hero video,body .hero .poster,body .vhero .vhero-video,body .ehero .hbg{border-width:6px!important;border-radius:8px!important}body .housing video,body .housing .poster{border:0!important}}
+
+/* ---------- no pink anywhere: selections go black, the Volty column goes black ---------- */
+body .opts button[aria-pressed=true],body .segbtns button[aria-pressed=true]{background:var(--blk)!important;border-color:var(--blk)!important;color:#EEE7DA!important}
+body .opts button[aria-pressed=true] *,body .segbtns button[aria-pressed=true] *{color:#EEE7DA!important}
+body .cmp th{background:var(--tile)!important}
+body .cmp td.us{background:var(--blk)!important;color:#EEE7DA!important;border-color:rgba(238,231,218,.14)!important}
+
+/* ---------- index dials: dark faces, sand ticks ---------- */
+body .spec .dial circle[fill="#fff"]{fill:#23221F}
+body .spec .dial [stroke="#151514"]{stroke:#EEE7DA}
+body .spec .dial [fill="#151514"]{fill:#EEE7DA}
+
+/* ---------- index pager stays a plain rule line on sand ---------- */
+body .pager a:only-child{background:transparent!important;color:var(--ink)!important;border-radius:0!important}
+body .pager a:only-child b{color:var(--ink)!important}
+
+/* ---------- technical outlines ----------
+   Sand blocks: a 2px line in the text colour, so black on sand and sand inside
+   the black grounds (the reverse). Black blocks on sand: a detached 2px black
+   frame 3px out, like a rating plate. The earlier top rules are retired. */
+body .aud>div,body .prin>div,body .cfg>figure,body .route,body .dcell,body .mlist li,body .path{border-top:0!important}
+body .aud>div,body .prin>div,body .cfg>figure,body .path,body .route,body .dcell,body .mlist li,
+body .price,body .speclist,body .hlist,body .faq,body .swap>div,body .sim>div,body .mbox>.mq,body .mres,
+body .fmedia,body .chart,body .shot,body .simg,body .vshow,body .mpanelbox,body .mtabs,body .stats .stat,body .opts button{
+  border:2px solid var(--ink)!important;box-shadow:none!important}
+body .aud>div,body .prin>div,body .cfg>figure,body .path,body .route,body .dcell,body .mlist li,body .price,body .hlist,body .faq,
+body .swap>div,body .sim>div,body .mbox>.mq,body .fmedia,body .chart{background:var(--tile)!important}
+body .knum,body .spec,body .story>div,body .stage .in,body .note,body .state,body .follow .grid,
+body .paths .path:first-child,body .routes .route:first-child,body .pager a:not(:only-child){
+  border:0!important;outline:2px solid var(--blk);outline-offset:3px}
+body .stat{outline:0!important}
+body .knum-grid,body .specs,body .story,body .paths,body .routes,body .pager .wrap{gap:20px!important}
+body .cfg img{border-radius:0!important;width:100%!important;margin:0!important;border-bottom:2px solid var(--ink)}
+body .fmedia .fr{border-radius:0!important;border-bottom:2px solid var(--ink)}
+body .hlist>div,body .faq details{border-bottom:1.5px solid var(--line2)!important}
+body .sim .stats .stat{border-color:var(--blk)!important}
+body .aud>div:hover,body .prin>div:hover,body .cfg>figure:hover,body .path:hover,body .route:hover,body .dcell:hover,body .knum:hover,body .story>div:hover{transform:translate(-2px,-2px)!important;box-shadow:4px 4px 0 var(--ink)!important}
+body .knum:hover,body .story>div:hover,body .paths .path:first-child:hover,body .routes .route:first-child:hover{box-shadow:none!important}
+body .chart{border-radius:var(--r)!important}
+
 </style>
 </head><body>
 <nav id="nav">
@@ -844,7 +995,7 @@ body section.band-w .chart:not(.sim .chart){background:var(--paper)!important}
 </table></div>
 <p class="swap-note" data-vi="Khả năng tương thích chéo là đặc tính thiết kế của khoang pin. Mỗi mạng lưới mới sẽ mở cho người chạy xe khi các điều khoản thương mại được ký kết, và chúng tôi chỉ nêu tên đối tác tại đây sau khi thỏa thuận đã hoàn tất.">Cross-compatibility is a design property of the battery bay. Each additional network becomes available to riders as commercial terms are signed, and we will name partners here only once agreements are executed.</p>
 </div></section>
-<section class="pad band-b" style="background:#FFFFFF;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap"><div class="shead"><div class="eyebrow rv" data-vi="Trải nghiệm lái">What You Are Riding</div><h2 class="rv d1" data-vi="Tối ưu bảo dưỡng. Tải trọng vượt trội. Đồng hành bền bỉ.">Built to be fixed, loaded, and lived with.</h2><p class="lead rv d2" data-vi="Bốn điều người chạy xe nhận ra ngay tuần đầu, và vẫn nhận ra ở năm thứ ba.">Four things a rider notices in the first week, and keeps noticing in year three.</p></div><figure class="bclip" data-s="idle"><div class="scr"><video id="bcVideo" muted playsinline preload="none" poster="/u1-builds-poster.webp" aria-label="The same U1 frame shown in four builds on one street"><source src="/u1-builds.webm" type="video/webm"><source src="/u1-builds.mp4" type="video/mp4"></video><button class="bclip-ctl" id="bcCtl" type="button" aria-label="Play video"><svg class="i i-play" viewBox="0 0 14 14"><path d="M3 1l10 6-10 6z"/></svg><svg class="i i-pause" viewBox="0 0 14 14"><rect height="12" width="3.5" x="2" y="1"/><rect height="12" width="3.5" x="8.5" y="1"/></svg><svg class="i i-replay" viewBox="0 0 14 14"><path d="M7 2a5 5 0 1 1-4.6 3H.5L3.2 2 6 5H4.1A3.4 3.4 0 1 0 7 3.6z"/></svg></button></div><figcaption data-vi="Một khung xe, bốn cấu hình, trên cùng một con phố.">One chassis, four builds, on the same street.</figcaption></figure><div class="frow"><div class="rv"><div class="fk" data-vi="Hệ truyền động">Running gear</div><h3 data-vi="Phụ tùng phổ thông, dễ thay thế">Parts a street mechanic already stocks</h3><p data-vi="Trang bị truyền động xích, giảm xóc đôi phía sau, gắp sau tiêu chuẩn và phanh đĩa trước sau. Kết cấu phổ thông giúp bảo dưỡng nhanh tại bất kỳ tiệm xe nào mà không phải chờ linh kiện độc quyền.">Chain final drive, twin rear shocks, a conventional swingarm, and disc brakes at both ends. None of that is exotic, and that is the point.</p>
+<section class="dk pad band-b"><div class="wrap"><div class="shead"><div class="eyebrow rv" data-vi="Trải nghiệm lái">What You Are Riding</div><h2 class="rv d1" data-vi="Tối ưu bảo dưỡng. Tải trọng vượt trội. Đồng hành bền bỉ.">Built to be fixed, loaded, and lived with.</h2><p class="lead rv d2" data-vi="Bốn điều người chạy xe nhận ra ngay tuần đầu, và vẫn nhận ra ở năm thứ ba.">Four things a rider notices in the first week, and keeps noticing in year three.</p></div><figure class="bclip" data-s="idle"><div class="scr"><video id="bcVideo" muted playsinline preload="none" poster="/u1-builds-poster.webp" aria-label="The same U1 frame shown in four builds on one street"><source src="/u1-builds.webm" type="video/webm"><source src="/u1-builds.mp4" type="video/mp4"></video><button class="bclip-ctl" id="bcCtl" type="button" aria-label="Play video"><svg class="i i-play" viewBox="0 0 14 14"><path d="M3 1l10 6-10 6z"/></svg><svg class="i i-pause" viewBox="0 0 14 14"><rect height="12" width="3.5" x="2" y="1"/><rect height="12" width="3.5" x="8.5" y="1"/></svg><svg class="i i-replay" viewBox="0 0 14 14"><path d="M7 2a5 5 0 1 1-4.6 3H.5L3.2 2 6 5H4.1A3.4 3.4 0 1 0 7 3.6z"/></svg></button></div><figcaption data-vi="Một khung xe, bốn cấu hình, trên cùng một con phố.">One chassis, four builds, on the same street.</figcaption></figure><div class="frow"><div class="rv"><div class="fk" data-vi="Hệ truyền động">Running gear</div><h3 data-vi="Phụ tùng phổ thông, dễ thay thế">Parts a street mechanic already stocks</h3><p data-vi="Trang bị truyền động xích, giảm xóc đôi phía sau, gắp sau tiêu chuẩn và phanh đĩa trước sau. Kết cấu phổ thông giúp bảo dưỡng nhanh tại bất kỳ tiệm xe nào mà không phải chờ linh kiện độc quyền.">Chain final drive, twin rear shocks, a conventional swingarm, and disc brakes at both ends. None of that is exotic, and that is the point.</p>
 <p data-vi="Truyền động đai hay động cơ đặt trong bánh sẽ gọn gàng hơn về hình thức, nhưng đẩy người chạy xe vào thế phụ thuộc một nhà cung cấp duy nhất. &lt;b&gt;Mọi chi tiết hao mòn trên chiếc xe này đều là phụ tùng mà một tiệm sửa xe đầu hẻm ở Việt Nam có thể mua và lắp được ngay hôm nay&lt;/b&gt;, kể cả Chủ nhật, không cần hẹn trước.">A belt drive or a hub motor would tidy the picture and put the rider at the mercy of one supplier. <b>Everything wearing on this bike is a part a corner-shop mechanic in Vietnam can source and fit today</b>, on a Sunday, without an appointment.</p>
 <p data-vi="Xích hở sẽ cần căn chỉnh và má phanh sẽ cần thay. Cả hai việc chỉ mất vài phút và tốn rất ít tiền, đó là đánh đổi chúng tôi chọn thay vì những cụm kín hiếm hỏng nhưng hỏng thì rất đắt.">The exposed chain will need adjusting and the pads will need changing. Both take minutes and cost very little, which is the trade we chose over sealed components that fail rarely and expensively.</p></div><figure class="fmedia rv d1"><div class="fr"><img alt="Rear suspension, chain drive, and the bolted side panel on the running prototype." loading="lazy" src="veh-swingarm.jpg"/></div><figcaption data-vi="Giảm xóc sau, truyền động xích và tấm ốp hông bắt vít trên nguyên mẫu đang chạy.">Rear suspension, chain drive, and the bolted side panel on the running prototype.</figcaption></figure></div><div class="frow"><div class="rv"><div class="fk" data-vi="Kết cấu chịu lực">Load path</div><h3 data-vi="Giá chở hàng tích hợp trực tiếp vào khung">The racks are structure, not accessories</h3><p data-vi="Sàn trước, thanh ray giữa và giá sau đều bắt vít độc lập trực tiếp vào khung chính. Khả năng chịu tải 200 kg đến từ nền tảng khung xe vững chắc chứ không chỉ nhờ phụ kiện gắn thêm.">Front deck, mid rails, and rear deck all bolt to the frame independently, not to each other. Take one off and the others do not move, and neither does the way the bike carries a load.</p>
 <p data-vi="&lt;b&gt;Tải trọng định mức là 200 kg&lt;/b&gt;, và đó là tổng tối đa mà khung xe chịu được: người lái, hành khách và hàng hóa cộng lại, không phải hàng hóa cộng thêm lên người lái. Đây là con số của khung xe, không phải của giá chở, và là mức mà kết cấu được thiết kế để mang khi đã lắp đủ giá."><b>The rated payload is 200 kg</b>, and that is the maximum total the frame carries: rider, passenger and cargo together, not cargo on top of a rider. It is a frame number, not a rack number, and it is what the structure is designed to carry once the racks are hung on it.</p>
@@ -859,7 +1010,7 @@ body section.band-w .chart:not(.sim .chart){background:var(--paper)!important}
 <p class="lead rv d2" data-vi="Không có gì về kết cấu thay đổi giữa các cấu hình này. Khung, khoang pin và các điểm bắt đều giống hệt nhau, phần còn lại chỉ là danh mục phụ kiện.">Nothing structural changes between these. The frame, the bay, and the mounting points are identical, and the rest is a parts list.</p>
 </div>
 <div class="rv d1">
-<div aria-label="Configuration" class="mtabs" id="mtabs" role="group"><button aria-pressed="true" data-m="urban" type="button" data-vi="Nội đô&lt;small&gt;Xe công nghệ&lt;/small&gt;">Urban<small>Ride hailing</small></button><button aria-pressed="false" data-m="delivery" type="button" data-vi="Giao hàng&lt;small&gt;Chặng cuối&lt;/small&gt;">Delivery<small>Last mile</small></button><button aria-pressed="false" data-m="maxload" type="button" data-vi="Tải tối đa&lt;small&gt;Logistics doanh nghiệp&lt;/small&gt;">Max load<small>Corporate logistics</small></button><button aria-pressed="false" data-m="expedition" type="button" data-vi="Đường dài&lt;small&gt;Ngoài giờ làm&lt;/small&gt;">Expedition<small>Off the clock</small></button></div><div class="mpanelbox"><figure class="mfig"><img alt="Volty U1 in urban configuration" id="mImg" src="veh-mode-urban.jpg"/></figure><div class="minfo"><h3 id="mH">Stripped to what a passenger shift needs</h3><p id="mP">Single pack, front deck only, lowest weight. This is the configuration for dense inner-city work, where the bike spends its day threading traffic and what you want under you is light and narrow.</p><div class="mspecs" id="mS"></div></div></div></div></div></section>
+<div aria-label="Configuration" class="mtabs" id="mtabs" role="group"><button aria-pressed="true" data-m="urban" type="button" data-vi="Nội đô&lt;small&gt;Xe công nghệ&lt;/small&gt;">Urban<small>Ride hailing</small></button><button aria-pressed="false" data-m="delivery" type="button" data-vi="Giao hàng&lt;small&gt;Chặng cuối&lt;/small&gt;">Delivery<small>Last mile</small></button><button aria-pressed="false" data-m="maxload" type="button" data-vi="Tải tối đa&lt;small&gt;Logistics doanh nghiệp&lt;/small&gt;">Max load<small>Corporate logistics</small></button><button aria-pressed="false" data-m="expedition" type="button" data-vi="Đường dài&lt;small&gt;Ngoài giờ làm&lt;/small&gt;">Expedition<small>Off the clock</small></button></div><div class="mpanelbox"><figure class="mfig"><img alt="Volty U1 in urban configuration" id="mImg" src="veh-mode-urban.jpg"/></figure><div class="minfo"><h3 id="mH">Built for the passenger shift, with room for a bag</h3><p id="mP">Rear rack and slim side frames, nothing hung off the front. Room for a passenger's bag or a helmet case without widening the bike, so it still threads inner-city traffic the way a ride-hailing day demands.</p><div class="mspecs" id="mS"></div></div></div></div></div></section>
 <section class="pad band-w"><div class="wrap"><div class="shead"><div class="eyebrow rv" data-vi="Các thông số">The Numbers</div><h2 class="rv d1" data-vi="Thông số đầy đủ.">Full specification.</h2><p class="lead rv d2" data-vi="Các con số mô tả chiếc xe ở trạng thái đang phát triển và thử nghiệm hiện tại. Chúng là mục tiêu cho tới khi được phê duyệt kiểu loại, và sẽ được công bố lại theo xe đã phê duyệt.">Figures describe the vehicle as currently developed and tested. They are targets until type approval is granted, and they will be restated against the approved vehicle.</p></div><div class="spec-grid rv d1"><div><span data-vi="Tốc độ tối đa">Top speed</span><b>80 km/h</b></div><div><span data-vi="Mô-men xoắn cực đại">Peak torque</span><b>152 Nm</b></div><div><span data-vi="Công suất cực đại">Peak power</span><b>6 kW / 8 HP</b></div><div><span data-vi="Quãng đường tối đa">Maximum range</span><b>195 km</b></div><div><span data-vi="Quãng đường thực tế, có tải, hai cụm pin">Real range, loaded, two packs</span><b data-vi="140 đến 160 km">140 to 160 km</b></div><div><span data-vi="Pin, mỗi cụm">Battery, per pack</span><b data-vi="2.2 kWh, tháo rời">2.2 kWh, removable</b></div><div><span data-vi="Cấu hình pin">Pack configuration</span><b data-vi="Một hoặc hai">One or two</b></div><div><span data-vi="Điện áp hệ thống">System voltage</span><b>72 V</b></div><div><span data-vi="Thời gian sạc, mỗi cụm">Charge time, per pack</span><b data-vi="2 đến 3 giờ">2 to 3 hours</b></div><div><span data-vi="Thời gian đổi pin">Swap time</span><b data-vi="Dưới 2 phút">Under 2 minutes</b></div><div><span data-vi="Tải trọng tối đa (người lái, hành khách, hàng hóa)">Maximum payload (rider, passenger, cargo)</span><b>200 kg</b></div><div><span data-vi="Khối lượng bản thân, gồm pin">Kerb weight, with battery</span><b>120 kg</b></div><div><span data-vi="Truyền động cuối">Final drive</span><b data-vi="Xích">Chain</b></div><div><span data-vi="Phanh">Brakes</span><b data-vi="Đĩa, trước và sau">Disc, front and rear</b></div><div><span data-vi="Điểm lắp giá chở">Rack mounting points</span><b data-vi="Trước, giữa, sau">Front, mid, rear</b></div><div><span data-vi="Chứng nhận kiểu loại">Homologation</span><b data-vi="Đang chờ phê duyệt kiểu loại">Type approval pending</b></div></div></div>
 <p class="swap-note" style="margin-top:22px" data-vi="Thông số phản ánh nguyên mẫu hiện tại và có thể thay đổi trước khi được phê duyệt kiểu loại.">Specs reflect the current prototype and are subject to change before type approval.</p>
 </section>
@@ -967,7 +1118,7 @@ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 
 /* ---- mode configurator ---- */
 (function(){
-  var MODES=[{"id": "urban", "img": "veh-mode-urban.jpg", "h": "Stripped to what a passenger shift needs", "p": "Single pack, front deck only, lowest weight. This is the configuration for dense inner-city work, where the bike spends its day threading traffic and what you want under you is light and narrow.", "specs": [["Battery", "One pack, 2.2 kWh"], ["Racks fitted", "Front deck only"], ["Best for", "Ride hailing, short parcels"], ["Priority", "Weight and agility"]]}, {"id": "delivery", "img": "veh-mode-delivery.jpg", "h": "Two packs, three mounting points, insulated boxes", "p": "Front basket, rear top box, and side panniers on the mid rails at once. Two packs so a full shift does not have to be planned around a swap stop. This is the configuration most fleet operators specify.", "specs": [["Battery", "Two packs, 4.4 kWh"], ["Racks fitted", "Front, mid, rear"], ["Best for", "Food and parcel delivery"], ["Priority", "Volume and range"]]}, {"id": "maxload", "img": "veh-mode-maxload.jpg", "h": "Every mounting point occupied, up to the rated 200 kg all in", "p": "Extended side rails, front and rear decks, screen and auxiliary light. This is the platform at its widest, for bulky low-density freight where volume runs out long before the payload rating does.", "specs": [["Battery", "Two packs, 4.4 kWh"], ["Racks fitted", "Front, mid, rear, extended"], ["Best for", "Bulk and contract logistics"], ["Priority", "Deck area"]]}, {"id": "expedition", "img": "veh-mode-expedition.jpg", "h": "The same chassis, on a day nobody is paying for the trip", "p": "Screen, handguards, auxiliary lights, soft luggage, dual-purpose tires. Nothing structural changes. This configuration exists because the rider who owns this bike for work owns it on Sunday too.", "specs": [["Battery", "Two packs, 4.4 kWh"], ["Racks fitted", "Rear rack, soft luggage"], ["Best for", "Touring and rough surfaces"], ["Priority", "Range and comfort"]]}], MODE_VI={"urban": {"h": "Tinh gọn đúng theo nhu cầu chở khách", "p": "Một cụm pin, chỉ lắp sàn trước, khối lượng thấp nhất. Đây là cấu hình cho công việc trong nội đô dày đặc, khi chiếc xe dành cả ngày luồn lách giữa dòng xe và thứ bạn cần dưới mình là một chiếc xe nhẹ và gọn.", "specs": [["Pin", "Một cụm pin, 2.2 kWh"], ["Giá chở lắp kèm", "Chỉ sàn trước"], ["Phù hợp nhất", "Xe công nghệ, bưu kiện nhỏ"], ["Ưu tiên", "Khối lượng và sự linh hoạt"]]}, "delivery": {"h": "Hai cụm pin, ba điểm lắp, thùng giữ nhiệt", "p": "Giỏ trước, thùng sau và túi hông trên thanh ray giữa cùng lúc. Hai cụm pin để trọn một ca làm không phải tính theo điểm đổi pin. Đây là cấu hình mà phần lớn nhà vận hành đội xe lựa chọn.", "specs": [["Pin", "Hai cụm pin, 4.4 kWh"], ["Giá chở lắp kèm", "Trước, giữa, sau"], ["Phù hợp nhất", "Giao đồ ăn và bưu kiện"], ["Ưu tiên", "Thể tích và quãng đường"]]}, "maxload": {"h": "Kín mọi điểm lắp, tới mức tải định mức 200 kg đã gồm người lái", "p": "Thanh ray hông kéo dài, sàn trước và sàn sau, kính chắn gió và đèn phụ trợ. Đây là nền tảng ở trạng thái rộng nhất, dành cho hàng cồng kềnh nhẹ, khi không gian hết trước cả khi chạm mức tải cho phép.", "specs": [["Pin", "Hai cụm pin, 4.4 kWh"], ["Giá chở lắp kèm", "Trước, giữa, sau, mở rộng"], ["Phù hợp nhất", "Hàng số lượng lớn và logistics hợp đồng"], ["Ưu tiên", "Diện tích sàn chở"]]}, "expedition": {"h": "Vẫn khung xe đó, cho ngày không ai trả tiền cho chuyến đi", "p": "Kính chắn gió, ốp bảo vệ tay, đèn phụ trợ, hành lý mềm và lốp đa địa hình. Không có gì về kết cấu thay đổi. Cấu hình này tồn tại vì người mua chiếc xe để làm việc cũng sở hữu nó vào Chủ nhật.", "specs": [["Pin", "Hai cụm pin, 4.4 kWh"], ["Giá chở lắp kèm", "Giá sau, hành lý mềm"], ["Phù hợp nhất", "Đi tour và đường xấu"], ["Ưu tiên", "Quãng đường và sự thoải mái"]]}}, tabs=document.getElementById('mtabs');
+  var MODES=[{"id": "urban", "img": "veh-mode-urban.jpg", "h": "Built for the passenger shift, with room for a bag", "p": "Rear rack and slim side frames, nothing hung off the front. Room for a passenger's bag or a helmet case without widening the bike, so it still threads inner-city traffic the way a ride-hailing day demands.", "specs": [["Battery", "One or two packs"], ["Racks fitted", "Rear rack, side frames"], ["Best for", "Ride hailing, light parcels"], ["Priority", "Agility and passenger comfort"]]}, {"id": "delivery", "img": "veh-mode-delivery.jpg", "h": "Two packs, three mounting points, insulated boxes", "p": "Front basket, rear top box, and side panniers on the mid rails at once. Two packs so a full shift does not have to be planned around a swap stop. This is the configuration most fleet operators specify.", "specs": [["Battery", "Two packs, 4.4 kWh"], ["Racks fitted", "Front, mid, rear"], ["Best for", "Food and parcel delivery"], ["Priority", "Volume and range"]]}, {"id": "maxload", "img": "veh-mode-maxload.jpg", "h": "Every mounting point occupied, up to the rated 200 kg all in", "p": "Extended side rails, front and rear decks, screen and auxiliary light. This is the platform at its widest, for bulky low-density freight where volume runs out long before the payload rating does.", "specs": [["Battery", "Two packs, 4.4 kWh"], ["Racks fitted", "Front, mid, rear, extended"], ["Best for", "Bulk and contract logistics"], ["Priority", "Deck area"]]}, {"id": "expedition", "img": "veh-mode-expedition.jpg", "h": "The same chassis, on a day nobody is paying for the trip", "p": "Screen, handguards, auxiliary lights, soft luggage, dual-purpose tires. Nothing structural changes. This configuration exists because the rider who owns this bike for work owns it on Sunday too.", "specs": [["Battery", "Two packs, 4.4 kWh"], ["Racks fitted", "Rear rack, soft luggage"], ["Best for", "Touring and rough surfaces"], ["Priority", "Range and comfort"]]}], MODE_VI={"urban": {"h": "Dành cho ca chở khách, vẫn có chỗ cho hành lý", "p": "Giá sau và khung hông gọn, phía trước không lắp thêm gì. Đủ chỗ cho túi của khách hoặc hộp đựng mũ bảo hiểm mà không làm xe rộng thêm, nên xe vẫn luồn lách tốt trong nội đô như một ngày chạy xe công nghệ đòi hỏi.", "specs": [["Pin", "Một hoặc hai cụm pin"], ["Giá chở lắp kèm", "Giá sau, khung hông"], ["Phù hợp nhất", "Xe công nghệ, bưu kiện nhẹ"], ["Ưu tiên", "Linh hoạt và thoải mái cho khách"]]}, "delivery": {"h": "Hai cụm pin, ba điểm lắp, thùng giữ nhiệt", "p": "Giỏ trước, thùng sau và túi hông trên thanh ray giữa cùng lúc. Hai cụm pin để trọn một ca làm không phải tính theo điểm đổi pin. Đây là cấu hình mà phần lớn nhà vận hành đội xe lựa chọn.", "specs": [["Pin", "Hai cụm pin, 4.4 kWh"], ["Giá chở lắp kèm", "Trước, giữa, sau"], ["Phù hợp nhất", "Giao đồ ăn và bưu kiện"], ["Ưu tiên", "Thể tích và quãng đường"]]}, "maxload": {"h": "Kín mọi điểm lắp, tới mức tải định mức 200 kg đã gồm người lái", "p": "Thanh ray hông kéo dài, sàn trước và sàn sau, kính chắn gió và đèn phụ trợ. Đây là nền tảng ở trạng thái rộng nhất, dành cho hàng cồng kềnh nhẹ, khi không gian hết trước cả khi chạm mức tải cho phép.", "specs": [["Pin", "Hai cụm pin, 4.4 kWh"], ["Giá chở lắp kèm", "Trước, giữa, sau, mở rộng"], ["Phù hợp nhất", "Hàng số lượng lớn và logistics hợp đồng"], ["Ưu tiên", "Diện tích sàn chở"]]}, "expedition": {"h": "Vẫn khung xe đó, cho ngày không ai trả tiền cho chuyến đi", "p": "Kính chắn gió, ốp bảo vệ tay, đèn phụ trợ, hành lý mềm và lốp đa địa hình. Không có gì về kết cấu thay đổi. Cấu hình này tồn tại vì người mua chiếc xe để làm việc cũng sở hữu nó vào Chủ nhật.", "specs": [["Pin", "Hai cụm pin, 4.4 kWh"], ["Giá chở lắp kèm", "Giá sau, hành lý mềm"], ["Phù hợp nhất", "Đi tour và đường xấu"], ["Ưu tiên", "Quãng đường và sự thoải mái"]]}}, tabs=document.getElementById('mtabs');
   if(!tabs)return;
   function render(m){
     document.getElementById('mImg').src=m.img;
@@ -1056,7 +1207,7 @@ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
       var o='';
       o+='<g transform="translate('+x+','+y+')">';
       o+='<rect x="0" y="0" width="'+slotW+'" height="'+slotH+'" fill="#FFFFFF" stroke="rgba(21,21,20,'+(ghost?'.22':'.62')+'") stroke-width="1.8"/>'.replace('"\)','")');
-      o+='<rect x="3" y="'+(3+ (slotH-6)*(1-soc))+'" width="'+(slotW-6)+'" height="'+((slotH-6)*soc)+'" fill="'+(soc>0.2?'#3F8A45':'#ff7a4d')+'" opacity="'+(ghost?0.25:0.85)+'"/>';
+      o+='<rect x="3" y="'+(3+ (slotH-6)*(1-soc))+'" width="'+(slotW-6)+'" height="'+((slotH-6)*soc)+'" fill="'+(soc>0.2?'#3F8A45':'#C8561E')+'" opacity="'+(ghost?0.25:0.85)+'"/>';
       o+='<rect x="'+(slotW/2-8)+'" y="-5" width="16" height="5" fill="rgba(21,21,20,'+(ghost?0.22:0.55)+')"/>';
       o+='</g>';
       if(!ghost) o+='<text x="'+(x+slotW/2)+'" y="'+(y-11)+'" text-anchor="middle" font-family="Space Mono,monospace" font-size="10" fill="#151514">'+Math.round(soc*100)+'%</text>';
@@ -1108,7 +1259,7 @@ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
         if(u>0.85){py=slotA.y-62+(dockY-8-(slotA.y-62))*((u-0.85)/0.15);} }
       else {var u=(p-seatQ)/(1-seatQ); px=dockX+14; py=dockY-8-slotH+12; charging=u; soc=0.14+0.86*u;}
       if(p>=seatQ){ h+=pack(px,py,soc,false);
-        h+='<circle cx="'+(dockX-6)+'" y="0" cy="'+(dockY+8)+'" r="3" fill="'+(soc>=1?'#3F8A45':'#ff7a4d')+'"><animate attributeName="opacity" values="1;.3;1" dur="1.2s" repeatCount="indefinite"/></circle>';
+        h+='<circle cx="'+(dockX-6)+'" y="0" cy="'+(dockY+8)+'" r="3" fill="'+(soc>=1?'#3F8A45':'#C8561E')+'"><animate attributeName="opacity" values="1;.3;1" dur="1.2s" repeatCount="indefinite"/></circle>';
       } else { h+=pack(px,py,soc,false); }
       h+=pack(slotB.x,slotB.y,1,true);
       var chargeSecs=charging*9000;

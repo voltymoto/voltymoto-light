@@ -38,7 +38,7 @@
   --red:#E2231A; --red-d:#9c130c; --red-l:#ff4133;
   --bg:#F3EFE7; --bg1:#FFFFFF; --bg2:#EFE9DE;
   --white:#151514; --muted:#4B4944; --faint:#8C887E;
-  --blue:#56a6f2; --green:#3F8A45; --amber:#ff7a4d;
+  --blue:#56a6f2; --green:#3F8A45; --amber:#C8561E;
   --line:rgba(21,21,20,.10); --line2:rgba(21,21,20,.18);
   --disp:"Saira Condensed",sans-serif; --wordmark:"Name Smile","Saira Condensed",sans-serif; --mono:"Space Mono",monospace; --body:"Sora",sans-serif;
   --max:1240px;
@@ -643,6 +643,157 @@ body .opts button{background:var(--card)!important}
 body .opts button[aria-pressed=true],body .segbtns button[aria-pressed=true]{background:var(--blush)!important;border-color:var(--red)!important}
 body .rtags span,body .tag,body .mchip span{border-radius:999px!important;border:0!important;background:var(--paper2)!important;color:var(--ink2)!important;padding:5px 11px!important}
 body section.band-w .chart:not(.sim .chart){background:var(--paper)!important}
+
+/* =====================================================================
+   VOLTY UTILITY EDITION: sand, black, one signal red.
+   Loaded last on every page. Pastels are retired: every pastel token now
+   resolves to a sand tile, so nothing soft is left anywhere. Corners are
+   cut back to 6px. Black carries numbers, status strips, CTAs, video
+   frames and the contact footer. Dark photography sits on black grounds,
+   bright studio shots sit on sand.
+   ===================================================================== */
+:root{
+  --red:#E2231A; --red-d:#B8170F; --red-l:#E2231A;
+  --sand:#E6DDCC; --sand-l:#F1EBE0; --sand-d:#D8CDB8; --tile:#F6F2EA;
+  --blk:#141413; --blk2:#1F1E1C; --blk3:#2A2926;
+  --paper:#E6DDCC; --paper2:#D8CDB8; --card:#F6F2EA;
+  --bg:#E6DDCC; --bg1:#F6F2EA; --bg2:#D8CDB8;
+  --ink:#141413; --ink2:#46423B; --ink3:#7A7366;
+  --white:#141413; --muted:#46423B; --faint:#7A7366;
+  --line:rgba(20,20,19,.14); --line2:rgba(20,20,19,.26);
+  --graphite:#141413; --graphite2:#2A2926;
+  --r:6px;
+}
+/* every pastel becomes the local tile colour */
+section,.hero,footer{--sky:var(--tile);--butter:var(--tile);--sage:var(--tile);--blush:var(--tile);--lilac:var(--tile);--mint:var(--tile);--cardbg:var(--tile)}
+html body{background:var(--sand)}
+
+/* ---------- grounds ---------- */
+body .band-w,body .stage,body .specband,body .econ,body .pager{background:var(--sand-l)!important}
+body .band-b,body .audience,body .hero{background-color:var(--sand)!important}
+body .band-k,body .follow{background:var(--sand-d)!important}
+body .band-w{--tile:#E3D9C7}
+body .stage,body .specband,body .econ,body .pager{--tile:#E3D9C7}
+body nav{background:rgba(230,221,204,.8)!important}
+body nav.scrolled{background:rgba(230,221,204,.95)!important}
+.hero{background:radial-gradient(circle,rgba(20,20,19,.12) 1px,transparent 1.4px) 0 0/22px 22px,var(--sand)!important}
+
+/* ---------- black scope: flips the tokens for anything inside ---------- */
+body .dk,body .contact,body footer,body .machine,
+body .knum,body .spec,body .stat,body .story>div,body .stage .in,body .note,body .state,
+body .follow .grid,body .paths .path:first-child,body .routes .route:first-child,body .pager a:not(:only-child),
+body .housing,body .bclip,body .calc{
+  --ink:#EEE7DA;--ink2:#B5AC9C;--ink3:#8A8273;--white:#EEE7DA;--muted:#B5AC9C;--faint:#8A8273;
+  --line:rgba(238,231,218,.14);--line2:rgba(238,231,218,.26);
+  --card:#23221F;--tile:#23221F;--cardbg:#23221F;--paper:#1B1A18;--paper2:#23221F;--bg:#141413;--bg1:#23221F;--bg2:#23221F;
+  --sky:#23221F;--butter:#23221F;--sage:#23221F;--blush:#23221F;--lilac:#23221F;--mint:#23221F;
+  color:var(--ink)}
+body .contact,body footer,body .machine,body .dk{background:var(--blk)!important}
+body .knum,body .spec,body .stat,body .story>div,body .stage .in,body .note,body .state,
+body .follow .grid,body .paths .path:first-child,body .routes .route:first-child,body .pager a:not(:only-child){background:var(--blk)!important}
+body footer .wrap{border-top-color:rgba(238,231,218,.14)!important}
+body .contact .cgrid{border-top-color:rgba(238,231,218,.2)!important}
+body .csocials a{background:var(--blk3)!important;color:#EEE7DA!important}
+body .csocials a:hover{background:var(--red)!important}
+
+/* ---------- corners: cut back ---------- */
+body .btn,body .navcta,body .langsw,body .swap-run,body .opts button,body .segbtns button,body .swap-net button,body .mnav button,
+body .dropmenu,body .routes a,body input,body select,body textarea{border-radius:4px!important}
+body .langsw button,body .dropmenu a,body .navlinks>a,body .navlinks .drop>button{border-radius:3px!important}
+body .soon .tag,body .rtags span,body .tag,body .mchip span,body .basis span{border-radius:2px!important}
+body .mtabs{border-radius:6px!important}body .mtabs button{border-radius:4px!important}
+body .cfg img{border-radius:3px!important}
+body .follow .grid{border-radius:8px!important}
+body .follow .grid::before{display:none}
+body .calc{border-radius:10px!important}body .calc-display{border-radius:4px!important}
+body .csocials a{border-radius:4px!important}
+body .aud>div,body .spec,body .speclist,body .price,body .vshow,body .stage .in{border-radius:var(--r)!important}
+
+/* ---------- video frames: a black bezel, not a white plastic body ---------- */
+body .housing,body .bclip{background:var(--blk)!important;border-radius:10px!important;padding:8px!important;
+  box-shadow:0 40px 80px -46px rgba(20,20,19,.7)!important}
+body .screen,body .screen::after,body .bclip .scr{border-radius:5px!important}
+body .hstrip b{color:#EEE7DA!important}
+body .hstrip .grille{background:radial-gradient(circle,rgba(238,231,218,.28) 1.5px,transparent 1.9px) 0 50%/9px 9px!important}
+body .vtoggle,body .bclip-ctl,body .vhero-ctl{border-radius:4px!important}
+@media(max-width:560px){body .housing,body .bclip{border-radius:8px!important;padding:6px!important}}
+
+/* ---------- details in black ---------- */
+body .eyebrow::before,body .crumb::before,body .ecrumb::before,body .xh-crumb::before{border-radius:1px!important;width:8px!important;height:8px!important}
+body .aud .k{border-radius:3px!important;background:var(--blk)!important;color:#EEE7DA!important}
+body .aud>div:nth-child(1) .k{background:var(--red)!important;color:#fff!important}
+body .aud>div{border-top:3px solid var(--blk)!important}
+body .prin>div,body .cfg>figure,body .route,body .dcell,body .mlist li,body .path{border-top:3px solid var(--blk)!important}
+body .paths .path:first-child,body .routes .route:first-child{border-top-color:var(--red)!important}
+body .stage .tag{background:var(--blk3)!important;border-radius:3px!important}
+body .keys i{border-radius:3px!important}
+body .keys i:nth-child(1),body .keys i:nth-child(2),body .keys i:nth-child(3){background:#55534E!important}
+body .keys i:nth-child(4){background:var(--red)!important}
+body .routes a{background:#2A2926!important;color:#EEE7DA!important}
+body .routes a:nth-child(2){background:var(--red)!important;color:#fff!important}
+body .speclist{background:#23221F!important}
+body .price{background:var(--tile)!important}
+body .price .fig{color:var(--red)}
+body .stat.hi .v{color:#EEE7DA!important}
+body .spec .dial *{stroke:currentColor}
+body .opts button[aria-pressed=true],body .segbtns button[aria-pressed=true]{background:rgba(226,35,26,.10)!important}
+body .mtabs{background:var(--blk)!important}
+body .mtabs button{background:#23221F!important;color:#EEE7DA!important}
+body .mtabs button small{color:#8A8273!important}
+body .mtabs button[aria-pressed=true]{background:var(--red)!important;color:#fff!important}
+body .mtabs button[aria-pressed=true] small{color:rgba(255,255,255,.8)!important}
+body .pager a b{color:#EEE7DA}
+body .pager a:hover b{color:var(--red)!important}
+body .navr .navcta{background:var(--blk)!important;border-color:var(--blk)!important}
+body .langsw{background:var(--sand-d)!important}
+body .langsw button.on,body .langsw button[aria-pressed=true]{background:var(--blk)!important;color:#fff!important}
+body .btn.light{background:var(--blk)!important;border-color:var(--blk)!important;color:#EEE7DA!important}
+.dk .btn:not(.prime),body .contact .btn:not(.prime),body .follow .grid .btn:not(.prime),body .path .navcta,body .route .navcta{border-color:currentColor!important}
+.dk .btn:not(.prime):hover,body .contact .btn:not(.prime):hover,body .follow .grid .btn:not(.prime):hover{background:#EEE7DA!important;color:var(--blk)!important}
+
+/* ---------- inner page heroes: black bezel on the film ---------- */
+body .hero video,body .hero .poster,body .vhero .vhero-video,body .ehero .hbg{border:8px solid var(--blk)!important;border-radius:10px!important;box-shadow:0 40px 80px -46px rgba(20,20,19,.7)!important}
+body .housing video,body .housing .poster{border:0!important;border-radius:0!important;box-shadow:none!important}
+@media(max-width:960px){body .hero video,body .hero .poster,body .vhero .vhero-video,body .ehero .hbg{border-width:6px!important;border-radius:8px!important}body .housing video,body .housing .poster{border:0!important}}
+
+/* ---------- no pink anywhere: selections go black, the Volty column goes black ---------- */
+body .opts button[aria-pressed=true],body .segbtns button[aria-pressed=true]{background:var(--blk)!important;border-color:var(--blk)!important;color:#EEE7DA!important}
+body .opts button[aria-pressed=true] *,body .segbtns button[aria-pressed=true] *{color:#EEE7DA!important}
+body .cmp th{background:var(--tile)!important}
+body .cmp td.us{background:var(--blk)!important;color:#EEE7DA!important;border-color:rgba(238,231,218,.14)!important}
+
+/* ---------- index dials: dark faces, sand ticks ---------- */
+body .spec .dial circle[fill="#fff"]{fill:#23221F}
+body .spec .dial [stroke="#151514"]{stroke:#EEE7DA}
+body .spec .dial [fill="#151514"]{fill:#EEE7DA}
+
+/* ---------- index pager stays a plain rule line on sand ---------- */
+body .pager a:only-child{background:transparent!important;color:var(--ink)!important;border-radius:0!important}
+body .pager a:only-child b{color:var(--ink)!important}
+
+/* ---------- technical outlines ----------
+   Sand blocks: a 2px line in the text colour, so black on sand and sand inside
+   the black grounds (the reverse). Black blocks on sand: a detached 2px black
+   frame 3px out, like a rating plate. The earlier top rules are retired. */
+body .aud>div,body .prin>div,body .cfg>figure,body .route,body .dcell,body .mlist li,body .path{border-top:0!important}
+body .aud>div,body .prin>div,body .cfg>figure,body .path,body .route,body .dcell,body .mlist li,
+body .price,body .speclist,body .hlist,body .faq,body .swap>div,body .sim>div,body .mbox>.mq,body .mres,
+body .fmedia,body .chart,body .shot,body .simg,body .vshow,body .mpanelbox,body .mtabs,body .stats .stat,body .opts button{
+  border:2px solid var(--ink)!important;box-shadow:none!important}
+body .aud>div,body .prin>div,body .cfg>figure,body .path,body .route,body .dcell,body .mlist li,body .price,body .hlist,body .faq,
+body .swap>div,body .sim>div,body .mbox>.mq,body .fmedia,body .chart{background:var(--tile)!important}
+body .knum,body .spec,body .story>div,body .stage .in,body .note,body .state,body .follow .grid,
+body .paths .path:first-child,body .routes .route:first-child,body .pager a:not(:only-child){
+  border:0!important;outline:2px solid var(--blk);outline-offset:3px}
+body .stat{outline:0!important}
+body .knum-grid,body .specs,body .story,body .paths,body .routes,body .pager .wrap{gap:20px!important}
+body .cfg img{border-radius:0!important;width:100%!important;margin:0!important;border-bottom:2px solid var(--ink)}
+body .fmedia .fr{border-radius:0!important;border-bottom:2px solid var(--ink)}
+body .hlist>div,body .faq details{border-bottom:1.5px solid var(--line2)!important}
+body .sim .stats .stat{border-color:var(--blk)!important}
+body .aud>div:hover,body .prin>div:hover,body .cfg>figure:hover,body .path:hover,body .route:hover,body .dcell:hover,body .knum:hover,body .story>div:hover{transform:translate(-2px,-2px)!important;box-shadow:4px 4px 0 var(--ink)!important}
+body .knum:hover,body .story>div:hover,body .paths .path:first-child:hover,body .routes .route:first-child:hover{box-shadow:none!important}
+body .chart{border-radius:var(--r)!important}
 
 </style>
 </head><body>
