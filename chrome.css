@@ -1,0 +1,144 @@
+/* =====================================================================
+   VOLTY LIGHT EDITION: shared chrome for every inner page.
+   Loaded after each page's own styles so it wins without rewriting them.
+   The page's own colour tokens are re-pointed to the light palette here,
+   which carries most components across on its own.
+   ===================================================================== */
+:root{
+  --red:#E2231A; --red-d:#B8170F; --red-l:#E2231A;
+  --paper:#F3EFE7; --paper2:#E7DDCB; --card:#FFFFFF;
+  --ink:#151514; --ink2:#4B4944; --ink3:#8C887E;
+  /* re-pointed legacy tokens: dark surfaces become light, light text becomes ink */
+  --bg:#F3EFE7; --bg1:#FFFFFF; --bg2:#E7DDCB;
+  --white:#151514; --muted:#4B4944; --faint:#8C887E;
+  --line:rgba(21,21,20,.12); --line2:rgba(21,21,20,.22);
+  --green:#3F8A45; --blue:#2F6FA8; --amber:#C8561E;
+  --sage:#D8E3D0; --sky:#D5E2EC; --butter:#F2E4BC; --blush:#F3D8CE; --lilac:#E2DCEC; --mint:#D3E9E0;
+  --hero:'Name Smile','Saira Condensed',sans-serif; --wordmark:'Name Smile','Saira Condensed',sans-serif;
+  --disp:'Saira Condensed',sans-serif; --mono:'Space Mono',monospace; --body:'Sora',sans-serif;
+  --nav-h:68px; --r:26px;
+}
+html[lang="vi"]{--hero:'Saira Condensed',sans-serif;--mono:'Be Vietnam Pro',sans-serif;--body:'Be Vietnam Pro',sans-serif}
+html body{background:var(--paper);color:var(--ink)}
+::selection{background:var(--red);color:#fff}
+
+/* ---------- headings: Name Smile in English, Saira Condensed 800 in Vietnamese ---------- */
+html[lang="en"] body h1,html[lang="en"] body h2{font-family:'Name Smile','Saira Condensed',sans-serif!important;font-weight:400!important;letter-spacing:.005em!important;line-height:.98!important;color:var(--ink)}
+html[lang="vi"] body h1,html[lang="vi"] body h2{font-family:'Saira Condensed',sans-serif!important;font-weight:800!important;letter-spacing:-.015em!important;line-height:1.04!important;color:var(--ink)}
+body h3,body h4{color:var(--ink)}
+body .shead h2{font-size:clamp(28px,3.6vw,56px)!important;max-width:24ch}
+body .lead{color:var(--ink2)}
+
+/* ---------- eyebrows: red dot, red label ---------- */
+body .eyebrow,body .eyebrow.blue,body .eyebrow.green,body .eyebrow.dim{display:inline-flex;align-items:center;gap:10px;color:var(--red)!important;font-family:var(--mono);font-weight:700;letter-spacing:.24em}
+body .eyebrow::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--red);flex:none}
+body .crumb,body .ecrumb,body .xh-crumb{display:inline-flex;align-items:center;gap:10px;color:var(--red)!important;font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.2em;text-shadow:none!important}
+body .crumb::before,body .ecrumb::before,body .xh-crumb::before{content:'';width:9px;height:9px;border-radius:50%;background:var(--red);flex:none}
+body .ecrumb a,body .xh-crumb a{color:inherit}
+
+/* ---------- buttons: Braun keys ---------- */
+body .btn{border-radius:14px!important;border:1.5px solid var(--ink)!important;color:var(--ink)!important;background:transparent!important;font-weight:700;padding:16px 24px}
+body .btn:hover{background:var(--ink)!important;color:var(--paper)!important}
+body .btn.prime{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important;box-shadow:0 10px 24px -12px rgba(226,35,26,.75)}
+body .btn.prime:hover{background:var(--red-d)!important;border-color:var(--red-d)!important}
+body .btn.light{background:var(--ink)!important;border-color:var(--ink)!important;color:var(--paper)!important}
+body .navcta{border-radius:12px!important;border:1.5px solid var(--ink)!important;color:var(--ink)!important;background:transparent!important;font-weight:700}
+body .navcta:hover{background:var(--ink)!important;color:var(--paper)!important}
+body .path.prime .navcta,body .route.prime .navcta{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important}
+
+/* ---------- nav ---------- */
+body nav{height:var(--nav-h);padding:0 32px!important;background:rgba(243,239,231,.74)!important;backdrop-filter:saturate(1.3) blur(14px);-webkit-backdrop-filter:saturate(1.3) blur(14px);border-bottom:1px solid transparent!important}
+body nav.scrolled{background:rgba(243,239,231,.92)!important;border-bottom-color:var(--line)!important}
+body .brand .wm{font-family:'Name Smile',sans-serif!important;font-size:25px;color:var(--red)!important}
+body .brand .by{color:var(--ink3)!important;font-family:'Space Mono',monospace}
+html[lang="vi"] body .brand .by{font-family:'Be Vietnam Pro',sans-serif}
+body .navlinks{color:var(--ink2);gap:6px}
+body .navlinks>a,body .navlinks .drop>button,body .navlinks>.soon{padding:9px 12px;border-radius:10px;color:var(--ink2)!important}
+body .navlinks>a:hover,body .navlinks .drop>button:hover{background:rgba(21,21,20,.06);color:var(--ink)!important}
+body .navlinks a.on{color:var(--ink)!important;position:relative}
+body .navlinks a.on::after{content:'';position:absolute;left:50%;bottom:1px;width:5px;height:5px;margin-left:-2.5px;border-radius:50%;background:var(--red)}
+body .navr .navcta{background:var(--ink)!important;color:var(--paper)!important;border-color:var(--ink)!important}
+body .navr .navcta:hover{background:var(--red)!important;border-color:var(--red)!important;color:#fff!important}
+body .dropmenu{background:var(--card)!important;border:1px solid var(--line)!important;border-radius:16px!important;padding:8px!important;box-shadow:0 24px 48px -24px rgba(21,21,20,.35)!important}
+body .dropmenu a{border-radius:10px;color:var(--ink2)!important;background:none!important}
+body .dropmenu a:hover{background:var(--paper)!important;color:var(--red)!important}
+body .soon .tag{border:0!important;border-radius:6px;background:var(--butter);color:var(--ink2)!important}
+body .langsw{padding:3px!important;border-radius:12px!important;background:var(--paper2)!important;border:1px solid var(--line)!important;overflow:visible!important}
+body .langsw button{border-radius:9px!important;color:var(--ink3)!important;background:none!important;font-family:'Space Mono',monospace!important;font-weight:700;padding:7px 11px!important}
+body .langsw button.on{background:var(--card)!important;color:var(--red)!important;box-shadow:0 1px 2px rgba(0,0,0,.12)}
+body .burger span{background:var(--ink)!important}
+body .mpanel{background:var(--paper)!important}
+body .mpanel a,body .mpanel .soon{font-family:var(--hero)!important;font-weight:400;font-size:24px!important;color:var(--ink)!important;border-bottom:1px solid var(--line)!important}
+html[lang="vi"] body .mpanel a{font-weight:800}
+body .mpanel a:hover{color:var(--red)!important}
+body .mpanel .grp{color:var(--red)!important}
+body .mpanel .sub{font-size:19px!important}
+
+/* ---------- pager ---------- */
+body .pager{background:var(--card)!important;border-top:1px solid var(--line)}
+body .pager a{background:var(--card)!important}
+body .pager a:hover{background:var(--paper)!important}
+body .pager .k{color:var(--ink3)!important}
+body .pager b{font-size:clamp(22px,2.4vw,34px)!important;color:var(--ink)}
+body .pager a:hover b{color:var(--red)!important}
+
+/* ---------- contact band and footer ---------- */
+body .contact{background:var(--card)!important}
+body .contact::before{display:none!important}
+body .contact h2{font-size:clamp(30px,4.5vw,75px)!important}
+body .cgrid{border-top:1px solid var(--line2)!important}
+body .cgrid h4{color:var(--ink3)!important}
+body .cgrid a,body .cgrid .ent{color:var(--ink2)!important}
+body .cgrid a:hover{color:var(--red)!important}
+body .cgrid .ent b{color:var(--ink)!important}
+body .csocials a{border:0!important;border-radius:12px;background:var(--paper)!important;color:var(--ink)!important}
+body .csocials a:hover{background:var(--red)!important;color:#fff!important}
+body .csocials svg[fill="none"]{fill:none!important;stroke:currentColor}
+body footer{background:var(--card)!important;border-top:1px solid var(--line)!important}
+body .fbrand{font-family:'Name Smile',sans-serif!important;color:var(--red)!important}
+body .flinks a,body .fmeta{color:var(--ink3)!important}
+body .flinks a:hover{color:var(--red)!important}
+body .corp{color:inherit;border-bottom:1px solid var(--line2)}
+body .corp:hover{color:var(--red)!important}
+
+/* ---------- hero: copy left, media in a white housing right, media first on mobile ---------- */
+body .hero,body .vhero,body .ehero{display:grid!important;grid-template-columns:minmax(0,4.4fr) minmax(0,7.6fr);gap:clamp(28px,4vw,72px);align-items:center;
+  height:auto!important;min-height:0!important;max-height:none!important;overflow:visible!important;
+  padding:calc(var(--nav-h) + clamp(28px,4vw,64px)) max(32px,calc((100vw - 1480px)/2)) clamp(56px,6vw,96px)!important;margin:0!important;
+  background:radial-gradient(circle,rgba(21,21,20,.11) 1px,transparent 1.4px) 0 0/22px 22px,var(--paper)!important;border:0!important}
+body .hero::before,body .hero::after,body .vhero::before,body .ehero::before,body .ehero::after{display:none!important}
+/* the media */
+body .hero video,body .hero .poster,body .vhero .vhero-video,body .ehero .hbg{position:relative!important;inset:auto!important;grid-column:2;grid-row:1;width:100%!important;height:auto!important;
+  aspect-ratio:16/9;object-fit:cover;transform:none!important;filter:none!important;margin:0!important;
+  border:12px solid #fff;border-radius:36px;box-shadow:0 44px 90px -50px rgba(21,21,20,.5),0 2px 0 rgba(21,21,20,.05);background-color:#15171a;z-index:1}
+body .hero .poster{display:none}
+body .ehero .hbg{background-size:cover!important;background-position:center!important;aspect-ratio:4/3;opacity:1!important}
+@media(prefers-reduced-motion:reduce){body .hero video{display:none!important}body .hero .poster{display:block!important}}
+/* the copy */
+body .hero .wrap,body .vhero .vhero-content,body .ehero .wrap{position:relative!important;inset:auto!important;grid-column:1;grid-row:1;z-index:2;padding:0!important;margin:0!important;max-width:none!important;width:auto!important}
+body .vhero .vhero-content .wrap{padding:0!important;max-width:none}
+body .hero-copy,body .xh-head{max-width:none!important}
+body .hero h1,body .vhero h1,body .ehero h1,body .chero h1{font-size:clamp(30px,3.7vw,59px)!important;color:var(--ink)!important;text-shadow:none!important;margin:18px 0 22px!important;max-width:18ch}
+html[lang="vi"] body .hero h1,html[lang="vi"] body .vhero h1,html[lang="vi"] body .ehero h1,html[lang="vi"] body .chero h1{font-size:clamp(28px,3.3vw,52px)!important}
+body .hero h1 em,body .vhero h1 em,body .ehero h1 em,body .chero h1 em{color:var(--red)!important}
+body .hero .sub,body .vhero .lead,body .ehero .lead,body .chero .lead{color:var(--ink2)!important;text-shadow:none!important;font-size:clamp(16px,1.35vw,19px)!important;max-width:44ch;padding-top:20px;border-top:1.5px solid var(--ink);margin-top:0!important}
+body .vhero-scrim,body .ehero .hglow,body .ehero .hsweep,body .ehero .hscrim,body .ehero .hgrain{display:none!important}
+/* audience play control sits on the video corner */
+body .vhero{position:relative!important}
+body .vhero .vhero-ctl{position:absolute!important;right:calc(max(32px,calc((100vw - 1480px)/2)) + 26px)!important;bottom:calc(clamp(56px,6vw,96px) + 26px)!important;left:auto!important;top:auto!important;z-index:3;
+  width:46px!important;height:46px!important;border:0!important;background:var(--red)!important;box-shadow:0 10px 22px -10px rgba(226,35,26,.9)}
+body .scrollcue{color:var(--ink3)!important}
+@media(max-width:960px){
+  body .hero,body .vhero,body .ehero{grid-template-columns:1fr!important;padding-left:20px!important;padding-right:20px!important}
+  body .hero video,body .hero .poster,body .vhero .vhero-video,body .ehero .hbg{grid-row:1!important;grid-column:1!important;border-width:9px;border-radius:28px}
+  body .hero .wrap,body .vhero .vhero-content,body .ehero .wrap{grid-row:2!important;grid-column:1!important}
+  body .vhero .vhero-ctl{right:calc(20px + 20px)!important;bottom:auto!important;top:calc(var(--nav-h) + clamp(28px,4vw,64px) + 20px + (100vw - 40px) * .5625 - 66px)!important}
+  body .scrollcue{display:none!important}
+}
+/* contact hero has no media: a calm beige band */
+body .chero{background:radial-gradient(circle,rgba(21,21,20,.11) 1px,transparent 1.4px) 0 0/22px 22px,var(--paper)!important;border-bottom:0!important}
+body .chero::before,body .chero .hglow{display:none!important}
+
+/* ---------- reveal, unchanged behaviour ---------- */
+@media(prefers-reduced-motion:reduce){.rv{opacity:1!important;transform:none!important}}
+body .eyebrow{justify-content:flex-start!important;width:auto!important;text-align:left}

@@ -1,0 +1,6 @@
+/*@@rider-economics.html@@*/
+body .basis span{background:var(--card)!important;color:var(--ink2)!important;border:1px solid var(--line)!important;border-radius:8px!important;box-shadow:none!important}
+/*@@fleet-economics.html@@*/
+body .basis span{background:var(--card)!important;color:var(--ink2)!important;border:1px solid var(--line)!important;border-radius:8px!important;box-shadow:none!important}
+/*@@design.html@@*/
+body .note p{font-family:var(--body)!important;font-size:15px!important;line-height:1.7!important;letter-spacing:0!important;color:var(--ink2)!important}
