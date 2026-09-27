@@ -313,6 +313,53 @@ footer .wrap>*{padding-top:26px}
 .machine .speclist{background:var(--card)}
 @media(max-width:960px){.scrollcue{display:none}}
 
+/* ---------- two ways to own: U1-F fleet, U1-R retail ---------- */
+.econ .shead{margin-bottom:34px}
+.pscale{max-width:820px;margin:0 0 18px;display:flex;flex-direction:column;gap:12px}
+.ps-row{display:grid;grid-template-columns:64px 1fr 150px;align-items:center;gap:16px}
+.ps-k{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em}
+.ps-track{position:relative;height:16px;background:rgba(20,20,19,.08);border-radius:2px}
+.ps-bar{position:absolute;top:0;bottom:0;border-radius:2px}
+.ps-f{background:var(--red)}.ps-r{background:var(--ink)}
+.ps-v{font-family:var(--disp);font-weight:800;font-size:18px;white-space:nowrap}
+.ps-axis{display:flex;justify-content:space-between;margin-left:80px;margin-right:166px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink3)}
+.psave{display:inline-flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin:10px 0 34px;padding:14px 18px;background:var(--red);color:#fff;border-radius:4px}
+.psave b{font-family:var(--hero);font-weight:var(--hw);font-size:clamp(22px,2.4vw,32px);line-height:1}
+.psave span{font-size:14.5px;color:#fff}
+.models{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:stretch}
+.mcard{position:relative;display:flex;flex-direction:column;background:var(--tile);border:2px solid var(--ink);border-radius:var(--r);overflow:hidden}
+.mcard.fleet{outline:2px solid var(--red);outline-offset:3px;border-color:var(--red)}
+.mtag{position:absolute;top:14px;left:14px;z-index:3}
+.mtag span{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:7px 11px;border-radius:3px;background:var(--ink);color:#EEE7DA}
+.mcard.fleet .mtag span{background:var(--red);color:#fff}
+.mshot{margin:0;aspect-ratio:16/9;overflow:hidden;background:#C9C8C6;border-bottom:2px solid var(--ink)}
+.mcard.fleet .mshot{border-bottom-color:var(--red)}
+.mshot img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .22s ease,transform .45s cubic-bezier(.2,.7,.2,1)}
+.mshot img.swap{opacity:0;transform:scale(1.02)}
+.mopts{display:flex;flex-wrap:wrap;gap:8px;padding:14px 18px 0}
+.mopt{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:9px 12px;border-radius:3px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background .15s,color .15s}
+.mopt:hover{background:rgba(20,20,19,.06)}
+.mopt[aria-pressed="true"]{background:var(--ink);color:#EEE7DA}
+.mcard.fleet .mopt[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.mopt:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+.mconcept{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--ink3);padding:10px 18px 0;margin:0}
+.mbody{padding:18px 22px 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.mname{font-family:var(--hero)!important;font-weight:var(--hw)!important;text-transform:uppercase;font-size:clamp(30px,3vw,42px);line-height:1;margin:0}
+.mwho{color:var(--ink2);font-size:15px;margin:0}
+.mprice{font-family:var(--hero);font-weight:var(--hw);font-size:clamp(26px,2.6vw,38px);line-height:1;margin-top:10px}
+.mcard.fleet .mprice{color:var(--red)}
+.mlab{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink3)}
+.mpts{list-style:none;padding:0;margin:10px 0 16px;display:flex;flex-direction:column;gap:7px;border-top:1px dashed var(--line2);padding-top:14px}
+.mpts li{position:relative;padding-left:18px;color:var(--ink2);font-size:14.5px;line-height:1.55}
+.mpts li::before{content:"";position:absolute;left:0;top:.6em;width:7px;height:7px;background:var(--ink);border-radius:1px}
+.mcard.fleet .mpts li::before{background:var(--red)}
+.mbody .btn{margin-top:auto;align-self:flex-start}
+.pnote{color:var(--ink3);font-size:13.5px;max-width:78ch;margin:22px 0 0}
+.calcrow{margin-top:40px}
+html[lang="vi"] .mname,html[lang="vi"] .mprice,html[lang="vi"] .psave b{font-family:'Saira Condensed',sans-serif!important;font-weight:800!important}
+@media(max-width:900px){.models{grid-template-columns:1fr}.mcard.fleet{outline-offset:2px}}
+@media(max-width:560px){.ps-row{grid-template-columns:48px 1fr;row-gap:4px}.ps-v{grid-column:2;font-size:15px}.ps-axis{margin-left:64px;margin-right:0}}
+
 /* =====================================================================
    VOLTY UTILITY EDITION: sand, black, one signal red.
    Loaded last on every page. Pastels are retired: every pastel token now
@@ -645,30 +692,54 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
      confirmed price or the range changes, change both together. -->
 <section class="econ pad">
   <div class="wrap">
-    <div class="grid">
-      <div>
-        <div class="eyebrow rv" data-en="The numbers" data-vi="Những con số">The numbers</div>
-        <h2 style="margin:14px 0 18px" data-en="Estimated cost of the U1, and cost per working day" data-vi="Chi phí dự kiến của U1 và chi phí mỗi ngày làm việc">Estimated cost of the U1, and cost per working day</h2>
-        <p class="lead" data-en="Two numbers decide whether an electric bike is worth it. What it costs to buy, and what it costs to run for a day of work. The first we can now put a range on. The second depends entirely on your route, so we let you run it yourself rather than quote you an average." data-vi="Có hai con số quyết định một chiếc xe điện có đáng hay không. Chi phí mua xe, và chi phí vận hành cho một ngày làm việc. Con số thứ nhất hiện đã có thể đưa ra khoảng giá. Con số thứ hai phụ thuộc hoàn toàn vào tuyến đường của bạn, nên chúng tôi để bạn tự tính thay vì đưa ra một mức trung bình.">Two numbers decide whether an electric bike is worth it. What it costs to buy, and what it costs to run for a day of work. The first we can now put a range on. The second depends entirely on your route, so we let you run it yourself rather than quote you an average.</p>
+    <div class="shead">
+      <div class="eyebrow rv" data-en="The numbers" data-vi="Những con số">The numbers</div>
+      <h2 class="rv d1" data-en="Two ways to own a U1. The fleet price is lower." data-vi="Hai cách sở hữu U1. Giá đội xe thấp hơn.">Two ways to own a U1. The fleet price is lower.</h2>
+      <p class="lead rv d2" data-en="Same bike, same frame, same battery bay. What changes is who buys it. Fleets buy in volume, so the U1-F costs less, and a rider who works with a fleet can buy through it and keep the difference." data-vi="Cùng một chiếc xe, cùng khung, cùng khoang pin. Điều khác nhau là ai mua. Đội xe mua số lượng lớn nên U1-F có giá thấp hơn, và tài xế làm việc cùng một đội xe có thể mua qua đội xe để giữ lại khoản chênh lệch.">Same bike, same frame, same battery bay. What changes is who buys it. Fleets buy in volume, so the U1-F costs less, and a rider who works with a fleet can buy through it and keep the difference.</p>
+    </div>
 
-        <div class="price">
-          <div>
-            <div class="fig">&#8363;35M to &#8363;45M</div>
-            <div class="l" data-en="Estimated, includes 10% VAT" data-vi="Dự kiến, đã bao gồm VAT 10%">Estimated, includes 10% VAT</div>
-          </div>
-          <p data-en="An estimated range for the first batch, not a confirmed price. Where a unit sits inside it depends on the battery and rack configuration you choose. We are publishing the range now because it is firm enough to plan around, and a rider deciding between bikes deserves a real number rather than a blank." data-vi="Đây là khoảng giá dự kiến cho lô đầu tiên, không phải giá chính thức. Vị trí của một chiếc xe trong khoảng này phụ thuộc vào cấu hình pin và giá chở mà bạn chọn. Chúng tôi công bố khoảng giá này vì nó đã đủ chắc để bạn lên kế hoạch, và một người đang cân nhắc giữa các dòng xe xứng đáng có một con số thật thay vì một khoảng trống.">An estimated range for the first batch, not a confirmed price. Where a unit sits inside it depends on the battery and rack configuration you choose. We are publishing the range now because it is firm enough to plan around, and a rider deciding between bikes deserves a real number rather than a blank.</p>
+    <div class="pscale rv d1" aria-hidden="true">
+      <div class="ps-row"><span class="ps-k">U1-F</span><div class="ps-track"><i class="ps-bar ps-f" style="left:10%;width:35%"></i></div><span class="ps-v">&#8363;32M to &#8363;39M</span></div>
+      <div class="ps-row"><span class="ps-k">U1-R</span><div class="ps-track"><i class="ps-bar ps-r" style="left:50%;width:45%"></i></div><span class="ps-v">&#8363;40M to &#8363;49M</span></div>
+      <div class="ps-axis"><span>&#8363;30M</span><span>&#8363;40M</span><span>&#8363;50M</span></div>
+    </div>
+    <div class="psave rv d1">
+      <b>&#8363;8M to &#8363;10M</b>
+      <span data-en="saved on every U1 bought through a fleet, compared with buying it retail" data-vi="tiết kiệm trên mỗi chiếc U1 mua qua đội xe, so với mua lẻ">saved on every U1 bought through a fleet, compared with buying it retail</span>
+    </div>
+    <div class="models rv d1">
+      <article class="mcard fleet" id="card-u1f">
+        <div class="mtag"><span data-en="Fleet price" data-vi="Giá đội xe">Fleet price</span></div>
+        <figure class="mshot"><img id="img-u1f" src="/u1f-delivery-1400.webp" srcset="/u1f-delivery-800.webp 800w, /u1f-delivery-1400.webp 1400w" sizes="(max-width:900px) 100vw, 45vw" alt="U1-F in a fleet delivery build on a Ho Chi Minh City street" width="1400" height="788" loading="lazy"></figure>
+        <div class="mopts" role="group" aria-label="Preview a build"><button type="button" class="mopt" data-m="u1f" data-img="/u1f-delivery" aria-pressed="true" data-en="Delivery" data-vi="Giao hàng">Delivery</button><button type="button" class="mopt" data-m="u1f" data-img="/u1f-parcel" aria-pressed="false" data-en="Parcel" data-vi="Bưu kiện">Parcel</button><button type="button" class="mopt" data-m="u1f" data-img="/u1f-utility" aria-pressed="false" data-en="Utility crew" data-vi="Tổ kỹ thuật">Utility crew</button></div>
+        <p class="mconcept" data-en="Concept builds. Real options depend on your work, and more are coming." data-vi="Cấu hình ý tưởng. Tùy chọn thực tế phụ thuộc vào công việc của bạn, và sẽ còn nhiều tùy chọn khác.">Concept builds. Real options depend on your work, and more are coming.</p>
+        <div class="mbody">
+          <h3 class="mname">U1-F</h3>
+          <p class="mwho" data-en="For fleets, and the riders who work with them" data-vi="Dành cho đội xe, và những tài xế làm việc cùng đội xe">For fleets, and the riders who work with them</p>
+          <div class="mprice">&#8363;32M to &#8363;39M</div>
+          <div class="mlab" data-en="Estimated fleet price, per unit" data-vi="Giá đội xe ước tính, mỗi xe">Estimated fleet price, per unit</div>
+          <ul class="mpts"><li data-en="Bought through a fleet operator, for its riders" data-vi="Mua qua đơn vị vận hành đội xe, cho tài xế của đơn vị">Bought through a fleet operator, for its riders</li><li data-en="Ride for a fleet? Buy through it and keep the saving" data-vi="Đang chạy cho một đội xe? Mua qua đội xe và giữ lại khoản tiết kiệm">Ride for a fleet? Buy through it and keep the saving</li><li data-en="Same frame, battery bay and racks as the U1-R" data-vi="Cùng khung xe, khoang pin và giá chở như U1-R">Same frame, battery bay and racks as the U1-R</li></ul>
+          <a class="btn prime" href="/contact.html#routes" data-en="Talk to fleet sales" data-vi="Liên hệ bộ phận đội xe">Talk to fleet sales</a>
         </div>
-
-        <p style="color:var(--muted);margin-top:22px" data-en="The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list and you will hear the confirmed price, the opening of ordering, and test ride sessions before any of it is announced publicly." data-vi="Giá chính thức được chốt khi chi phí sản xuất được xác định và lịch chứng nhận kiểu loại được ấn định. Đăng ký nhận tin để biết giá chính thức, thời điểm mở đặt xe và các buổi chạy thử trước khi những thông tin này được công bố rộng rãi.">The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list and you will hear the confirmed price, the opening of ordering, and test ride sessions before any of it is announced publicly.</p>
-
-        <div class="btns" style="margin-top:26px">
-          <a class="btn light" href="/contact.html#routes" data-en="Join the list" data-vi="Đăng ký nhận tin">Join the list</a>
-          <a href="/contact.html#routes" class="btn" data-en="Talk to fleet sales" data-vi="Liên hệ bộ phận đội xe">Talk to fleet sales</a>
+      </article>
+      <article class="mcard retail" id="card-u1r">
+        <div class="mtag"><span data-en="Retail price" data-vi="Giá bán lẻ">Retail price</span></div>
+        <figure class="mshot"><img id="img-u1r" src="/u1r-classic-1400.webp" srcset="/u1r-classic-800.webp 800w, /u1r-classic-1400.webp 1400w" sizes="(max-width:900px) 100vw, 45vw" alt="U1-R in red and white, parked in the warehouse" width="1400" height="788" loading="lazy"></figure>
+        <div class="mopts" role="group" aria-label="Preview a build"><button type="button" class="mopt" data-m="u1r" data-img="/u1r-classic" aria-pressed="true" data-en="Classic" data-vi="Cổ điển">Classic</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-rack" aria-pressed="false" data-en="Black rack" data-vi="Đen giá chở">Black rack</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-blackgold" aria-pressed="false" data-en="Black and gold" data-vi="Đen vàng">Black and gold</button></div>
+        <p class="mconcept" data-en="Concept builds. Real options depend on your work, and more are coming." data-vi="Cấu hình ý tưởng. Tùy chọn thực tế phụ thuộc vào công việc của bạn, và sẽ còn nhiều tùy chọn khác.">Concept builds. Real options depend on your work, and more are coming.</p>
+        <div class="mbody">
+          <h3 class="mname">U1-R</h3>
+          <p class="mwho" data-en="For riders who buy for themselves" data-vi="Dành cho tài xế tự mua xe">For riders who buy for themselves</p>
+          <div class="mprice">&#8363;40M to &#8363;49M</div>
+          <div class="mlab" data-en="Estimated retail price, per unit" data-vi="Giá bán lẻ ước tính, mỗi xe">Estimated retail price, per unit</div>
+          <ul class="mpts"><li data-en="Bought directly by the rider" data-vi="Tài xế mua trực tiếp">Bought directly by the rider</li><li data-en="Your bike, your racks, your weekend too" data-vi="Xe của bạn, giá chở của bạn, cả ngày cuối tuần cũng vậy">Your bike, your racks, your weekend too</li><li data-en="Same frame, battery bay and racks as the U1-F" data-vi="Cùng khung xe, khoang pin và giá chở như U1-F">Same frame, battery bay and racks as the U1-F</li></ul>
+          <a class="btn light" href="/contact.html#routes" data-en="Join the list" data-vi="Đăng ký danh sách">Join the list</a>
         </div>
-      </div>
-
-      <div>
-        <div class="calc rv d1"><div class="calc-display" aria-hidden="true"><span data-en="Cost per working day" data-vi="Chi phí mỗi ngày làm việc">Cost per working day</span><b>&#8363;</b></div>
+      </article>
+    </div>
+    <p class="pnote" data-en="Estimated ranges for the first batch, not confirmed prices. The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list to hear it first." data-vi="Khoảng giá ước tính cho lô xe đầu tiên, chưa phải giá chính thức. Giá chính thức được công bố khi chi phí sản xuất được chốt và lịch phê duyệt kiểu loại được xác định. Đăng ký danh sách để biết sớm nhất.">Estimated ranges for the first batch, not confirmed prices. The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list to hear it first.</p>
+    <div class="calcrow">
+<div class="calc rv d1"><div class="calc-display" aria-hidden="true"><span data-en="Cost per working day" data-vi="Chi phí mỗi ngày làm việc">Cost per working day</span><b>&#8363;</b></div>
           <h3 data-en="Run it against your own day" data-vi="Tính trên chính ngày làm việc của bạn">Run it against your own day</h3>
           <p data-en="Cost per working day is energy, maintenance, depreciation and insurance, set against the petrol bike being ridden today. It moves with distance, load and shift pattern, which is why an average helps nobody. Both calculators start from your own numbers." data-vi="Chi phí mỗi ngày làm việc gồm năng lượng, bảo dưỡng, khấu hao và bảo hiểm, so với chiếc xe xăng đang chạy hiện nay. Con số này thay đổi theo quãng đường, tải trọng và cách chia ca, nên một mức trung bình không giúp được ai. Cả hai công cụ tính đều bắt đầu từ số liệu của chính bạn.">Cost per working day is energy, maintenance, depreciation and insurance, set against the petrol bike being ridden today. It moves with distance, load and shift pattern, which is why an average helps nobody. Both calculators start from your own numbers.</p>
           <div class="routes">
@@ -685,7 +756,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
           </div>
           <div class="keys" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
         </div>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -832,6 +903,15 @@ mp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function
 /* Browser-tab title in Vietnamese. volty-lang.js reads this dictionary; the page
    has no loose text nodes to translate, so the title is its only entry. */
 var __VI_LABELS={"Volty U1 | Electric utility motorcycle by NUEN MOTO":"Volty U1 | Xe máy điện đa dụng của NUEN MOTO"};window.__VI_LABELS=__VI_LABELS;
+</script>
+<script>
+/* model cards: clicking a build name swaps that card's image with a short fade */
+(function(){document.querySelectorAll('.mopt').forEach(function(b){b.addEventListener('click',function(){
+  var m=b.getAttribute('data-m'),base=b.getAttribute('data-img'),img=document.getElementById('img-'+m);if(!img)return;
+  document.querySelectorAll('.mopt[data-m="'+m+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+  img.classList.add('swap');setTimeout(function(){img.onload=function(){img.classList.remove('swap')};img.srcset=base+'-800.webp 800w, '+base+'-1400.webp 1400w';img.src=base+'-1400.webp';if(img.complete)img.classList.remove('swap');},200);
+});});
+['u1f-parcel','u1f-utility','u1r-rack','u1r-blackgold'].forEach(function(n){var i=new Image();i.src='/'+n+'-800.webp'});})();
 </script>
 <script>
 /* Hero video pause control. Autoplaying motion longer than five seconds needs a
