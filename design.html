@@ -548,6 +548,30 @@ body .eyebrow{justify-content:flex-start!important;width:auto!important;text-ali
 body .band-w{background:var(--card)!important}body .band-b{background:var(--paper)!important}body .band-k{background:var(--paper2)!important}
 body .ucta .eyebrow.rv.in{display:inline-flex!important;grid-template-columns:none!important;gap:10px!important}
 body .note p{font-family:var(--body)!important;font-size:15px!important;line-height:1.7!important;letter-spacing:0!important;color:var(--ink2)!important}
+body .batvid{position:relative;border:2px solid var(--ink);border-radius:var(--r);overflow:hidden;background:#141413;outline:2px solid var(--ink);outline-offset:3px;margin-top:8px}
+body .batvid video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-view-box:inset(0.5% 0.4%)}
+body .bv-ctl{position:absolute;right:16px;bottom:16px;width:46px;height:46px;border:0;border-radius:4px;background:var(--red);display:grid;place-items:center;cursor:pointer}
+body .bv-ctl:hover{background:var(--red-d)}
+body .bv-ctl svg{width:14px;height:14px;fill:#fff}
+body .bv-ctl .i-play{display:none}
+body .batvid.paused .bv-ctl .i-play{display:block}body .batvid.paused .bv-ctl .i-pause{display:none}
+body .batstats{display:grid;grid-template-columns:repeat(3,1fr);margin:28px 0 36px;border:2px solid var(--ink);border-radius:var(--r);background:var(--ink);color:#fff;overflow:hidden}
+body .batstats>div{padding:22px 24px 24px;display:flex;flex-direction:column;gap:8px;border-left:1px solid rgba(255,255,255,.16)}
+body .batstats>div:first-child{border-left:0}
+body .batstats b{font-family:var(--hero);font-weight:var(--hw);font-size:clamp(28px,3.2vw,44px);line-height:1;color:#fff;text-transform:uppercase}
+body .batstats>div:first-child b{color:var(--red)}
+body .batstats .k{font-size:14px;line-height:1.5;color:rgba(255,255,255,.72)!important}
+body .batfig{grid-template-columns:1fr 1fr!important}
+body .batfig img{aspect-ratio:3/2;object-fit:cover}
+body .batwhy{margin-bottom:22px!important}
+body .bath{font-size:clamp(26px,3vw,38px)}
+body .batnote{margin-top:36px;padding:32px 34px;border-radius:var(--r);background:var(--tile);border:2px solid var(--ink);border-left:6px solid var(--red)}
+body .batnote h3{font-size:clamp(22px,2.2vw,28px);margin-bottom:12px}
+body .batnote p{color:var(--ink2);font-size:15.5px;line-height:1.7;max-width:80ch}
+body .batnote p.bsmall{font-size:13px;color:var(--ink3,#6b665e);margin-top:12px}
+html[lang="vi"] body .batstats b{font-family:'Saira Condensed',sans-serif!important;font-weight:800!important}
+@media(max-width:760px){body .batstats{grid-template-columns:1fr}body .batstats>div{border-left:0;border-top:1px solid rgba(255,255,255,.16)}body .batstats>div:first-child{border-top:0}body .batfig{grid-template-columns:1fr!important}body .batnote{padding:24px 22px}}
+
 
 /* =====================================================================
    VOLTY LIGHT EDITION: index card system carried to every inner page.
@@ -725,7 +749,7 @@ body .vtoggle,body .bclip-ctl,body .vhero-ctl{border-radius:4px!important}
 /* ---------- details in black ---------- */
 body .eyebrow::before,body .crumb::before,body .ecrumb::before,body .xh-crumb::before{border-radius:1px!important;width:8px!important;height:8px!important}
 body .aud .k{border-radius:3px!important;background:var(--blk)!important;color:#EEE7DA!important}
-body .aud>div:nth-child(1) .k{background:var(--red)!important;color:#fff!important}
+body .aud>div:nth-child(2) .k{background:var(--red)!important;color:#fff!important}
 body .aud>div{border-top:3px solid var(--blk)!important}
 body .prin>div,body .cfg>figure,body .route,body .dcell,body .mlist li,body .path{border-top:3px solid var(--blk)!important}
 body .paths .path:first-child,body .routes .route:first-child{border-top-color:var(--red)!important}
@@ -993,8 +1017,78 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
   </div>
 </section>
 
+<!-- ================= BATTERY ================= -->
+<section class="pad battery band-k" id="battery" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="eyebrow rv" data-en="The battery" data-vi="Pin">The battery</div>
+      <h2 data-en="Designed around the pack, not one network" data-vi="Thiết kế quanh khối pin, không quanh một mạng lưới">Designed around the pack, not one network</h2>
+      <p class="lead" data-en="Vietnam is moving two-wheelers off petrol, but there is no single standard battery yet. Each swap network runs its own pack, in its own size. So we did not design the U1 around one network&#39;s battery. We sized the bay for the largest removable pack we could find on the market, then made it adjustable so smaller packs from other vendors fit too." data-vi="Việt Nam đang chuyển xe hai bánh khỏi xăng, nhưng vẫn chưa có một chuẩn pin chung. Mỗi mạng lưới đổi pin dùng khối pin riêng, với kích thước riêng. Vì vậy chúng tôi không thiết kế U1 quanh pin của một mạng lưới nào. Chúng tôi làm khoang pin vừa với khối pin tháo rời lớn nhất mà chúng tôi tìm được trên thị trường, rồi thiết kế để điều chỉnh được, nên các khối pin nhỏ hơn của những nhà cung cấp khác cũng vừa.">Vietnam is moving two-wheelers off petrol, but there is no single standard battery yet. Each swap network runs its own pack, in its own size. So we did not design the U1 around one network&#39;s battery. We sized the bay for the largest removable pack we could find on the market, then made it adjustable so smaller packs from other vendors fit too.</p>
+    </div>
+
+    <div class="batvid rv d1">
+      <video class="bv" autoplay muted loop playsinline preload="metadata" poster="/dsn-battery-poster.webp" aria-label="Two battery packs lowering into the U1 main bay and lifting back out">
+        <source src="/dsn-battery.webm" type="video/webm"><source src="/dsn-battery.mp4" type="video/mp4">
+      </video>
+      <button type="button" class="bv-ctl" aria-label="Pause video"><svg class="i-pause" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="1" width="3.5" height="12"/><rect x="8.5" y="1" width="3.5" height="12"/></svg><svg class="i-play" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 1l10 6-10 6z"/></svg></button>
+    </div>
+
+    <div class="batstats rv d1">
+      <div><b><span data-en="Up to 4" data-vi="Tối đa 4">Up to 4</span></b><span class="k" data-en="removable packs, depending on the vendor&#39;s pack size" data-vi="khối pin tháo rời, tùy kích thước pin của nhà cung cấp">removable packs, depending on the vendor&#39;s pack size</span></div>
+      <div><b><span data-en="2 bays" data-vi="2 khoang">2 bays</span></b><span class="k" data-en="a front bay and a main bay, both reached without tools" data-vi="khoang trước và khoang chính, đều mở được không cần dụng cụ">a front bay and a main bay, both reached without tools</span></div>
+      <div><b><span data-en="Under 2 min" data-vi="Dưới 2 phút">Under 2 min</span></b><span class="k" data-en="to swap, standing beside the bike" data-vi="để đổi pin, đứng ngay cạnh xe">to swap, standing beside the bike</span></div>
+    </div>
+
+    <div class="cfg batfig rv d1">
+      <figure>
+        <img src="/dsn-bat-main-1200.webp" srcset="/dsn-bat-main-800.webp 800w, /dsn-bat-main-1200.webp 1200w" sizes="(max-width:760px) 100vw, 50vw" alt="Two full-size battery packs standing upright in the U1 main bay, handles on top" width="1200" height="800" loading="lazy">
+        <figcaption>
+          <h4 data-en="Main bay" data-vi="Khoang chính">Main bay</h4>
+          <p data-en="Two full-size packs sit upright under the seat line and lift out by the handle. Change them standing beside the bike, with nothing to unbolt." data-vi="Hai khối pin cỡ lớn đặt đứng dưới đường yên và nhấc ra bằng tay cầm. Đổi pin ngay cạnh xe, không cần tháo ốc.">Two full-size packs sit upright under the seat line and lift out by the handle. Change them standing beside the bike, with nothing to unbolt.</p>
+        </figcaption>
+      </figure>
+      <figure>
+        <img src="/dsn-bat-front-1200.webp" srcset="/dsn-bat-front-800.webp 800w, /dsn-bat-front-1200.webp 1200w" sizes="(max-width:760px) 100vw, 50vw" alt="U1 front bay with its hinged lid raised, showing the pack handle and connectors" width="1200" height="800" loading="lazy">
+        <figcaption>
+          <h4 data-en="Front bay" data-vi="Khoang trước">Front bay</h4>
+          <p data-en="Under a hinged lid ahead of the seat. It takes an extra pack for more range, or smaller packs from vendors whose batteries are sized differently." data-vi="Nằm dưới nắp bản lề phía trước yên. Khoang này chứa thêm một khối pin để đi xa hơn, hoặc các khối pin nhỏ hơn từ những nhà cung cấp có kích thước pin khác.">Under a hinged lid ahead of the seat. It takes an extra pack for more range, or smaller packs from vendors whose batteries are sized differently.</p>
+        </figcaption>
+      </figure>
+    </div>
+
+    <div class="shead batwhy rv" style="margin-top:64px">
+      <h3 class="bath" data-en="Why removable" data-vi="Vì sao là pin tháo rời">Why removable</h3>
+    </div>
+    <div class="prin rv d1">
+      <div><span class="k">01</span>
+        <h3 data-en="Swap in minutes, not hours" data-vi="Đổi pin trong vài phút, không phải vài giờ">Swap in minutes, not hours</h3>
+        <p data-en="A charge parks the bike for hours. A swap takes under two minutes, so a bike that earns per trip keeps earning." data-vi="Sạc pin khiến xe nằm yên hàng giờ. Đổi pin chỉ mất dưới hai phút, nên chiếc xe kiếm tiền theo chuyến vẫn tiếp tục kiếm tiền.">A charge parks the bike for hours. A swap takes under two minutes, so a bike that earns per trip keeps earning.</p>
+      </div>
+      <div><span class="k">02</span>
+        <h3 data-en="Charge the pack, not the bike" data-vi="Sạc khối pin, không phải sạc cả chiếc xe">Charge the pack, not the bike</h3>
+        <p data-en="Many riders live down alleys or in apartments where a bike cannot be plugged in overnight. A removable pack goes upstairs to charge while the bike stays parked below." data-vi="Nhiều tài xế sống trong hẻm hoặc chung cư, nơi không thể cắm sạc xe qua đêm. Khối pin tháo rời được mang lên nhà để sạc, còn xe vẫn đỗ bên dưới.">Many riders live down alleys or in apartments where a bike cannot be plugged in overnight. A removable pack goes upstairs to charge while the bike stays parked below.</p>
+      </div>
+      <div><span class="k">03</span>
+        <h3 data-en="Not locked to one network" data-vi="Không bị khóa vào một mạng lưới">Not locked to one network</h3>
+        <p data-en="Because the bay adjusts to different pack sizes, a fleet can change swap partner, or run two at once, without changing bikes. The bike stays the same. The network becomes a supplier." data-vi="Vì khoang pin điều chỉnh được theo nhiều kích thước pin, đội xe có thể đổi đối tác đổi pin, hoặc dùng hai mạng lưới cùng lúc, mà không cần đổi xe. Chiếc xe giữ nguyên. Mạng lưới trở thành nhà cung cấp.">Because the bay adjusts to different pack sizes, a fleet can change swap partner, or run two at once, without changing bikes. The bike stays the same. The network becomes a supplier.</p>
+      </div>
+    </div>
+
+    <div class="batnote rv d1">
+      <h3 data-en="What it means for the transition" data-vi="Điều này có ý nghĩa gì cho quá trình chuyển đổi">What it means for the transition</h3>
+      <p data-en="A swap station is only useful if the bikes on the road can use it. Every U1 is one more bike that more than one network can serve, and that is how separate networks start to work like public infrastructure. As Ho Chi Minh City phases out petrol two-wheelers and Hanoi pilots its low emission zone, the bike that fits more networks is the one that keeps working through the change." data-vi="Một trạm đổi pin chỉ hữu ích khi xe trên đường dùng được nó. Mỗi chiếc U1 là thêm một chiếc xe mà nhiều mạng lưới cùng phục vụ được, và đó là cách những mạng lưới riêng lẻ bắt đầu vận hành như hạ tầng công cộng. Khi TP. Hồ Chí Minh loại dần xe máy chạy xăng và Hà Nội thí điểm vùng phát thải thấp, chiếc xe vừa với nhiều mạng lưới hơn chính là chiếc xe tiếp tục làm việc xuyên suốt quá trình chuyển đổi.">A swap station is only useful if the bikes on the road can use it. Every U1 is one more bike that more than one network can serve, and that is how separate networks start to work like public infrastructure. As Ho Chi Minh City phases out petrol two-wheelers and Hanoi pilots its low emission zone, the bike that fits more networks is the one that keeps working through the change.</p>
+      <p class="bsmall" data-en="Pack count and fit depend on each vendor&#39;s dimensions and are confirmed network by network during validation." data-vi="Số lượng và độ vừa của khối pin phụ thuộc vào kích thước của từng nhà cung cấp, và được xác nhận theo từng mạng lưới trong quá trình kiểm định.">Pack count and fit depend on each vendor&#39;s dimensions and are confirmed network by network during validation.</p>
+    </div>
+  </div>
+</section>
+<script>(function(){var w=document.querySelector('.batvid');if(!w)return;var v=w.querySelector('video'),b=w.querySelector('.bv-ctl');
+function set(p){w.classList.toggle('paused',p);b.setAttribute('aria-label',p?'Play video':'Pause video')}
+if(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches){v.removeAttribute('autoplay');v.pause();set(true)}
+b.addEventListener('click',function(){if(v.paused){v.play();set(false)}else{v.pause();set(true)}});
+if('IntersectionObserver'in window){new IntersectionObserver(function(e){e.forEach(function(x){if(w.classList.contains('paused'))return;x.isIntersecting?v.play().catch(function(){}):v.pause()})},{threshold:.2}).observe(w)}})();</script>
+
 <!-- ================= CONFIGURATIONS ================= -->
-<section class="pad band-k" style="border-top:1px solid var(--line)">
+<section class="pad band-w" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
       <div class="eyebrow rv" data-en="Where it leads" data-vi="Kết quả">Where it leads</div>
@@ -1040,7 +1134,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
 </section>
 
 <!-- ================= CTA ================= -->
-<section class="ucta pad band-w">
+<section class="ucta pad band-b">
   <div class="wrap">
     <div class="in">
       <div>
