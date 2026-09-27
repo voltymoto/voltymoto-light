@@ -244,7 +244,7 @@ html[lang="vi"] .hero h1{font-size:clamp(28px,3.3vw,52px)}
 .aud>div:nth-child(1){background:var(--sky)}.aud>div:nth-child(2){background:var(--butter)}.aud>div:nth-child(3){background:var(--sage)}
 .aud>div:nth-child(4){background:var(--blush)}.aud>div:nth-child(5){background:var(--lilac)}.aud>div:nth-child(6){background:var(--mint)}
 .aud .k{width:44px;height:44px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;color:var(--ink)}
-.aud>div:nth-child(1) .k{background:var(--red);color:#fff}
+.aud>div:nth-child(2) .k{background:var(--red);color:#fff}
 .aud h3{font-size:30px;margin-top:40px}
 .aud p{color:var(--ink2);font-size:14.5px;line-height:1.7}
 @media(max-width:1040px){.aud{grid-template-columns:repeat(2,1fr)}}
@@ -372,6 +372,18 @@ html[lang="vi"] .mname,html[lang="vi"] .mprice,html[lang="vi"] .psave b{font-fam
 html[lang="vi"] .hb-n{font-family:'Saira Condensed',sans-serif!important;font-weight:800!important}
 @media(max-width:860px){.hb-steps{grid-template-columns:1fr}.hb-steps li{border-left:0;border-top:1px solid rgba(255,255,255,.14)}.hb-steps li:first-child{border-top:0}}
 
+/* audience: card that sends people to the full audience page */
+.audcta{display:grid;grid-template-columns:1fr auto;grid-template-areas:"k go" "t go" "p go";column-gap:32px;row-gap:10px;align-items:center;margin-top:20px;padding:30px 34px;background:var(--ink);color:#fff;border-radius:var(--r);text-decoration:none;outline:2px solid var(--ink);outline-offset:3px;transition:transform .3s cubic-bezier(.2,.7,.2,1),box-shadow .3s}
+.audcta:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--red)}
+.audcta .ac-k{grid-area:k;font-family:'Space Mono',monospace;font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
+.audcta .ac-t{grid-area:t;font-family:var(--hero);font-weight:var(--hw);font-size:clamp(24px,2.8vw,38px);line-height:1.05;text-transform:uppercase;color:#fff}
+.audcta .ac-p{grid-area:p;font-size:14.5px;line-height:1.6;color:rgba(255,255,255,.72);max-width:62ch}
+.audcta .ac-go{grid-area:go;background:var(--red);color:#fff;padding:15px 22px;border-radius:4px;font-family:'Space Mono',monospace;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;transition:background .2s}
+.audcta:hover .ac-go{background:var(--red-d,#B81C14)}
+.audcta:focus-visible{outline-color:var(--red)}
+html[lang="vi"] .audcta .ac-t{font-family:'Saira Condensed',sans-serif!important;font-weight:800!important;line-height:1.2}
+@media(max-width:760px){.audcta{grid-template-columns:1fr;grid-template-areas:"k" "t" "p" "go";padding:26px 24px}.audcta .ac-go{justify-self:start;margin-top:8px}}
+
 /* =====================================================================
    VOLTY UTILITY EDITION: sand, black, one signal red.
    Loaded last on every page. Pastels are retired: every pastel token now
@@ -449,7 +461,7 @@ body .vtoggle,body .bclip-ctl,body .vhero-ctl{border-radius:4px!important}
 /* ---------- details in black ---------- */
 body .eyebrow::before,body .crumb::before,body .ecrumb::before,body .xh-crumb::before{border-radius:1px!important;width:8px!important;height:8px!important}
 body .aud .k{border-radius:3px!important;background:var(--blk)!important;color:#EEE7DA!important}
-body .aud>div:nth-child(1) .k{background:var(--red)!important;color:#fff!important}
+body .aud>div:nth-child(2) .k{background:var(--red)!important;color:#fff!important}
 body .aud>div{border-top:3px solid var(--blk)!important}
 body .prin>div,body .cfg>figure,body .route,body .dcell,body .mlist li,body .path{border-top:3px solid var(--blk)!important}
 body .paths .path:first-child,body .routes .route:first-child{border-top-color:var(--red)!important}
@@ -775,16 +787,17 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
     <div class="shead rv">
       <div class="eyebrow rv" data-en="Audience" data-vi="Khách hàng">Audience</div>
       <h2 data-en="Who it is for" data-vi="U1 dành cho ai">Who it is for</h2>
-      <p class="lead" data-en="Fleet operators are who we build for first. Riders who buy their own bike get the same machine. In both cases the vehicle stays our responsibility, not the swap network's." data-vi="Trước hết chúng tôi làm xe cho nhà vận hành đội xe. Người mua xe riêng nhận đúng chiếc xe đó. Trong cả hai trường hợp, trách nhiệm về xe thuộc về chúng tôi, không phải mạng lưới đổi pin.">Fleet operators are who we build for first. Riders who buy their own bike get the same machine. In both cases the vehicle stays our responsibility, not the swap network's.</p>
+      <p class="lead" data-en="Built first for fleets that work all day, ready for riders who buy their own. The U1-F is set up to each fleet&#39;s spec, the U1-R is finished for everyday life. Whichever you ride, the vehicle stays our responsibility, not the swap network&#39;s." data-vi="Làm ra trước hết cho những đội xe chạy cả ngày, và sẵn sàng cho những người tự mua xe cho mình. U1-F được thiết lập theo yêu cầu của từng đội xe, U1-R được hoàn thiện cho cuộc sống hằng ngày. Dù bạn chạy phiên bản nào, chiếc xe vẫn là trách nhiệm của chúng tôi, không phải của mạng lưới đổi pin.">Built first for fleets that work all day, ready for riders who buy their own. The U1-F is set up to each fleet&#39;s spec, the U1-R is finished for everyday life. Whichever you ride, the vehicle stays our responsibility, not the swap network&#39;s.</p>
     </div>
     <div class="aud rv d1">
-      <div><span class="k">01</span><h3 data-en="Ride hailing" data-vi="Xe công nghệ">Ride hailing</h3><p data-en="High daily kilometers on thin margins per trip. A swap under two minutes keeps the bike earning where a charge stops it." data-vi="Số ki lô mét mỗi ngày cao, biên lợi nhuận mỗi chuyến mỏng. Đổi pin dưới hai phút giúp xe tiếp tục chạy, trong khi sạc thì phải dừng.">High daily kilometers on thin margins per trip. A swap under two minutes keeps the bike earning where a charge stops it.</p></div>
-      <div><span class="k">02</span><h3 data-en="Last mile delivery" data-vi="Giao hàng chặng cuối">Last mile delivery</h3><p data-en="Stop and start duty, loaded racks, riders handing over between shifts. 200 kg maximum payload, rider included, and mounts front, mid and rear." data-vi="Chạy dừng liên tục, giá chở có tải, tài xế giao ca cho nhau. Tải trọng tối đa 200 kg đã gồm người lái, cùng giá lắp phía trước, giữa và phía sau.">Stop and start duty, loaded racks, riders handing over between shifts. 200 kg maximum payload, rider included, and mounts front, mid and rear.</p></div>
-      <div><span class="k">03</span><h3 data-en="B2B fleets" data-vi="Đội xe doanh nghiệp">B2B fleets</h3><p data-en="Emission inspection becomes mandatory in July 2027 and Hanoi is already piloting a low emission zone. The dates are public." data-vi="Kiểm định khí thải bắt buộc từ tháng 7 năm 2027 và Hà Nội đang thí điểm vùng phát thải thấp. Các mốc thời gian đều đã công bố.">Emission inspection becomes mandatory in July 2027 and Hanoi is already piloting a low emission zone. The dates are public.</p></div>
-      <div><span class="k">04</span><h3 data-en="Multi fleet riders" data-vi="Tài xế chạy nhiều nền tảng">Multi fleet riders</h3><p data-en="You ride for whoever pays best this hour. The bike is yours, not the fleet's, and it swaps on whichever network is nearest." data-vi="Bạn chạy cho bên nào trả tốt nhất trong giờ đó. Xe là của bạn chứ không phải của đội xe, và đổi pin ở mạng lưới nào gần nhất.">You ride for whoever pays best this hour. The bike is yours, not the fleet's, and it swaps on whichever network is nearest.</p></div>
+      <div><span class="k">01</span><h3 data-en="Last mile delivery" data-vi="Giao hàng chặng cuối">Last mile delivery</h3><p data-en="Stop and start duty, loaded racks, riders handing over between shifts. 200 kg maximum payload, rider included, and mounts front, mid and rear." data-vi="Chạy dừng liên tục, giá chở có tải, tài xế giao ca cho nhau. Tải trọng tối đa 200 kg đã gồm người lái, cùng giá lắp phía trước, giữa và phía sau.">Stop and start duty, loaded racks, riders handing over between shifts. 200 kg maximum payload, rider included, and mounts front, mid and rear.</p></div>
+      <div><span class="k">02</span><h3 data-en="B2B fleets" data-vi="Đội xe doanh nghiệp">B2B fleets</h3><p data-en="Emission inspection becomes mandatory in July 2027 and Hanoi is already piloting a low emission zone. The dates are public." data-vi="Kiểm định khí thải bắt buộc từ tháng 7 năm 2027 và Hà Nội đang thí điểm vùng phát thải thấp. Các mốc thời gian đều đã công bố.">Emission inspection becomes mandatory in July 2027 and Hanoi is already piloting a low emission zone. The dates are public.</p></div>
+      <div><span class="k">03</span><h3 data-en="Multi fleet riders" data-vi="Tài xế chạy nhiều nền tảng">Multi fleet riders</h3><p data-en="You ride for whoever pays best this hour. The bike is yours, not the fleet's, and it swaps on whichever network is nearest." data-vi="Bạn chạy cho bên nào trả tốt nhất trong giờ đó. Xe là của bạn chứ không phải của đội xe, và đổi pin ở mạng lưới nào gần nhất.">You ride for whoever pays best this hour. The bike is yours, not the fleet's, and it swaps on whichever network is nearest.</p></div>
+      <div><span class="k">04</span><h3 data-en="Ride hailing" data-vi="Xe công nghệ">Ride hailing</h3><p data-en="High daily kilometers on thin margins per trip. A swap under two minutes keeps the bike earning where a charge stops it." data-vi="Số ki lô mét mỗi ngày cao, biên lợi nhuận mỗi chuyến mỏng. Đổi pin dưới hai phút giúp xe tiếp tục chạy, trong khi sạc thì phải dừng.">High daily kilometers on thin margins per trip. A swap under two minutes keeps the bike earning where a charge stops it.</p></div>
       <div><span class="k">05</span><h3 data-en="Commuters" data-vi="Đi làm hằng ngày">Commuters</h3><p data-en="Two trips a day, plus errands and the school run. Run one pack or two, and carry a pack inside to charge, not the bike." data-vi="Hai lượt mỗi ngày, thêm việc vặt và đưa đón con. Chạy một hoặc hai pin, và mang pin vào nhà để sạc thay vì mang cả xe.">Two trips a day, plus errands and the school run. Run one pack or two, and carry a pack inside to charge, not the bike.</p></div>
       <div><span class="k">06</span><h3 data-en="Adventure riders" data-vi="Chạy đường dài cuối tuần">Adventure riders</h3><p data-en="Weekend distance outside the city, gear on the rack. 195 km maximum range, 140 to 160 km loaded, swap where you find one." data-vi="Đi xa khỏi thành phố cuối tuần, đồ đạc buộc trên giá. Tầm hoạt động tối đa 195 km, 140 đến 160 km khi có tải, đổi pin khi gặp trạm.">Weekend distance outside the city, gear on the rack. 195 km maximum range, 140 to 160 km loaded, swap where you find one.</p></div>
     </div>
+      <a class="audcta" href="/audience.html#match"><span class="ac-k" data-en="Nine rider profiles, one quiz" data-vi="Chín hồ sơ tài xế, một bài trắc nghiệm">Nine rider profiles, one quiz</span><b class="ac-t" data-en="Where do you fit? Find your build." data-vi="Bạn thuộc nhóm nào? Tìm cấu hình của bạn.">Where do you fit? Find your build.</b><span class="ac-p" data-en="See who the U1 is built for, answer three questions, and get the build that matches your work." data-vi="Xem U1 được làm cho ai, trả lời ba câu hỏi và nhận cấu hình phù hợp với công việc của bạn.">See who the U1 is built for, answer three questions, and get the build that matches your work.</span><span class="ac-go" data-en="Explore the audience →" data-vi="Khám phá nhóm khách hàng →">Explore the audience →</span></a>
   </div>
 </section>
 
