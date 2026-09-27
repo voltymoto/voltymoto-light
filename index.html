@@ -359,6 +359,18 @@ footer .wrap>*{padding-top:26px}
 html[lang="vi"] .mname,html[lang="vi"] .mprice,html[lang="vi"] .psave b{font-family:'Saira Condensed',sans-serif!important;font-weight:800!important}
 @media(max-width:900px){.models{grid-template-columns:1fr}.mcard.fleet{outline-offset:2px}}
 @media(max-width:560px){.ps-row{grid-template-columns:48px 1fr;row-gap:4px}.ps-v{grid-column:2;font-size:15px}.ps-axis{margin-left:64px;margin-right:0}}
+/* how a rider gets the fleet price */
+.hbuy{margin:26px 0 0;border:2px solid var(--ink);border-radius:var(--r);background:var(--ink);color:#fff;overflow:hidden}
+.hb-head{padding:18px 24px;border-bottom:1px solid rgba(255,255,255,.14)}
+.hb-t{font-size:clamp(20px,2vw,26px);color:#fff;margin:0}
+.hb-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr)}
+.hb-steps li{padding:22px 24px 26px;border-left:1px solid rgba(255,255,255,.14);display:flex;flex-direction:column;gap:8px}
+.hb-steps li:first-child{border-left:0}
+.hb-n{font-family:var(--hero);font-weight:var(--hw);font-size:30px;line-height:1;color:var(--red)}
+.hb-steps b{font-size:16.5px;color:#fff}
+.hb-steps p{font-size:14px;line-height:1.55;color:rgba(255,255,255,.72);margin:0}
+html[lang="vi"] .hb-n{font-family:'Saira Condensed',sans-serif!important;font-weight:800!important}
+@media(max-width:860px){.hb-steps{grid-template-columns:1fr}.hb-steps li{border-left:0;border-top:1px solid rgba(255,255,255,.14)}.hb-steps li:first-child{border-top:0}}
 
 /* =====================================================================
    VOLTY UTILITY EDITION: sand, black, one signal red.
@@ -695,7 +707,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
     <div class="shead">
       <div class="eyebrow rv" data-en="The numbers" data-vi="Những con số">The numbers</div>
       <h2 class="rv d1" data-en="Two ways to own a U1. The fleet price is lower." data-vi="Hai cách sở hữu U1. Giá đội xe thấp hơn.">Two ways to own a U1. The fleet price is lower.</h2>
-      <p class="lead rv d2" data-en="Same bike, same frame, same battery bay. What changes is who buys it. Fleets buy in volume, so the U1-F costs less, and a rider who works with a fleet can buy through it and keep the difference." data-vi="Cùng một chiếc xe, cùng khung, cùng khoang pin. Điều khác nhau là ai mua. Đội xe mua số lượng lớn nên U1-F có giá thấp hơn, và tài xế làm việc cùng một đội xe có thể mua qua đội xe để giữ lại khoản chênh lệch.">Same bike, same frame, same battery bay. What changes is who buys it. Fleets buy in volume, so the U1-F costs less, and a rider who works with a fleet can buy through it and keep the difference.</p>
+      <p class="lead rv d2" data-en="Same frame and battery bay underneath. The U1-F is a simpler, bare build set up to each fleet&#39;s spec. The U1-R adds premium finishes and lifestyle accessories. If you ride for a fleet with 100 or more U1s, you can buy through it at that fleet&#39;s price and keep the saving." data-vi="Cùng khung xe và khoang pin bên dưới. U1-F là bản đơn giản, tối giản, được thiết lập theo yêu cầu của từng đội xe. U1-R có thêm hoàn thiện cao cấp và phụ kiện phong cách sống. Nếu bạn chạy cho một đội xe có từ 100 chiếc U1 trở lên, bạn có thể mua qua đội xe với giá của đội xe đó và giữ lại khoản tiết kiệm.">Same frame and battery bay underneath. The U1-F is a simpler, bare build set up to each fleet&#39;s spec. The U1-R adds premium finishes and lifestyle accessories. If you ride for a fleet with 100 or more U1s, you can buy through it at that fleet&#39;s price and keep the saving.</p>
     </div>
 
     <div class="pscale rv d1" aria-hidden="true">
@@ -705,7 +717,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
     </div>
     <div class="psave rv d1">
       <b>&#8363;8M to &#8363;10M</b>
-      <span data-en="saved on every U1 bought through a fleet, compared with buying it retail" data-vi="tiết kiệm trên mỗi chiếc U1 mua qua đội xe, so với mua lẻ">saved on every U1 bought through a fleet, compared with buying it retail</span>
+      <span data-en="less for a rider who buys a U1-F through their fleet, compared with the U1-R retail range" data-vi="thấp hơn cho tài xế mua U1-F qua đội xe của mình, so với khoảng giá bán lẻ U1-R">less for a rider who buys a U1-F through their fleet, compared with the U1-R retail range</span>
     </div>
     <div class="models rv d1">
       <article class="mcard fleet" id="card-u1f">
@@ -715,10 +727,10 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
         <p class="mconcept" data-en="Concept builds. Real options depend on your work, and more are coming." data-vi="Cấu hình ý tưởng. Tùy chọn thực tế phụ thuộc vào công việc của bạn, và sẽ còn nhiều tùy chọn khác.">Concept builds. Real options depend on your work, and more are coming.</p>
         <div class="mbody">
           <h3 class="mname">U1-F</h3>
-          <p class="mwho" data-en="For fleets, and the riders who work with them" data-vi="Dành cho đội xe, và những tài xế làm việc cùng đội xe">For fleets, and the riders who work with them</p>
+          <p class="mwho" data-en="For fleets, and the riders who ride for them" data-vi="Dành cho đội xe, và những tài xế chạy cho đội xe">For fleets, and the riders who ride for them</p>
           <div class="mprice">&#8363;32M to &#8363;39M</div>
-          <div class="mlab" data-en="Estimated fleet price, per unit" data-vi="Giá đội xe ước tính, mỗi xe">Estimated fleet price, per unit</div>
-          <ul class="mpts"><li data-en="Bought through a fleet operator, for its riders" data-vi="Mua qua đơn vị vận hành đội xe, cho tài xế của đơn vị">Bought through a fleet operator, for its riders</li><li data-en="Ride for a fleet? Buy through it and keep the saving" data-vi="Đang chạy cho một đội xe? Mua qua đội xe và giữ lại khoản tiết kiệm">Ride for a fleet? Buy through it and keep the saving</li><li data-en="Same frame, battery bay and racks as the U1-R" data-vi="Cùng khung xe, khoang pin và giá chở như U1-R">Same frame, battery bay and racks as the U1-R</li></ul>
+          <div class="mlab" data-en="Estimated fleet price per unit, includes 10% VAT" data-vi="Giá đội xe ước tính mỗi xe, đã gồm 10% VAT">Estimated fleet price per unit, includes 10% VAT</div>
+          <ul class="mpts"><li data-en="Simple, bare build, set up to your fleet&#39;s spec" data-vi="Bản đơn giản, tối giản, thiết lập theo yêu cầu của đội xe">Simple, bare build, set up to your fleet&#39;s spec</li><li data-en="Riders buy through the platform they ride for, once the fleet approves" data-vi="Tài xế mua qua nền tảng mình đang chạy, khi đội xe duyệt">Riders buy through the platform they ride for, once the fleet approves</li><li data-en="Fleet price applies to fleets with 100 or more U1s assigned" data-vi="Giá đội xe áp dụng cho đội xe có từ 100 chiếc U1 trở lên">Fleet price applies to fleets with 100 or more U1s assigned</li></ul>
           <a class="btn prime" href="/contact.html#routes" data-en="Talk to fleet sales" data-vi="Liên hệ bộ phận đội xe">Talk to fleet sales</a>
         </div>
       </article>
@@ -731,13 +743,18 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
           <h3 class="mname">U1-R</h3>
           <p class="mwho" data-en="For riders who buy for themselves" data-vi="Dành cho tài xế tự mua xe">For riders who buy for themselves</p>
           <div class="mprice">&#8363;40M to &#8363;49M</div>
-          <div class="mlab" data-en="Estimated retail price, per unit" data-vi="Giá bán lẻ ước tính, mỗi xe">Estimated retail price, per unit</div>
-          <ul class="mpts"><li data-en="Bought directly by the rider" data-vi="Tài xế mua trực tiếp">Bought directly by the rider</li><li data-en="Your bike, your racks, your weekend too" data-vi="Xe của bạn, giá chở của bạn, cả ngày cuối tuần cũng vậy">Your bike, your racks, your weekend too</li><li data-en="Same frame, battery bay and racks as the U1-F" data-vi="Cùng khung xe, khoang pin và giá chở như U1-F">Same frame, battery bay and racks as the U1-F</li></ul>
+          <div class="mlab" data-en="Estimated retail price per unit, includes 10% VAT" data-vi="Giá bán lẻ ước tính mỗi xe, đã gồm 10% VAT">Estimated retail price per unit, includes 10% VAT</div>
+          <ul class="mpts"><li data-en="Premium finishes, with lifestyle accessories included" data-vi="Hoàn thiện cao cấp, kèm phụ kiện phong cách sống">Premium finishes, with lifestyle accessories included</li><li data-en="Bought directly by you, no fleet needed" data-vi="Bạn mua trực tiếp, không cần qua đội xe">Bought directly by you, no fleet needed</li><li data-en="Same frame and battery bay as the U1-F" data-vi="Cùng khung xe và khoang pin như U1-F">Same frame and battery bay as the U1-F</li></ul>
           <a class="btn light" href="/contact.html#routes" data-en="Join the list" data-vi="Đăng ký danh sách">Join the list</a>
         </div>
       </article>
     </div>
-    <p class="pnote" data-en="Estimated ranges for the first batch, not confirmed prices. The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list to hear it first." data-vi="Khoảng giá ước tính cho lô xe đầu tiên, chưa phải giá chính thức. Giá chính thức được công bố khi chi phí sản xuất được chốt và lịch phê duyệt kiểu loại được xác định. Đăng ký danh sách để biết sớm nhất.">Estimated ranges for the first batch, not confirmed prices. The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list to hear it first.</p>
+
+    <div class="hbuy rv d1">
+      <div class="hb-head"><h3 class="hb-t" data-en="How a rider gets the fleet price" data-vi="Cách tài xế mua được giá đội xe">How a rider gets the fleet price</h3></div>
+      <ol class="hb-steps"><li><span class="hb-n">01</span><b data-en="Ask your platform" data-vi="Hỏi nền tảng của bạn">Ask your platform</b><p data-en="Tell the fleet or platform you ride for that you want a U1-F. If you ride for more than one, pick the one you buy through." data-vi="Báo với đội xe hoặc nền tảng bạn đang chạy rằng bạn muốn mua U1-F. Nếu bạn chạy cho nhiều nơi, hãy chọn nơi bạn sẽ mua qua.">Tell the fleet or platform you ride for that you want a U1-F. If you ride for more than one, pick the one you buy through.</p></li><li><span class="hb-n">02</span><b data-en="The fleet approves you" data-vi="Đội xe duyệt">The fleet approves you</b><p data-en="Each fleet decides which riders can buy through it. The fleet price is open to fleets with 100 or more U1s assigned." data-vi="Mỗi đội xe tự quyết định tài xế nào được mua qua đội xe. Giá đội xe áp dụng cho đội xe có từ 100 chiếc U1 trở lên.">Each fleet decides which riders can buy through it. The fleet price is open to fleets with 100 or more U1s assigned.</p></li><li><span class="hb-n">03</span><b data-en="Pay the fleet price, keep the saving" data-vi="Trả giá đội xe, giữ lại khoản tiết kiệm">Pay the fleet price, keep the saving</b><p data-en="You pay the price set for that fleet, for a U1-F built to its spec. The saving against retail is yours." data-vi="Bạn trả mức giá được đặt cho đội xe đó, cho chiếc U1-F theo yêu cầu của đội xe. Khoản tiết kiệm so với giá bán lẻ thuộc về bạn.">You pay the price set for that fleet, for a U1-F built to its spec. The saving against retail is yours.</p></li></ol>
+    </div>
+    <p class="pnote" data-en="Estimated ranges for the first batch, including 10% VAT, not confirmed prices. The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list to hear it first." data-vi="Khoảng giá ước tính cho lô xe đầu tiên, đã gồm 10% VAT, chưa phải giá chính thức. Giá chính thức được công bố khi chi phí sản xuất được chốt và lịch phê duyệt kiểu loại được xác định. Đăng ký danh sách để biết sớm nhất.">Estimated ranges for the first batch, including 10% VAT, not confirmed prices. The confirmed price is set once the build cost is locked and type approval is scheduled. Join the list to hear it first.</p>
     <div class="calcrow">
 <div class="calc rv d1"><div class="calc-display" aria-hidden="true"><span data-en="Cost per working day" data-vi="Chi phí mỗi ngày làm việc">Cost per working day</span><b>&#8363;</b></div>
           <h3 data-en="Run it against your own day" data-vi="Tính trên chính ngày làm việc của bạn">Run it against your own day</h3>
