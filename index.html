@@ -726,7 +726,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
       <article class="mcard retail" id="card-u1r">
         <div class="mtag"><span data-en="Retail price" data-vi="Giá bán lẻ">Retail price</span></div>
         <figure class="mshot"><img id="img-u1r" src="/u1r-classic-1400.webp" srcset="/u1r-classic-800.webp 800w, /u1r-classic-1400.webp 1400w" sizes="(max-width:900px) 100vw, 45vw" alt="U1-R in red and white, parked in the warehouse" width="1400" height="788" loading="lazy"></figure>
-        <div class="mopts" role="group" aria-label="Preview a build"><button type="button" class="mopt" data-m="u1r" data-img="/u1r-classic" aria-pressed="true" data-en="Classic" data-vi="Cổ điển">Classic</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-rack" aria-pressed="false" data-en="Black rack" data-vi="Đen giá chở">Black rack</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-blackgold" aria-pressed="false" data-en="Black and gold" data-vi="Đen vàng">Black and gold</button></div>
+        <div class="mopts" role="group" aria-label="Preview a build"><button type="button" class="mopt" data-m="u1r" data-img="/u1r-classic" aria-pressed="true" data-en="Classic" data-vi="Cổ điển">Classic</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-rack" aria-pressed="false" data-en="Black rack" data-vi="Đen giá chở">Black rack</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-blackgold" aria-pressed="false" data-en="Black and gold" data-vi="Đen vàng">Black and gold</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-sky" aria-pressed="false" data-en="Sky blue" data-vi="Xanh da trời">Sky blue</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-touring" aria-pressed="false" data-en="Touring" data-vi="Đi xa">Touring</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-weekender" aria-pressed="false" data-en="Weekender" data-vi="Cuối tuần">Weekender</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-companion" aria-pressed="false" data-en="Companion" data-vi="Người đồng hành">Companion</button><button type="button" class="mopt" data-m="u1r" data-img="/u1r-spoke" aria-pressed="false" data-en="Spoke wheels" data-vi="Vành căm">Spoke wheels</button></div>
         <p class="mconcept" data-en="Concept builds. Real options depend on your work, and more are coming." data-vi="Cấu hình ý tưởng. Tùy chọn thực tế phụ thuộc vào công việc của bạn, và sẽ còn nhiều tùy chọn khác.">Concept builds. Real options depend on your work, and more are coming.</p>
         <div class="mbody">
           <h3 class="mname">U1-R</h3>
@@ -930,9 +930,9 @@ var __VI_LABELS={"Volty U1 | Electric utility motorcycle by NUEN MOTO":"Volty U1
 (function(){document.querySelectorAll('.mopt').forEach(function(b){b.addEventListener('click',function(){
   var m=b.getAttribute('data-m'),base=b.getAttribute('data-img'),img=document.getElementById('img-'+m);if(!img)return;
   document.querySelectorAll('.mopt[data-m="'+m+'"]').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
-  img.classList.add('swap');setTimeout(function(){img.onload=function(){img.classList.remove('swap')};img.srcset=base+'-800.webp 800w, '+base+'-1400.webp 1400w';img.src=base+'-1400.webp';if(img.complete)img.classList.remove('swap');},200);
+  img.classList.add('swap');setTimeout(function(){img.onload=function(){img.classList.remove('swap')};img.srcset=base+'-800.webp 800w, '+base+'-1400.webp 1400w';img.alt=m.toUpperCase().replace('U1','U1-')+' concept build: '+b.textContent;img.src=base+'-1400.webp';if(img.complete)img.classList.remove('swap');},200);
 });});
-['u1f-parcel','u1f-utility','u1r-rack','u1r-blackgold'].forEach(function(n){var i=new Image();i.src='/'+n+'-800.webp'});})();
+['u1f-parcel','u1f-utility','u1r-rack','u1r-blackgold','u1r-sky','u1r-touring','u1r-weekender','u1r-companion','u1r-spoke'].forEach(function(n){var i=new Image();i.src='/'+n+'-800.webp'});})();
 </script>
 <script>
 /* Hero video pause control. Autoplaying motion longer than five seconds needs a
