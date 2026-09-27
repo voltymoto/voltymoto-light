@@ -866,6 +866,12 @@ body .pager .wrap{border-top:1px solid var(--line2)!important;border-bottom:1px 
 body .pager .wrap>a{border:0!important}
 body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1/-1;justify-content:space-between!important;align-items:center!important;flex-direction:row!important}
 
+/* Vietnamese-only and English-only copy blocks */
+html[lang="vi"] body .vi-drop{display:none!important}
+html:not([lang="vi"]) body .en-drop{display:none!important}
+body .path p.en-drop{margin-top:10px}
+body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(--ink)}
+
 </style>
 </head><body>
 <nav id="nav">
@@ -875,7 +881,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
     <a href="/u1.html" data-en="The U1" data-vi="Xe U1">The U1</a>
     <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
     <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
-    <a class="on" href="/audience.html" data-en="Audience" data-vi="Đối tượng">Audience</a>
+    <a class="on" href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
     <div class="drop" id="drop">
       <button type="button" aria-haspopup="true" aria-expanded="false" data-en="Economics" data-vi="Bài toán chi phí">Economics</button>
       <div class="dropmenu">
@@ -901,7 +907,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
   <a href="/u1.html" data-en="The U1" data-vi="Xe U1">The U1</a>
   <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
   <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
-  <a href="/audience.html" data-en="Audience" data-vi="Đối tượng">Audience</a>
+  <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
   <div class="grp" data-en="Economics" data-vi="Bài toán chi phí">Economics</div>
   <a class="sub" href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
   <a class="sub" href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
@@ -914,7 +920,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
 </video>
 <div class="vhero-scrim"></div>
 <div class="vhero-content"><div class="wrap"><div class="xh-head">
-<div class="xh-crumb" data-vi='&lt;a href="/index.html"&gt;Volty&lt;/a&gt; / Đối tượng'><a href="/index.html">Volty</a> / Audience</div>
+<div class="xh-crumb" data-vi='&lt;a href="/index.html"&gt;Volty&lt;/a&gt; / Khách hàng'><a href="/index.html">Volty</a> / Audience</div>
 <h1 data-vi="Sát cánh cùng mọi hành trình &lt;em&gt;trên khắp Việt Nam.&lt;/em&gt;">Built for the people <em>who move this country.</em></h1>
 <p class="lead" data-vi="Hơn 70 triệu chiếc xe máy đang giữ cho nhịp sống Việt Nam vận hành mỗi ngày, từ di chuyển cá nhân đến các hoạt động vận tải bền bỉ. Một nền tảng khung xe linh hoạt, sẵn sàng tối ưu cho đa dạng nhu cầu và mọi kịch bản sử dụng.">Seventy million motorcycles move Vietnam every day, and the hardest-working ones earn their rider's living. The U1 is built for those riders first: one platform that becomes whatever your working day needs it to be.</p>
 </div></div></div>
@@ -1184,7 +1190,7 @@ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 <script>
 /* Loose text nodes that carry no data-vi attribute of their own. The switcher in
    volty-lang.js reads this dictionary if the page defines one. */
-var __VI_LABELS = {"Vision": "Tầm nhìn", "Design": "Thiết kế", "Vehicle": "Phương tiện", "Audience": "Đối tượng", "Economics": "Bài toán chi phí", "Rider Economics": "Bài toán của tài xế", "Fleet Economics": "Bài toán của đội xe", "Contact": "Liên hệ", "Home": "Trang chủ", "Previous": "Trang trước", "Next": "Trang sau", "Site Map": "Sơ đồ trang", "Contact Us": "Liên hệ", "Parent Company": "Công ty mẹ", "Sales & Rider Support": "Kinh doanh và hỗ trợ tài xế", "NUEN MOTO Company": "Công ty NUEN MOTO", "No. 11, 10th Street, Sala": "Số 11, Đường số 10, Sala", "An Loi Dong, Thu Duc City, HCMC": "An Lợi Đông, TP. Thủ Đức, TP.HCM", "Follow": "Theo dõi", "by NUEN MOTO": "bởi NUEN MOTO", "The Modular EV Platform": "Nền tảng xe điện mô-đun", "Built for the riders who work on two wheels in Vietnam.": "Dành cho những người kiếm sống trên hai bánh tại Việt Nam.", "Terms of Use": "Điều khoản sử dụng", "Privacy Policy": "Chính sách bảo mật", "Investor Access Request": "Yêu cầu quyền truy cập nhà đầu tư", "A brand by NUEN MOTO Company Limited. 2026. nuenmoto.com": "Một thương hiệu của Công ty TNHH NUEN MOTO. 2026. nuenmoto.com", "I want a U1": "Tôi muốn một chiếc U1", "Start a pilot": "Bắt đầu chạy thử", "Join the list": "Đăng ký nhận tin", "Riders": "Tài xế", "Fleets": "Đội xe", "Where It Stands": "Hiện trạng", "FAQ": "Câu hỏi thường gặp", "Volty": "Volty", "On This Page": "Trong trang này", "Daily distance": "Quãng đường mỗi ngày", "RON92 pump price": "Giá xăng RON92", "Fleet size": "Quy mô đội xe", "Scenario": "Kịch bản", "Fuel scenario": "Kịch bản giá xăng", "Network": "Mạng lưới", "Ready": "Sẵn sàng", "Ready to swap": "Sẵn sàng đổi pin", "units": "xe", "days": "ngày", "Audience | Volty by NUEN MOTO": "Đối tượng | Volty by NUEN MOTO"};
+var __VI_LABELS = {"Vision": "Tầm nhìn", "Design": "Thiết kế", "Vehicle": "Phương tiện", "Audience": "Khách hàng", "Economics": "Bài toán chi phí", "Rider Economics": "Bài toán của tài xế", "Fleet Economics": "Bài toán của đội xe", "Contact": "Liên hệ", "Home": "Trang chủ", "Previous": "Trang trước", "Next": "Trang sau", "Site Map": "Sơ đồ trang", "Contact Us": "Liên hệ", "Parent Company": "Công ty mẹ", "Sales & Rider Support": "Kinh doanh và hỗ trợ tài xế", "NUEN MOTO Company": "Công ty NUEN MOTO", "No. 11, 10th Street, Sala": "Số 11, Đường số 10, Sala", "An Loi Dong, Thu Duc City, HCMC": "An Lợi Đông, TP. Thủ Đức, TP.HCM", "Follow": "Theo dõi", "by NUEN MOTO": "bởi NUEN MOTO", "The Modular EV Platform": "Nền tảng xe điện mô-đun", "Built for the riders who work on two wheels in Vietnam.": "Dành cho những người kiếm sống trên hai bánh tại Việt Nam.", "Terms of Use": "Điều khoản sử dụng", "Privacy Policy": "Chính sách bảo mật", "Investor Access Request": "Yêu cầu quyền truy cập nhà đầu tư", "A brand by NUEN MOTO Company Limited. 2026. nuenmoto.com": "Một thương hiệu của Công ty TNHH NUEN MOTO. 2026. nuenmoto.com", "I want a U1": "Tôi muốn một chiếc U1", "Start a pilot": "Bắt đầu chạy thử", "Join the list": "Đăng ký nhận tin", "Riders": "Tài xế", "Fleets": "Đội xe", "Where It Stands": "Hiện trạng", "FAQ": "Câu hỏi thường gặp", "Volty": "Volty", "On This Page": "Trong trang này", "Daily distance": "Quãng đường mỗi ngày", "RON92 pump price": "Giá xăng RON92", "Fleet size": "Quy mô đội xe", "Scenario": "Kịch bản", "Fuel scenario": "Kịch bản giá xăng", "Network": "Mạng lưới", "Ready": "Sẵn sàng", "Ready to swap": "Sẵn sàng đổi pin", "units": "xe", "days": "ngày", "Audience | Volty by NUEN MOTO": "Khách hàng | Volty by NUEN MOTO"};
 window.__VI_LABELS=__VI_LABELS;
 </script>
 <script>

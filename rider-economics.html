@@ -736,7 +736,7 @@ body .vtoggle,body .bclip-ctl,body .vhero-ctl{border-radius:4px!important}
 /* ---------- details in black ---------- */
 body .eyebrow::before,body .crumb::before,body .ecrumb::before,body .xh-crumb::before{border-radius:1px!important;width:8px!important;height:8px!important}
 body .aud .k{border-radius:3px!important;background:var(--blk)!important;color:#EEE7DA!important}
-body .aud>div:nth-child(1) .k{background:var(--red)!important;color:#fff!important}
+body .aud>div:nth-child(2) .k{background:var(--red)!important;color:#fff!important}
 body .aud>div{border-top:3px solid var(--blk)!important}
 body .prin>div,body .cfg>figure,body .route,body .dcell,body .mlist li,body .path{border-top:3px solid var(--blk)!important}
 body .paths .path:first-child,body .routes .route:first-child{border-top-color:var(--red)!important}
@@ -866,6 +866,12 @@ body .pager .wrap{border-top:1px solid var(--line2)!important;border-bottom:1px 
 body .pager .wrap>a{border:0!important}
 body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1/-1;justify-content:space-between!important;align-items:center!important;flex-direction:row!important}
 
+/* Vietnamese-only and English-only copy blocks */
+html[lang="vi"] body .vi-drop{display:none!important}
+html:not([lang="vi"]) body .en-drop{display:none!important}
+body .path p.en-drop{margin-top:10px}
+body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(--ink)}
+
 </style>
 </head><body>
 <nav id="nav">
@@ -875,7 +881,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
     <a href="/u1.html" data-en="The U1" data-vi="Xe U1">The U1</a>
     <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
     <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
-    <a href="/audience.html" data-en="Audience" data-vi="Đối tượng">Audience</a>
+    <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
     <div class="drop on" id="drop">
       <button type="button" aria-haspopup="true" aria-expanded="false" data-en="Economics" data-vi="Bài toán chi phí">Economics</button>
       <div class="dropmenu">
@@ -899,8 +905,8 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
   <a href="/u1.html" data-en="The U1" data-vi="Xe U1">The U1</a>
   <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
   <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
-  <a href="/audience.html" data-en="Audience" data-vi="Đối tượng">Audience</a>
-  <a href="/audience.html" data-en="Audience" data-vi="Đối tượng">Audience</a>
+  <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
+  <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
   <div class="grp" data-en="Economics" data-vi="Bài toán chi phí">Economics</div>
   <a class="sub" href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
   <a class="sub" href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
@@ -1026,7 +1032,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
 </div>
 </div></section>
 <section class="notewrap"><div class="wrap"><p class="chart-cap footnote" data-vi="Mô hình dựa trên thông số U1 đã công bố và giá hiện tại của đối tác. Cơ sở tính, trừ khi bạn thay đổi ở trên: 200 km mỗi ngày làm việc, 26 ngày làm việc mỗi tháng, RON92 giá ₫22.480 một lít, gói pin Selex TP3U không giới hạn quãng đường giá ₫918.000 mỗi tháng đã gồm VAT, đổi pin tại trạm tính ₫8.000 mỗi cục, sạc tại nhà khoảng ₫6.600 mỗi cục, quãng đường thực tế khi chở tải 75 km mỗi cục pin, và doanh thu của tài xế ₫12.000.000 mỗi tháng. Thời gian hoàn vốn được tính theo khoảng giá bán lẻ dự kiến của U1-R từ ₫40.000.000 đến ₫49.000.000, đã bao gồm VAT 10%, cho lô sản xuất đầu tiên. Khoảng giá đó không phải giá đã xác nhận: giá chính thức được công bố khi chi phí sản xuất được chốt và mở đặt xe. Mọi con số hoàn vốn trên trang này đều được tính ở cả hai đầu của khoảng giá và hiển thị dưới dạng một khoảng, nên không có mức giá giả định nào bị giấu trong kết quả. Selex là đối tác đổi pin hiện tại của chúng tôi và là một trong nhiều nhà cung cấp mà khoang pin U1 tương thích. Các gói tính số cục pin luân chuyển trong mạng lưới đổi pin. Bản thân xe chở một hoặc hai cục. Giá thuê bao phản ánh điều khoản hiện tại của đối tác và mang tính hợp đồng, không phải giá thị trường cố định. Kết quả thực tế thay đổi theo tuyến đường, tải trọng, thời tiết và cách bạn chạy xe. Đây là công cụ lập kế hoạch, không phải cam kết bảo hành.">Modeled from published U1 specifications and current partner pricing. Basis unless changed above: 200 km per working day, 26 working days per month, RON92 at ₫22,480 per liter, the Selex TP3U unlimited-distance battery plan at ₫918,000 per month with VAT, station swaps billed at ₫8,000 per battery, home charging at about ₫6,600 per pack, a real loaded range of 75 km per pack, and gross rider revenue of ₫12,000,000 per month. Payback is modeled against the ₫40,000,000 to ₫49,000,000 estimated U1-R retail range, including 10% VAT, for the first production batch. That range is not a confirmed price: the confirmed price is published when the build cost is locked and ordering opens. Every payback figure on this page is calculated at both ends of that range and shown as a span, so no single assumed price is hidden inside the result. Selex is our current swap partner and one of several providers the U1 bay accepts. Plan tiers count packs in rotation across the swap network. The bike itself carries one or two. Subscription pricing reflects current partner terms and is contractual, not a permanent market price. Real results vary with routes, load, weather, and how you ride. This is a planning tool, not a warranty.</p></div></section>
-<section class="pager"><div class="wrap"><a class="prev" href="/audience.html"><span class="k" data-en="← Previous" data-vi="← Trang trước">← Previous</span><b data-en="Audience" data-vi="Đối tượng">Audience</b></a><a class="next" href="/fleet-economics.html"><span class="k" data-en="Next →" data-vi="Trang sau →">Next →</span><b data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</b></a></div></section>
+<section class="pager"><div class="wrap"><a class="prev" href="/audience.html"><span class="k" data-en="← Previous" data-vi="← Trang trước">← Previous</span><b data-en="Audience" data-vi="Khách hàng">Audience</b></a><a class="next" href="/fleet-economics.html"><span class="k" data-en="Next →" data-vi="Trang sau →">Next →</span><b data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</b></a></div></section>
 <!-- ================= CONTACT + FOOTER ================= -->
 <section class="contact pad" id="contact">
   <div class="wrap">
@@ -1256,7 +1262,7 @@ if(bg&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
 })();
 </script>
 <script>
-var __VI_LABELS = {"Battery plan": "Gói pin", "How you refuel": "Cách bạn nạp năng lượng", "Vision": "Tầm nhìn", "Design": "Thiết kế", "Vehicle": "Phương tiện", "Audience": "Đối tượng", "Economics": "Bài toán chi phí", "Rider Economics": "Bài toán của tài xế", "Fleet Economics": "Bài toán của đội xe", "Contact": "Liên hệ", "Home": "Trang chủ", "Previous": "Trang trước", "Next": "Trang sau", "Site Map": "Sơ đồ trang", "Contact Us": "Liên hệ", "Parent Company": "Công ty mẹ", "Sales & Rider Support": "Kinh doanh và hỗ trợ tài xế", "NUEN MOTO Company": "Công ty NUEN MOTO", "No. 11, 10th Street, Sala": "Số 11, Đường số 10, Sala", "An Loi Dong, Thu Duc City, HCMC": "An Lợi Đông, TP. Thủ Đức, TP.HCM", "Follow": "Theo dõi", "by NUEN MOTO": "bởi NUEN MOTO", "The Modular EV Platform": "Nền tảng xe điện mô-đun", "Built for the riders who work on two wheels in Vietnam.": "Dành cho những người kiếm sống trên hai bánh tại Việt Nam.", "Terms of Use": "Điều khoản sử dụng", "Privacy Policy": "Chính sách bảo mật", "Investor Access Request": "Yêu cầu quyền truy cập nhà đầu tư", "A brand by NUEN MOTO Company Limited. 2026. nuenmoto.com": "Một thương hiệu của Công ty TNHH NUEN MOTO. 2026. nuenmoto.com", "I want a U1": "Tôi muốn một chiếc U1", "Start a pilot": "Bắt đầu chạy thử", "Join the list": "Đăng ký nhận tin", "Riders": "Tài xế", "Fleets": "Đội xe", "Where It Stands": "Hiện trạng", "FAQ": "Câu hỏi thường gặp", "Volty": "Volty", "On This Page": "Trong trang này", "Daily distance": "Quãng đường mỗi ngày", "RON92 pump price": "Giá xăng RON92", "Fleet size": "Quy mô đội xe", "Scenario": "Kịch bản", "Fuel scenario": "Kịch bản giá xăng", "Network": "Mạng lưới", "Ready": "Sẵn sàng", "Ready to swap": "Sẵn sàng đổi pin", "units": "xe", "days": "ngày", "Rider Economics | Volty by NUEN MOTO": "Bài toán của tài xế | Volty by NUEN MOTO"};
+var __VI_LABELS = {"Battery plan": "Gói pin", "How you refuel": "Cách bạn nạp năng lượng", "Vision": "Tầm nhìn", "Design": "Thiết kế", "Vehicle": "Phương tiện", "Audience": "Khách hàng", "Economics": "Bài toán chi phí", "Rider Economics": "Bài toán của tài xế", "Fleet Economics": "Bài toán của đội xe", "Contact": "Liên hệ", "Home": "Trang chủ", "Previous": "Trang trước", "Next": "Trang sau", "Site Map": "Sơ đồ trang", "Contact Us": "Liên hệ", "Parent Company": "Công ty mẹ", "Sales & Rider Support": "Kinh doanh và hỗ trợ tài xế", "NUEN MOTO Company": "Công ty NUEN MOTO", "No. 11, 10th Street, Sala": "Số 11, Đường số 10, Sala", "An Loi Dong, Thu Duc City, HCMC": "An Lợi Đông, TP. Thủ Đức, TP.HCM", "Follow": "Theo dõi", "by NUEN MOTO": "bởi NUEN MOTO", "The Modular EV Platform": "Nền tảng xe điện mô-đun", "Built for the riders who work on two wheels in Vietnam.": "Dành cho những người kiếm sống trên hai bánh tại Việt Nam.", "Terms of Use": "Điều khoản sử dụng", "Privacy Policy": "Chính sách bảo mật", "Investor Access Request": "Yêu cầu quyền truy cập nhà đầu tư", "A brand by NUEN MOTO Company Limited. 2026. nuenmoto.com": "Một thương hiệu của Công ty TNHH NUEN MOTO. 2026. nuenmoto.com", "I want a U1": "Tôi muốn một chiếc U1", "Start a pilot": "Bắt đầu chạy thử", "Join the list": "Đăng ký nhận tin", "Riders": "Tài xế", "Fleets": "Đội xe", "Where It Stands": "Hiện trạng", "FAQ": "Câu hỏi thường gặp", "Volty": "Volty", "On This Page": "Trong trang này", "Daily distance": "Quãng đường mỗi ngày", "RON92 pump price": "Giá xăng RON92", "Fleet size": "Quy mô đội xe", "Scenario": "Kịch bản", "Fuel scenario": "Kịch bản giá xăng", "Network": "Mạng lưới", "Ready": "Sẵn sàng", "Ready to swap": "Sẵn sàng đổi pin", "units": "xe", "days": "ngày", "Rider Economics | Volty by NUEN MOTO": "Bài toán của tài xế | Volty by NUEN MOTO"};
 window.__VI_LABELS=__VI_LABELS;
 var __titleEn = null;
 /* __setLang now lives in volty-lang.js */

@@ -695,7 +695,7 @@ body .vtoggle,body .bclip-ctl,body .vhero-ctl{border-radius:4px!important}
 /* ---------- details in black ---------- */
 body .eyebrow::before,body .crumb::before,body .ecrumb::before,body .xh-crumb::before{border-radius:1px!important;width:8px!important;height:8px!important}
 body .aud .k{border-radius:3px!important;background:var(--blk)!important;color:#EEE7DA!important}
-body .aud>div:nth-child(1) .k{background:var(--red)!important;color:#fff!important}
+body .aud>div:nth-child(2) .k{background:var(--red)!important;color:#fff!important}
 body .aud>div{border-top:3px solid var(--blk)!important}
 body .prin>div,body .cfg>figure,body .route,body .dcell,body .mlist li,body .path{border-top:3px solid var(--blk)!important}
 body .paths .path:first-child,body .routes .route:first-child{border-top-color:var(--red)!important}
@@ -825,6 +825,12 @@ body .pager .wrap{border-top:1px solid var(--line2)!important;border-bottom:1px 
 body .pager .wrap>a{border:0!important}
 body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1/-1;justify-content:space-between!important;align-items:center!important;flex-direction:row!important}
 
+/* Vietnamese-only and English-only copy blocks */
+html[lang="vi"] body .vi-drop{display:none!important}
+html:not([lang="vi"]) body .en-drop{display:none!important}
+body .path p.en-drop{margin-top:10px}
+body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(--ink)}
+
 </style>
 </head><body>
 <nav id="nav">
@@ -834,7 +840,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
     <a href="/u1.html" data-en="The U1" data-vi="Xe U1">The U1</a>
     <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
     <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
-    <a href="/audience.html" data-en="Audience" data-vi="Đối tượng">Audience</a>
+    <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
     <div class="drop" id="drop">
       <button type="button" aria-haspopup="true" aria-expanded="false" data-en="Economics" data-vi="Bài toán chi phí">Economics</button>
       <div class="dropmenu">
@@ -860,7 +866,7 @@ body .pager .wrap>a:only-child,body .pager .wrap>a.only:only-child{grid-column:1
   <a href="/u1.html" data-en="The U1" data-vi="Xe U1">The U1</a>
   <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
   <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
-  <a href="/audience.html" data-en="Audience" data-vi="Đối tượng">Audience</a>
+  <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
   <div class="grp" data-en="Economics" data-vi="Bài toán chi phí">Economics</div>
   <a class="sub" href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
   <a class="sub" href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
@@ -1087,7 +1093,7 @@ document.querySelectorAll('.rv').forEach(function(el){io.observe(el)});
 /* Loose text nodes that carry no data-vi attribute of their own. The switcher in
    volty-lang.js reads this dictionary if the page defines one. Terms here match
    the nav labels, so a page never shows two Vietnamese names for one section. */
-var __VI_LABELS = {"Vision": "Tầm nhìn", "Design": "Thiết kế", "Vehicle": "Phương tiện", "Audience": "Đối tượng", "Economics": "Bài toán chi phí", "Rider Economics": "Bài toán của tài xế", "Fleet Economics": "Bài toán của đội xe", "Contact": "Liên hệ", "Home": "Trang chủ", "Previous": "Trang trước", "Next": "Trang sau", "Site Map": "Sơ đồ trang", "Contact Us": "Liên hệ", "Parent Company": "Công ty mẹ", "Sales & Rider Support": "Kinh doanh và hỗ trợ tài xế", "NUEN MOTO Company": "Công ty NUEN MOTO", "No. 11, 10th Street, Sala": "Số 11, Đường số 10, Sala", "An Loi Dong, Thu Duc City, HCMC": "An Lợi Đông, TP. Thủ Đức, TP.HCM", "Follow": "Theo dõi", "by NUEN MOTO": "bởi NUEN MOTO", "The Modular EV Platform": "Nền tảng xe điện mô-đun", "Built for the riders who work on two wheels in Vietnam.": "Dành cho những người kiếm sống trên hai bánh tại Việt Nam.", "Terms of Use": "Điều khoản sử dụng", "Privacy Policy": "Chính sách bảo mật", "Investor Access Request": "Yêu cầu quyền truy cập nhà đầu tư", "I want a U1": "Tôi muốn một chiếc U1", "Start a pilot": "Bắt đầu chạy thử", "Join the list": "Đăng ký nhận tin", "Riders": "Tài xế", "Fleets": "Đội xe", "Where It Stands": "Hiện trạng", "FAQ": "Câu hỏi thường gặp", "On This Page": "Trong trang này", "Form not loading? Open it in a new tab": "Biểu mẫu không tải? Mở trong thẻ mới", "Done": "Xong", "Contact | Volty by NUEN MOTO": "Liên hệ | Volty by NUEN MOTO"};
+var __VI_LABELS = {"Vision": "Tầm nhìn", "Design": "Thiết kế", "Vehicle": "Phương tiện", "Audience": "Khách hàng", "Economics": "Bài toán chi phí", "Rider Economics": "Bài toán của tài xế", "Fleet Economics": "Bài toán của đội xe", "Contact": "Liên hệ", "Home": "Trang chủ", "Previous": "Trang trước", "Next": "Trang sau", "Site Map": "Sơ đồ trang", "Contact Us": "Liên hệ", "Parent Company": "Công ty mẹ", "Sales & Rider Support": "Kinh doanh và hỗ trợ tài xế", "NUEN MOTO Company": "Công ty NUEN MOTO", "No. 11, 10th Street, Sala": "Số 11, Đường số 10, Sala", "An Loi Dong, Thu Duc City, HCMC": "An Lợi Đông, TP. Thủ Đức, TP.HCM", "Follow": "Theo dõi", "by NUEN MOTO": "bởi NUEN MOTO", "The Modular EV Platform": "Nền tảng xe điện mô-đun", "Built for the riders who work on two wheels in Vietnam.": "Dành cho những người kiếm sống trên hai bánh tại Việt Nam.", "Terms of Use": "Điều khoản sử dụng", "Privacy Policy": "Chính sách bảo mật", "Investor Access Request": "Yêu cầu quyền truy cập nhà đầu tư", "I want a U1": "Tôi muốn một chiếc U1", "Start a pilot": "Bắt đầu chạy thử", "Join the list": "Đăng ký nhận tin", "Riders": "Tài xế", "Fleets": "Đội xe", "Where It Stands": "Hiện trạng", "FAQ": "Câu hỏi thường gặp", "On This Page": "Trong trang này", "Form not loading? Open it in a new tab": "Biểu mẫu không tải? Mở trong thẻ mới", "Done": "Xong", "Contact | Volty by NUEN MOTO": "Liên hệ | Volty by NUEN MOTO"};
 window.__VI_LABELS=__VI_LABELS;
 </script>
 <script>
