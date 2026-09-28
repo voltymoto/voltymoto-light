@@ -622,6 +622,58 @@ body .bclip[data-s="play"] .bclip-ctl .i-pause,body .bclip[data-s="idle"] .bclip
 body .bclip-ctl:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
 @media(max-width:560px){body .bclip{border-radius:28px;padding:9px;margin-bottom:44px}body .bclip .scr{border-radius:20px}}
 
+body .vhero .cs-stage{position:relative;grid-column:2;grid-row:1;width:100%;aspect-ratio:16/10;border:8px solid var(--blk);border-radius:10px;overflow:hidden;z-index:1;
+  background:radial-gradient(120% 90% at 50% 38%,#cfcfcf 0%,#bdbdbd 45%,#9f9f9f 100%);box-shadow:0 40px 80px -46px rgba(20,20,19,.7);outline:none;user-select:none;-webkit-user-select:none}
+body .vhero .cs-stage:focus-visible{box-shadow:0 0 0 3px var(--red),0 40px 80px -46px rgba(20,20,19,.7)}
+body .cs-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .6s}
+body .cs-stage.ready .cs-poster{opacity:0;pointer-events:none}
+body .cs-gl{position:absolute;inset:0}
+body .cs-gl canvas{display:block;width:100%!important;height:100%!important;cursor:grab;touch-action:pan-y}
+body .cs-stage.grab .cs-gl canvas{cursor:grabbing}
+body .cs-stage:not(.ready) .cs-hs,body .cs-stage:not(.ready) .cs-bar,body .cs-stage:not(.ready) .cs-hint,body .cs-stage:not(.ready) .cs-deg{display:none}
+body .cs-hs{position:absolute;inset:0;pointer-events:none}
+body .cs-pin{position:absolute;left:0;top:0;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:0;padding:0;cursor:pointer;pointer-events:auto;background:var(--red);color:#fff;
+  font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;display:grid;place-items:center;box-shadow:0 0 0 3px rgba(255,255,255,.85),0 6px 14px -4px rgba(0,0,0,.5);transition:opacity .25s,background .2s}
+body .cs-pin::before{content:"";position:absolute;inset:-7px;border-radius:50%;border:2px solid var(--red);opacity:.0;animation:csPulse 2.4s ease-out infinite}
+body .cs-pin.back{opacity:.28}
+body .cs-pin.on,body .cs-pin:hover{background:var(--blk)}
+body .cs-pin:focus-visible{outline:2px solid var(--blk);outline-offset:4px}
+@keyframes csPulse{0%{transform:scale(.7);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+body .cs-top{position:absolute;left:14px;right:14px;top:12px;display:flex;justify-content:space-between;align-items:center;pointer-events:none}
+body .cs-tag{display:inline-flex;align-items:center;gap:8px;background:var(--blk);color:#EEE7DA;font-family:'Space Mono',monospace;font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;padding:7px 11px;border-radius:3px}
+body .cs-tag i{width:7px;height:7px;background:var(--red);border-radius:50%;animation:csBlink 1.6s steps(2) infinite}
+@keyframes csBlink{50%{opacity:.25}}
+body .cs-deg{display:inline-flex;align-items:center;gap:8px;background:rgba(20,20,19,.82);color:#EEE7DA;padding:5px 10px 5px 6px;border-radius:3px;font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.08em}
+body .cs-deg b{font-weight:700;min-width:4ch;text-align:right;font-variant-numeric:tabular-nums}
+body .cs-dial{width:22px;height:22px;border-radius:50%;border:1.5px solid rgba(238,231,218,.6);position:relative;display:block}
+body .cs-dial i{position:absolute;left:50%;top:2px;bottom:50%;width:2px;margin-left:-1px;background:var(--red);transform-origin:50% 100%;border-radius:1px}
+body .cs-hint{position:absolute;left:50%;top:52px;transform:translateX(-50%);display:flex;align-items:center;gap:8px;background:rgba(246,242,234,.92);color:var(--blk);padding:8px 13px;border-radius:3px;
+  font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.06em;white-space:nowrap;pointer-events:none;transition:opacity .5s,transform .5s;box-shadow:0 8px 20px -10px rgba(0,0,0,.4)}
+body .cs-hint svg{width:16px;height:16px;fill:none;stroke:var(--red);stroke-width:2;stroke-linecap:round;stroke-linejoin:round;animation:csNudge 1.8s ease-in-out infinite}
+@keyframes csNudge{50%{transform:translateX(3px)}}
+body .cs-hint.gone{opacity:0;transform:translate(-50%,-6px)}
+body .cs-bar{position:absolute;left:10px;right:10px;bottom:10px;display:flex;flex-wrap:wrap;gap:6px;justify-content:space-between;align-items:flex-end;pointer-events:none}
+body .cs-grp{display:flex;gap:2px;background:rgba(20,20,19,.86);padding:3px;border-radius:5px;pointer-events:auto;backdrop-filter:blur(6px)}
+body .cs-grp button{appearance:none;border:0;background:transparent;color:#EEE7DA;font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:8px 10px;border-radius:3px;cursor:pointer;line-height:1;transition:background .2s,color .2s}
+body .cs-grp button:hover{background:#2A2926}
+body .cs-grp button[aria-pressed="true"]{background:var(--red);color:#fff}
+body .cs-grp button:focus-visible{outline:2px solid var(--red);outline-offset:1px}
+body .cs-z button{min-width:30px;font-size:14px;padding:6px 8px}
+body .cs-z svg{width:12px;height:12px;fill:none;stroke:currentColor;stroke-width:1.8;display:block}
+body .cs-card{position:absolute;left:12px;top:48px;width:min(300px,calc(100% - 24px));background:rgba(246,242,234,.97);border:2px solid var(--blk);border-radius:6px;padding:14px 16px 12px;box-shadow:6px 6px 0 var(--blk);animation:csIn .35s cubic-bezier(.2,.7,.2,1)}
+body .cs-card[hidden]{display:none}
+@keyframes csIn{from{opacity:0;transform:translateY(8px)}}
+body .cs-card-k{font-family:'Space Mono',monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:6px}
+body .cs-card h4{font-family:'Saira Condensed',sans-serif;font-weight:800;text-transform:uppercase;font-size:22px;line-height:1.05;margin:0 0 6px;color:var(--blk)}
+body .cs-card p{font-size:13.5px;line-height:1.55;color:#46423B;margin:0}
+body .cs-card-b{display:flex;justify-content:space-between;gap:8px;margin-top:10px;border-top:1px solid rgba(20,20,19,.14);padding-top:8px}
+body .cs-card-b button{border:0;background:none;padding:4px 0;font-family:'Space Mono',monospace;font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;color:var(--blk)}
+body .cs-card-b .cs-next{color:var(--red)}
+body .cs-stage.is-full{border:0;border-radius:0;aspect-ratio:auto;width:100vw;height:100vh}
+@media(max-width:960px){body .vhero .cs-stage{grid-row:1!important;grid-column:1!important;border-width:6px;border-radius:8px;aspect-ratio:4/3}}
+@media(max-width:600px){body .vhero .cs-stage{aspect-ratio:1/1.08}body .cs-views{display:none}body .cs-grp button{padding:8px 7px;font-size:9.5px}body .cs-card{top:auto;left:8px;right:8px;width:auto;bottom:94px;padding:10px 12px 8px;box-shadow:4px 4px 0 var(--blk)}body .cs-card h4{font-size:17px}body .cs-card p{font-size:12.5px;line-height:1.5}body .cs-card-b{margin-top:6px;padding-top:6px}body .cs-hint{top:46px;font-size:9.5px;padding:7px 10px}body .cs-deg{display:none}body .cs-pin{width:26px;height:26px;margin:-13px 0 0 -13px;font-size:9.5px}}
+@media(prefers-reduced-motion:reduce){body .cs-pin::before,body .cs-tag i,body .cs-hint svg{animation:none}}
+
 
 /* =====================================================================
    VOLTY LIGHT EDITION: index card system carried to every inner page.
@@ -975,20 +1027,44 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
   <a href="/contact.html" data-en="Contact" data-vi="Liên hệ">Contact</a>
 </div>
 <section class="vhero" id="top">
-<video aria-label="A rider pulling away on a Ho Chi Minh City street, then the U1 parked outside a tire shop" autoplay="" class="vhero-video" id="vhVideo" loop="" muted="" playsinline="" poster="/u1-hero-rider-poster.webp" preload="metadata">
-<source src="/u1-hero-rider.webm" type="video/webm">
-      <source src="/u1-hero-rider.mp4" type="video/mp4"/>
-</video>
+<div class="cs-stage" id="u1Stage" tabindex="0" role="region" aria-label="Interactive 3D view of the Volty U1 chassis. Drag or use the arrow keys to rotate.">
+<img class="cs-poster" src="/u1-chassis-poster.webp" alt="The Volty U1 chassis: head tube, twin rails, battery bay, rear rack cage and swingarm cradle" width="1400" height="875">
+<div class="cs-gl"></div>
+<div class="cs-hs"></div>
+<div class="cs-top">
+  <span class="cs-tag"><i></i><span data-vi="Khung xe 3D tương tác">Interactive 3D chassis</span></span>
+  <span class="cs-deg"><span class="cs-dial"><i></i></span><b>000°</b></span>
+</div>
+<div class="cs-hint"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16M4 12l4-4M4 12l4 4M20 12l-4-4M20 12l-4 4"/></svg><span data-vi="Kéo để xoay 360°. Chạm vào số để xem chi tiết.">Drag to spin 360°. Tap a number to explore.</span></div>
+<div class="cs-card" hidden><div class="cs-card-k"></div><h4></h4><p></p><div class="cs-card-b"><button type="button" class="cs-next" data-vi="Chi tiết tiếp →">Next detail →</button><button type="button" class="cs-x" aria-label="Close" data-vi="Đóng">Close</button></div></div>
+<div class="cs-bar">
+  <div class="cs-grp" role="group" aria-label="Modes">
+    <button type="button" data-cs="spin" aria-pressed="true" data-vi="Xoay">Spin</button>
+    <button type="button" data-cs="xray" aria-pressed="false" data-vi="Xuyên thấu">X-ray</button>
+    <button type="button" data-cs="explode" aria-pressed="false" data-vi="Tách lớp">Explode</button>
+    <button type="button" data-cs="load" aria-pressed="false" data-vi="Đường tải">Load path</button>
+  </div>
+  <div class="cs-grp cs-views" role="group" aria-label="Views">
+    <button type="button" data-cs="q" data-vi="3/4">3/4</button>
+    <button type="button" data-cs="side" data-vi="Ngang">Side</button>
+    <button type="button" data-cs="front" data-vi="Trước">Front</button>
+    <button type="button" data-cs="rear" data-vi="Sau">Rear</button>
+    <button type="button" data-cs="top" data-vi="Trên">Top</button>
+  </div>
+  <div class="cs-grp cs-z" role="group" aria-label="Zoom">
+    <button type="button" data-cs="zout" aria-label="Zoom out">&#8722;</button>
+    <button type="button" data-cs="zin" aria-label="Zoom in">+</button>
+    <button type="button" data-cs="full" aria-label="Full screen"><svg viewBox="0 0 14 14" aria-hidden="true"><path d="M1 5V1h4M9 1h4v4M13 9v4H9M5 13H1V9"/></svg></button>
+  </div>
+</div>
+</div>
 <div class="vhero-scrim"></div>
 <div class="vhero-content"><div class="wrap"><div class="xh-head">
 <div class="xh-crumb" data-vi='&lt;a href="/index.html"&gt;Volty&lt;/a&gt; / Phương tiện'><a href="/index.html">Volty</a> / Vehicle</div>
 <h1 data-vi="Một khung xe. &lt;em&gt;Linh hoạt tùy chỉnh.&lt;/em&gt;">One chassis. <em>Every job.</em></h1>
 <p class="lead" data-vi="Dễ dàng tháo lắp 2 cụm pin trong chưa đầy 2 phút tại bất kỳ trạm đổi pin tương thích nào, không cần dụng cụ, không cần đặt trước. Mọi chi tiết còn lại đều được tối ưu để mang đến cho bạn trải nghiệm vận hành hoàn toàn an tâm.">Two packs come out in under two minutes, at any compatible cabinet, with no tools and no appointment. Everything else on this vehicle is built so a working rider never has to think about it.</p>
 </div></div></div>
-<button aria-label="Pause video" class="vhero-ctl" id="vhCtl" type="button">
-<svg class="ic-pause" viewbox="0 0 14 14"><rect height="12" width="3.5" x="2" y="1"></rect><rect height="12" width="3.5" x="8.5" y="1"></rect></svg>
-<svg class="ic-play" viewbox="0 0 14 14"><path d="M3 1l10 6-10 6z"></path></svg>
-</button>
+
 </section>
 <section class="knums band-w"><div class="knum-grid"><div class="knum"><div class="v">200<small>kg</small></div><div class="k" data-vi="Tải trọng tối đa">Max payload, rider and cargo</div></div><div class="knum"><div class="v">195<small>km</small></div><div class="k" data-vi="Quãng đường tối đa">Maximum range,<br/>two packs</div></div><div class="knum"><div class="v">80<small>km/h</small></div><div class="k" data-vi="Tốc độ tối đa">Top speed</div></div><div class="knum"><div class="v">152<small>Nm</small></div><div class="k" data-vi="Mô-men xoắn cực đại&lt;br/&gt;tại bánh xe">Peak torque<br/>at the wheel</div></div><div class="knum"><div class="v">&lt;2<small>min</small></div><div class="k" data-vi="Đổi pin,&lt;br/&gt;không cần dụng cụ">Battery swap,<br/>no tools</div></div></div></section>
 <!-- ================= WHAT A WORK MOTORCYCLE MEANS ================= -->
@@ -1403,6 +1479,13 @@ var __titleEn = null;
   }
 })();
 </script>
+<script>/* 3D chassis: load three.js after first paint, keep the poster if WebGL is missing */
+(function(){var st=document.getElementById('u1Stage');if(!st)return;
+var c=document.createElement('canvas');var ok=!!(window.WebGLRenderingContext&&(c.getContext('webgl')||c.getContext('experimental-webgl')));if(!ok)return;
+function add(src,cb){var s=document.createElement('script');s.src=src;s.onload=cb;document.body.appendChild(s);}
+function go(){add('/three.min.js',function(){add('/u1-chassis.js');});}
+if(document.readyState==='complete')setTimeout(go,50);else window.addEventListener('load',function(){setTimeout(go,50);});
+var prev=window.__viHook;window.__viHook=function(l){if(prev)try{prev(l)}catch(e){};document.dispatchEvent(new Event('volty:lang'));};})();</script>
 <script data-k="HEROCTL-ON">/* keep the hero play/pause key on the film's bottom right corner */
 (function(){var h=document.querySelector('.vhero'),v=h&&h.querySelector('.vhero-video'),c=h&&h.querySelector('.vhero-ctl');if(!v||!c)return;
 function place(){var hr=h.getBoundingClientRect(),vr=v.getBoundingClientRect();c.style.setProperty('top',(vr.bottom-hr.top-c.offsetHeight-22)+'px','important');c.style.setProperty('left',(vr.right-hr.left-c.offsetWidth-22)+'px','important');c.style.setProperty('right','auto','important');c.style.setProperty('bottom','auto','important');}
