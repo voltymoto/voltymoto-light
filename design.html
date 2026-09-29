@@ -571,6 +571,26 @@ body .batnote p{color:var(--ink2);font-size:15.5px;line-height:1.7;max-width:80c
 body .batnote p.bsmall{font-size:13px;color:var(--ink3,#6b665e);margin-top:12px}
 html[lang="vi"] body .batstats b{font-family:'Saira Condensed',sans-serif!important;font-weight:800!important}
 @media(max-width:760px){body .batstats{grid-template-columns:1fr}body .batstats>div{border-left:0;border-top:1px solid rgba(255,255,255,.16)}body .batstats>div:first-child{border-top:0}body .batfig{grid-template-columns:1fr!important}body .batnote{padding:24px 22px}}
+body .coldfig{margin:8px 0 0;border:2px solid var(--ink);border-radius:var(--r);overflow:hidden;background:#bdbdbd;outline:2px solid var(--ink);outline-offset:3px}
+body .coldfig img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover}
+body .coldfig figcaption{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:#EEE7DA;background:var(--ink);padding:10px 16px}
+body .ccomp{border:2px solid var(--ink);border-radius:var(--r);background:var(--tile);overflow:hidden}
+body .ccomp .cc-row{display:grid;grid-template-columns:minmax(160px,.32fr) 1fr;gap:24px;padding:18px 24px;border-top:1px solid rgba(20,20,19,.14);align-items:baseline}
+body .ccomp .cc-row:first-child{border-top:0}
+body .ccomp .cc-row b{font-family:'Saira Condensed',sans-serif;font-weight:800;font-size:19px;text-transform:uppercase;color:var(--ink);line-height:1.2}
+body .ccomp .cc-row p{color:var(--ink2);font-size:15px;line-height:1.65;margin:0}
+body .ccomp .cc-row.us{background:var(--ink);border-top:0}
+body .ccomp .cc-row.us b{color:var(--red)}
+body .ccomp .cc-row.us p{color:#EEE7DA!important}
+body .cimpact{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:28px}
+body .cimpact>div{border-top:3px solid var(--red);padding-top:14px}
+body .cimpact .ck{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);font-weight:700;margin-bottom:8px}
+body .cimpact p{color:var(--ink2);font-size:15px;line-height:1.65}
+body .coldbtns{display:flex;flex-wrap:wrap;gap:12px;margin:22px 0 4px}
+body .cold .batstats b{font-size:clamp(26px,2.8vw,40px)}
+html[lang="vi"] body .cimpact .ck{font-family:'Be Vietnam Pro',sans-serif;letter-spacing:.08em}
+@media(max-width:760px){body .ccomp .cc-row{grid-template-columns:1fr;gap:6px;padding:16px 18px}body .cimpact{grid-template-columns:1fr}}
+
 
 /* =====================================================================
    VOLTY LIGHT EDITION: index card system carried to every inner page.
@@ -998,8 +1018,42 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
   </div>
 </section>
 
+<!-- ================= COLD DELIVERY ================= -->
+<section class="pad cold band-b" id="cold" style="border-top:1px solid var(--line)">
+  <div class="wrap">
+    <div class="shead rv">
+      <div class="eyebrow rv" data-en="Cold delivery" data-vi="Giao hàng lạnh">Cold delivery</div>
+      <h2 data-en="The load has a temperature" data-vi="Hàng hóa cũng có nhiệt độ">The load has a temperature</h2>
+      <p class="lead" data-en="Fresh meat, seafood, dairy and frozen food still cross Ho Chi Minh City in a foam box with a bag of ice, through afternoons above 30°C for most of the year. The U1-F takes a cold module with a chilled compartment and a freezer, mounted on the rear deck and powered by the bike&amp;#39;s own packs. On a running unit it has held chilled and frozen goods for a minimum of one hour of cross-town delivery." data-vi="Thịt, hải sản, sữa và thực phẩm đông lạnh vẫn đang băng qua TP.HCM trong thùng xốp với một túi đá, dưới cái nắng trên 30°C gần như quanh năm. U1-F lắp được mô-đun lạnh gồm một ngăn mát và một ngăn đông, gắn trên sàn sau và lấy điện từ chính pin của xe. Trên xe chạy thực tế, mô-đun đã giữ lạnh hàng mát và hàng đông tối thiểu một giờ cho một chuyến giao xuyên thành phố.">Fresh meat, seafood, dairy and frozen food still cross Ho Chi Minh City in a foam box with a bag of ice, through afternoons above 30°C for most of the year. The U1-F takes a cold module with a chilled compartment and a freezer, mounted on the rear deck and powered by the bike&#39;s own packs. On a running unit it has held chilled and frozen goods for a minimum of one hour of cross-town delivery.</p>
+    </div>
+    <figure class="coldfig rv d1">
+      <img src="/dsn-cold-1200.webp" srcset="/dsn-cold-800.webp 800w, /dsn-cold-1200.webp 1200w, /dsn-cold-1600.webp 1600w" sizes="(max-width:1100px) 100vw, 1100px" alt="Volty U1-F from the rear three-quarter view with a white chilled and freezer module mounted on the rear deck" width="1600" height="1000" loading="lazy">
+      <figcaption data-en="Render of the U1-F with the cold module on the rear deck." data-vi="Hình dựng U1-F với mô-đun lạnh trên sàn sau.">Render of the U1-F with the cold module on the rear deck.</figcaption>
+    </figure>
+    <div class="batstats rv d1">
+      <div><b><span data-en="60 min" data-vi="60 phút">60 min</span></b><span class="k" data-en="minimum cold hold across town, tested on a running unit" data-vi="giữ lạnh tối thiểu khi giao xuyên thành phố, đã thử trên xe chạy thực tế">minimum cold hold across town, tested on a running unit</span></div>
+      <div><b><span data-en="2 compartments" data-vi="2 ngăn">2 compartments</span></b><span class="k" data-en="chilled and frozen, in one module" data-vi="ngăn mát và ngăn đông trong một mô-đun">chilled and frozen, in one module</span></div>
+      <div><b><span data-en="Under 2 min" data-vi="Dưới 2 phút">Under 2 min</span></b><span class="k" data-en="one swap restores the drive and the cold together" data-vi="một lần đổi pin khôi phục cả sức kéo lẫn độ lạnh">one swap restores the drive and the cold together</span></div>
+    </div>
+    <div class="shead rv" style="margin-top:56px"><h3 class="bath" data-en="Where cold delivery breaks today" data-vi="Giao hàng lạnh đang gặp khó ở đâu">Where cold delivery breaks today</h3></div>
+    <div class="ccomp rv d1"><div class="cc-row"><b data-en="Foam box and ice" data-vi="Thùng xốp và đá">Foam box and ice</b><p data-en="Holds only as long as the ice. Every opening in the heat costs cold, frozen goods soften within the trip, and meltwater ruins the packaging." data-vi="Chỉ giữ lạnh được đến khi đá tan. Mỗi lần mở nắp dưới trời nóng là mất lạnh, hàng đông mềm ra ngay trong chuyến, nước đá tan làm hỏng bao bì.">Holds only as long as the ice. Every opening in the heat costs cold, frozen goods soften within the trip, and meltwater ruins the packaging.</p></div><div class="cc-row"><b data-en="Refrigerated van" data-vi="Xe tải lạnh">Refrigerated van</b><p data-en="Too wide for most alleys and slow in traffic. Inner cities are closing to trucks: Hanoi has barred trucks of 2 tons and above in daytime since January 2026, and a May 2026 Ho Chi Minh City draft would lower its threshold to 1 ton." data-vi="Quá lớn cho phần lớn các con hẻm và chậm khi kẹt xe. Nội đô đang dần đóng cửa với xe tải: Hà Nội cấm xe từ 2 tấn trở lên vào ban ngày từ tháng 1 năm 2026, và dự thảo tháng 5 năm 2026 của TP.HCM đề xuất hạ ngưỡng xuống 1 tấn.">Too wide for most alleys and slow in traffic. Inner cities are closing to trucks: Hanoi has barred trucks of 2 tons and above in daytime since January 2026, and a May 2026 Ho Chi Minh City draft would lower its threshold to 1 ton.</p></div><div class="cc-row"><b data-en="Bolt-on cooler" data-vi="Thùng lạnh gắn thêm">Bolt-on cooler</b><p data-en="Adds weight to a frame never rated to carry it, and runs from wiring sized for lights or from a second battery the rider has to charge." data-vi="Tăng tải cho một khung xe vốn không được thiết kế để chở nó, và chạy bằng hệ thống điện chỉ đủ cho đèn, hoặc bằng một cục pin phụ tài xế phải tự sạc.">Adds weight to a frame never rated to carry it, and runs from wiring sized for lights or from a second battery the rider has to charge.</p></div><div class="cc-row"><b data-en="Shorter radius" data-vi="Thu hẹp bán kính giao">Shorter radius</b><p data-en="The store sends cold goods only to nearby streets, or drops frozen from the menu. The vehicle ends up setting the business model." data-vi="Cửa hàng chỉ giao hàng lạnh cho các con phố gần, hoặc bỏ hẳn hàng đông khỏi danh mục. Chiếc xe quyết định luôn mô hình kinh doanh.">The store sends cold goods only to nearby streets, or drops frozen from the menu. The vehicle ends up setting the business model.</p></div><div class="cc-row us"><b data-en="Volty U1-F" data-vi="Volty U1-F">Volty U1-F</b><p data-en="Cold built into the platform, powered by the packs that drive it, restored by the same swap." data-vi="Độ lạnh được tích hợp vào nền tảng, chạy bằng chính pin kéo xe, và được khôi phục bằng cùng một lần đổi pin.">Cold built into the platform, powered by the packs that drive it, restored by the same swap.</p></div></div>
+    <div class="shead batwhy rv" style="margin-top:64px"><h3 class="bath" data-en="What makes it different" data-vi="Điều làm nên khác biệt">What makes it different</h3></div>
+    <div class="prin rv d1"><div><span class="k">01</span><h3 data-en="Designed in, not bolted on" data-vi="Thiết kế sẵn, không phải gắn thêm">Designed in, not bolted on</h3><p data-en="The module mounts to the rear load points of a frame rated for 200 kg maximum, rider included, with the racks as part of the structure. The cold load is planned inside the payload, not added on top of it." data-vi="Mô-đun lắp vào các điểm chịu tải phía sau của khung xe có tải trọng tối đa 200 kg đã gồm người lái, với giá chở là một phần của kết cấu. Tải của thùng lạnh được tính trong tải trọng cho phép, không cộng thêm bên ngoài.">The module mounts to the rear load points of a frame rated for 200 kg maximum, rider included, with the racks as part of the structure. The cold load is planned inside the payload, not added on top of it.</p></div><div><span class="k">02</span><h3 data-en="Powered by the packs that drive it" data-vi="Chạy bằng chính pin kéo xe">Powered by the packs that drive it</h3><p data-en="No ice to buy, no second battery to charge, no plug at the store. The module draws on the same removable packs as the motor." data-vi="Không cần mua đá, không cần sạc pin phụ, không cần ổ cắm tại cửa hàng. Mô-đun lấy điện từ cùng các khối pin tháo rời cấp cho động cơ.">No ice to buy, no second battery to charge, no plug at the store. The module draws on the same removable packs as the motor.</p></div><div><span class="k">03</span><h3 data-en="One swap restores both" data-vi="Một lần đổi pin, khôi phục cả hai">One swap restores both</h3><p data-en="When the packs run low, a swap under two minutes brings back the drive and the cold together, on the swap network the fleet chose. The swap network becomes the cold chain&amp;#39;s power supply." data-vi="Khi pin xuống thấp, một lần đổi pin dưới 2 phút khôi phục cả sức kéo lẫn độ lạnh, trên mạng lưới đổi pin mà đội xe đã chọn. Mạng lưới đổi pin trở thành nguồn điện cho chuỗi lạnh.">When the packs run low, a swap under two minutes brings back the drive and the cold together, on the swap network the fleet chose. The swap network becomes the cold chain&#39;s power supply.</p></div></div>
+    <div class="cimpact rv d1"><div><span class="ck" data-en="For the merchant" data-vi="Với cửa hàng">For the merchant</span><p data-en="A delivery radius set by the vehicle, not the ice. One store can serve more of the city, and the frozen range joins what can actually be delivered." data-vi="Bán kính giao do chiếc xe quyết định, không phải do đá. Một cửa hàng phục vụ được nhiều khu vực hơn, và hàng đông lạnh trở thành hàng giao được.">A delivery radius set by the vehicle, not the ice. One store can serve more of the city, and the frozen range joins what can actually be delivered.</p></div><div><span class="ck" data-en="For the rider" data-vi="Với tài xế">For the rider</span><p data-en="Chilled and frozen orders that a standard motorcycle turns down become work the same bike can take, on the same shift." data-vi="Những đơn hàng mát và đông mà xe máy thông thường phải từ chối trở thành việc làm thêm trên cùng chiếc xe, trong cùng ca.">Chilled and frozen orders that a standard motorcycle turns down become work the same bike can take, on the same shift.</p></div><div><span class="ck" data-en="For the platform" data-vi="Với nền tảng">For the platform</span><p data-en="A warm delivery shows up as a refund and a customer who does not reorder. Routing can shorten a trip. Only the vehicle can hold the temperature through it." data-vi="Một đơn hàng đến nơi bị ấm là một khoản hoàn tiền và một khách hàng không quay lại. Điều phối có thể rút ngắn chuyến đi. Chỉ chiếc xe mới giữ được nhiệt độ suốt chuyến đi đó.">A warm delivery shows up as a refund and a customer who does not reorder. Routing can shorten a trip. Only the vehicle can hold the temperature through it.</p></div></div>
+    <div class="batnote rv d1">
+      <h3 data-en="Why we lead with it" data-vi="Vì sao chúng tôi bắt đầu từ đây">Why we lead with it</h3>
+      <p data-en="Starting from the load has meant payload since the first drawing. Cold delivery extends it to temperature. It is the clearest example of how we decide what to build: a specific job, a specific failure in how it is done today, and a vehicle designed to remove it." data-vi="Xuất phát từ tải trọng đã luôn có nghĩa là khối lượng, ngay từ bản vẽ đầu tiên. Giao hàng lạnh mở rộng điều đó sang nhiệt độ. Đây là ví dụ rõ nhất cho cách chúng tôi quyết định làm gì: một công việc cụ thể, một điểm hỏng cụ thể trong cách công việc đó đang được làm, và một chiếc xe được thiết kế để loại bỏ nó.">Starting from the load has meant payload since the first drawing. Cold delivery extends it to temperature. It is the clearest example of how we decide what to build: a specific job, a specific failure in how it is done today, and a vehicle designed to remove it.</p>
+      <div class="coldbtns">
+        <a class="btn prime" href="/contact.html#routes" data-en="Talk to fleet sales" data-vi="Liên hệ Bộ phận Doanh nghiệp / Đội xe">Talk to fleet sales</a>
+        <a class="btn" href="/audience.html#r-cold" data-en="Meet the cold-chain courier →" data-vi="Xem hồ sơ giao hàng lạnh →">Meet the cold-chain courier →</a>
+      </div>
+      <p class="bsmall" data-en="The cold module is offered on the U1-F fleet build and priced separately. It draws on the traction packs, so range with it running is lower than the 140 to 160 km loaded figure. How much lower depends on the heat and how often the lid opens; the measured figure comes with the fleet program terms. Sources: VietNamNet, January 2026 (Hanoi truck restriction); Saigon Times, May 2026 (Ho Chi Minh City draft)." data-vi="Mô-đun lạnh được cung cấp trên phiên bản U1-F cho đội xe và được báo giá riêng. Mô-đun dùng chung pin kéo xe, nên quãng đường khi bật mô-đun sẽ thấp hơn mức 140 đến 160 km khi chở tải. Mức giảm phụ thuộc vào nhiệt độ và số lần mở nắp; con số đo thực tế được cung cấp cùng điều khoản chương trình đội xe. Nguồn: VietNamNet, tháng 1 năm 2026 (hạn chế xe tải tại Hà Nội); Saigon Times, tháng 5 năm 2026 (dự thảo của TP.HCM).">The cold module is offered on the U1-F fleet build and priced separately. It draws on the traction packs, so range with it running is lower than the 140 to 160 km loaded figure. How much lower depends on the heat and how often the lid opens; the measured figure comes with the fleet program terms. Sources: VietNamNet, January 2026 (Hanoi truck restriction); Saigon Times, May 2026 (Ho Chi Minh City draft).</p>
+    </div>
+  </div>
+</section>
+
 <!-- ================= PRINCIPLES ================= -->
-<section class="pad band-b" style="border-top:1px solid var(--line)">
+<section class="pad band-k" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
       <div class="eyebrow rv" data-en="What we hold to" data-vi="Nguyên tắc">What we hold to</div>
@@ -1023,7 +1077,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
 </section>
 
 <!-- ================= BATTERY ================= -->
-<section class="pad battery band-k" id="battery" style="border-top:1px solid var(--line)">
+<section class="pad battery band-w" id="battery" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
       <div class="eyebrow rv" data-en="The battery" data-vi="Pin">The battery</div>
@@ -1093,7 +1147,7 @@ b.addEventListener('click',function(){if(v.paused){v.play();set(false)}else{v.pa
 if('IntersectionObserver'in window){new IntersectionObserver(function(e){e.forEach(function(x){if(w.classList.contains('paused'))return;x.isIntersecting?v.play().catch(function(){}):v.pause()})},{threshold:.2}).observe(w)}})();</script>
 
 <!-- ================= CONFIGURATIONS ================= -->
-<section class="pad band-w" style="border-top:1px solid var(--line)">
+<section class="pad band-b" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="note">
       <h3 data-en="Current status and development" data-vi="Thông tin và tiến độ dự án">Current status and development</h3>
@@ -1103,7 +1157,7 @@ if('IntersectionObserver'in window){new IntersectionObserver(function(e){e.forEa
 </section>
 
 <!-- ================= CTA ================= -->
-<section class="ucta pad band-b">
+<section class="ucta pad band-k">
   <div class="wrap">
     <div class="in">
       <div>
