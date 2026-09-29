@@ -559,6 +559,11 @@ body .eyebrow{justify-content:flex-start!important;width:auto!important;text-ali
 /* ---------- section grounds ---------- */
 body .band-w{background:var(--card)!important}body .band-b{background:var(--paper)!important}body .band-k{background:var(--paper2)!important}
 body .basis span{background:var(--card)!important;color:var(--ink2)!important;border:1px solid var(--line)!important;border-radius:8px!important;box-shadow:none!important}
+body .rmarks.rm-abs{display:block;position:relative;height:14px}
+body .rmarks.rm-abs span{position:absolute;top:0;left:calc(var(--m) * (100% - 18px) + 9px);transform:translateX(-50%);white-space:nowrap}
+body .rmarks.rm-abs span:first-child{transform:translateX(-9px)}
+body .rmarks.rm-abs span:last-child{transform:translateX(calc(-100% + 9px))}
+
 
 /* =====================================================================
    VOLTY LIGHT EDITION: index card system carried to every inner page.
@@ -917,22 +922,22 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
 <div class="hsweep"></div><div class="hscrim"></div><div class="hgrain"></div>
 <div class="wrap">
 <div class="ecrumb" data-vi='&lt;a href="/index.html"&gt;Volty&lt;/a&gt; / Bài toán chi phí / Đội xe'><a href="/index.html">Volty</a> / Economics / Fleet</div>
-<h1 data-vi='Mỗi xe. Mỗi năm. &lt;em style="font-style:normal;color:var(--red)"&gt;Nhân với đội xe của bạn.&lt;/em&gt;'>Per unit. Per year. <em style="font-style:normal;color:var(--red)">Times your fleet.</em></h1>
-<p class="lead" data-vi="So sánh ba năm, theo từng xe, giữa xe máy xăng và Volty U1, dành cho đơn vị vận hành đang tính chuyện chuyển đổi. Năng lượng, bảo dưỡng, khấu hao, bảo hiểm, và cả thời gian chết mà không ai đưa vào báo giá.">A three-year, per-unit comparison of a petrol motorcycle against a Volty U1, built for operators planning the switch. Energy, maintenance, depreciation, insurance, and the downtime nobody puts on the quote.</p>
+<h1 data-vi="Tính trên từng xe. Bình ổn theo năm. &lt;em style=&quot;font-style:normal;color:var(--red)&quot;&gt;Nhân rộng theo quy mô.&lt;/em&gt;">Per unit. Per year. <em style="font-style:normal;color:var(--red)">Times your fleet.</em></h1>
+<p class="lead" data-vi="Phân tích bài toán kinh tế 3 năm giữa xe xăng và Volty U1 dành cho đối tác giao vận. Bảng tính minh bạch toàn bộ chi phí: nhiên liệu, bảo trì, khấu hao, bảo hiểm và tổn thất do thời gian dừng xe, những con số hiếm khi xuất hiện trong các báo giá tiêu chuẩn.">A three-year, per-unit comparison of a petrol motorcycle against a Volty U1, built for operators planning the switch. Energy, maintenance, depreciation, insurance, and the downtime nobody puts on the quote.</p>
 <div class="basis">
 <span data-vi="Cơ sở mỗi xe: 200 km/ngày, 26 ngày/tháng">Per unit basis: 200 km/day, 26 days/month</span><span data-vi="62.400 km / năm">62,400 km / year</span>
 <span data-vi="Vòng đời tài sản 3 năm">3-year asset horizon</span><span data-vi="RON92 ₫22.480/lít">RON92 ₫22,480/L</span><span data-vi="Gói pin TP3U">Battery plan TP3U</span><span data-vi="Thời gian chết tính ₫400.000/ngày">Downtime valued ₫400,000/day</span>
 </div>
 </div></section>
 <section class="pad band-w" id="sim"><div class="wrap">
-<div class="shead"><div class="eyebrow green rv" data-vi="Chạy thử cả bãi xe">Run The Yard</div>
-<h2 class="rv d1" data-vi="Đặt quy mô đội xe. Xem nền chi phí dịch chuyển.">Set the fleet. Watch the cost base move.</h2></div>
+<div class="shead"><div class="eyebrow green rv" data-vi="Thử nghiệm vận hành thực tế">Run The Yard</div>
+<h2 class="rv d1" data-vi="Tùy chọn số lượng vận hành. Xem cấu trúc chi phí thay đổi">Set the fleet. Watch the cost base move.</h2></div>
 <div class="sim rv d1">
 <div class="sim-ctl">
 <div>
 <div class="cl">Fleet size <b id="oFl">100<small>units</small></b></div>
-<input id="rFl" max="1000" min="10" step="10" type="range" value="100"/>
-<div class="rmarks"><span>10</span><span>250</span><span>500</span><span>1,000</span></div>
+<input id="rFl" max="1000" min="100" step="10" type="range" value="100"/>
+<div class="rmarks rm-abs"><span style="--m:0">100</span><span style="--m:.1667">250</span><span style="--m:.4444">500</span><span style="--m:1">1,000</span></div>
 </div>
 <div>
 <div class="cl" style="margin-bottom:10px">Fuel scenario</div>
@@ -976,27 +981,27 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
 <p class="chart-cap" style="margin-top:20px" data-vi="Hao mòn pin không bao giờ xuất hiện trong bảng này vì các cục pin thuộc về gói thuê bao, không thuộc về đơn vị vận hành.">Battery wear never appears in this table because the packs belong to the subscription, not to the operator.</p>
 </div></section>
 <section class="pad band-k"><div class="wrap">
-<div class="shead"><div class="eyebrow green rv" data-vi="Góc nhìn vốn">Capital View</div>
-<h2 class="rv d1" data-vi="Hoàn vốn và chỉ số đội xe">Payback and the fleet metric.</h2></div>
+<div class="shead"><div class="eyebrow green rv" data-vi="Hiệu quả đầu tư">Capital View</div>
+<h2 class="rv d1" data-vi="Tối ưu chi phí vận hành trên mỗi đầu xe">Payback and the fleet metric.</h2></div>
 <div class="story rv d1">
-<div><div class="v grn" id="fPay">~12 to 15<small style="font-size:.4em">mo</small></div><div class="k" data-vi="Giá đội xe U1-F dự kiến ₫32 đến ₫39 triệu&lt;br/&gt;được hoàn lại bằng tiền tiết kiệm ở mức cơ sở">Estimated ₫32M to ₫39M U1-F fleet price<br/>returned by savings at the basis</div></div>
-<div><div class="v" id="fKmV">₫452<small style="font-size:.4em">/km</small></div><div class="k" data-vi="Chi phí trọn gói mỗi km của Volty:&lt;br/&gt;năng lượng, bảo dưỡng, khấu hao, bảo hiểm">Volty all-in cost per km:<br/>energy, maintenance, depreciation, insurance</div></div>
-<div><div class="v red" id="fKmG">₫960<small style="font-size:.4em">/km</small></div><div class="k" data-vi="Chi phí trọn gói mỗi km của xe xăng,&lt;br/&gt;cùng các khoản, cùng 62.400 km mỗi năm">Petrol all-in cost per km,<br/>same lines, same 62,400 km year</div></div>
+<div><div class="v grn" id="fPay">~12 to 15<small style="font-size:.4em">mo</small></div><div class="k" data-vi="Thời gian hoàn vốn 100% chi phí mua U1-F (32 đến 39 triệu đồng) từ khoản chi phí tiết kiệm thực tế">Estimated ₫32M to ₫39M U1-F fleet price<br/>returned by savings at the basis</div></div>
+<div><div class="v" id="fKmV">₫452<small style="font-size:.4em">/km</small></div><div class="k" data-vi="Chi phí vận hành trọn gói của Volty U1 (nhiên liệu, bảo dưỡng, khấu hao, bảo hiểm)">Volty all-in cost per km:<br/>energy, maintenance, depreciation, insurance</div></div>
+<div><div class="v red" id="fKmG">₫960<small style="font-size:.4em">/km</small></div><div class="k" data-vi="Chi phí vận hành trọn gói của xe xăng (tương đương 62.400 km/năm)">Petrol all-in cost per km,<br/>same lines, same 62,400 km year</div></div>
 </div>
 <div class="hlist rv d1" style="margin-top:34px">
-<div><b data-vi="Vòng đời ba năm">Three-year horizon</b><p data-vi="Qua trọn vòng đời tài sản ba năm, một xe tốn ₫193,2 triệu để vận hành bằng xăng và ₫83,7 triệu với U1. Tức là ₫109,5 triệu mỗi xe, khoảng 4.200 USD, lặp lại với từng xe và từng chu kỳ thay xe của đội.">Over a full three-year asset life, one unit costs ₫193.2M to run on petrol and ₫83.7M on the U1. That is ₫109.5M per vehicle, roughly 4,200 USD, recurring for every unit and every replacement cycle the fleet runs.</p></div>
+<div><b data-vi="Tổng kết vòng đời 3 năm (TCO)">Three-year horizon</b><p data-vi="Chi phí xe xăng: 193,2 triệu đồng/xe&lt;br&gt;&lt;span style=&quot;font-weight:700;color:inherit&quot;&gt;Chi phí Volty U1: 83,7 triệu đồng/xe&lt;/span&gt;&lt;br&gt;&lt;br&gt;Mức cắt giảm chi phí: 109,5 triệu đồng/xe (~4.200 USD). Mức tiết kiệm này nhân lên trực tiếp theo tổng số lượng xe và từng chu kỳ thay xe của doanh nghiệp.">Over a full three-year asset life, one unit costs ₫193.2M to run on petrol and ₫83.7M on the U1. That is ₫109.5M per vehicle, roughly 4,200 USD, recurring for every unit and every replacement cycle the fleet runs.</p></div>
 </div>
 </div></section>
 <section class="pad band-w" style="background:#FFFFFF;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
 <div class="shead"><div class="eyebrow rv" data-vi="Giả định và loại trừ">Assumptions And Exclusions</div>
-<h2 class="rv d1" data-vi="Mô hình này tính gì và không tính gì.">What this model does and does not include.</h2></div>
+<h2 class="rv d1" data-vi="Phạm vi và bối cảnh tính toán bài toán kinh tế">What this model does and does not include.</h2></div>
 <div class="hlist rv d1">
-<div><b data-vi="Không tính chi phí tài chính">Financing excluded</b><p data-vi="Ở cả hai phía. Thuê tài chính hay vay vốn chỉ thay đổi thời điểm của dòng tiền, không thay đổi khoảng chênh lệch chi phí thực chất.">On both sides. Leasing or loan structures change cash flow timing, not the underlying cost gap.</p></div>
-<div><b data-vi="Không tính ưu đãi cho xe điện">EV incentives excluded</b><p data-vi="Ở những nơi được miễn lệ phí trước bạ, ưu đãi đó còn làm lợi thế của Volty lớn hơn; chúng tôi giữ phép so sánh ở mức thận trọng.">Where registration fee exemptions apply they improve the Volty case further; we keep the comparison conservative.</p></div>
-<div><b data-vi="Giá trị còn lại là ước tính">Residuals are estimates</b><p data-vi="Thị trường xe hai bánh chạy điện đã qua sử dụng còn non trẻ; các khoản khấu hao sẽ chắc chắn hơn khi có dữ liệu từ đội xe.">The used market for electric two-wheelers is young; depreciation lines will firm up with fleet data.</p></div>
-<div><b data-vi="Thuê bao mang tính hợp đồng">Subscription is contractual</b><p data-vi="Giá thuê bao pin phản ánh điều khoản hiện tại của đối tác theo thỏa thuận, không phải giá thị trường cố định.">Battery subscription pricing reflects current partner terms per agreement, not a permanent market price.</p></div>
-<div><b data-vi="Bảo hiểm tính ngang nhau">Insurance held equal</b><p data-vi="Cho cả hai loại xe, và thời gian chết được tính ₫400.000 cho mỗi ngày ngừng chạy do mất năng lực giao hàng.">Across both vehicles, and downtime is valued at ₫400,000 per offline day of lost delivery capacity.</p></div>
-<div><b data-vi="Đơn giá chưa được chốt">Unit price is not set</b><p data-vi="Kế hoạch dùng giá đội xe U1-F dự kiến từ ₫32.000.000 đến ₫39.000.000, đã bao gồm VAT 10%, cho lô sản xuất đầu tiên. Mức giá này áp dụng cho đội xe có từ 100 chiếc U1 trở lên, và giá cụ thể của mỗi đội xe được quy định trong thỏa thuận riêng. Đội xe chạy thử dưới 100 chiếc được báo giá riêng. Giá chính thức được công bố khi chi phí sản xuất được chốt và mở đặt xe.">Planning uses the estimated U1-F fleet price of ₫32,000,000 to ₫39,000,000, including 10% VAT, for the first production batch. That price applies to fleets with 100 or more U1s assigned, and each fleet’s exact price is set in its own agreement. Pilot fleets below 100 units are priced separately. The confirmed price is published when the build cost is locked and ordering opens.</p></div>
+<div><b data-vi="Chi phí tài chính">Financing excluded</b><p data-vi="Chưa bao gồm lãi vay/thuê tài chính (do chỉ ảnh hưởng thời điểm dòng tiền, không đổi mức chênh lệch chi phí).">On both sides. Leasing or loan structures change cash flow timing, not the underlying cost gap.</p></div>
+<div><b data-vi="Chính sách ưu đãi">EV incentives excluded</b><p data-vi="Chưa tính mức miễn/giảm lệ phí trước bạ cho xe điện (để giữ phép so sánh thận trọng).">Where registration fee exemptions apply they improve the Volty case further; we keep the comparison conservative.</p></div>
+<div><b data-vi="Giá trị còn lại (Khấu hao)">Residuals are estimates</b><p data-vi="Mang tính ước tính do thị trường xe điện cũ còn non trẻ; sẽ chính xác hơn khi có thêm dữ liệu thực tế.">The used market for electric two-wheelers is young; depreciation lines will firm up with fleet data.</p></div>
+<div><b data-vi="Phí thuê pin">Subscription is contractual</b><p data-vi="Áp dụng linh hoạt theo hợp đồng khung ký kết với từng đối tác giao vận.">Battery subscription pricing reflects current partner terms per agreement, not a permanent market price.</p></div>
+<div><b data-vi="Bảo hiểm &amp; Downtime">Insurance held equal</b><p data-vi="Bảo hiểm tính đồng cấp; chi phí gián đoạn vận hành quy đổi giả định 400.000 đ/ngày/xe.">Across both vehicles, and downtime is valued at ₫400,000 per offline day of lost delivery capacity.</p></div>
+<div><b data-vi="Mức giá xe">Unit price is not set</b><p data-vi="Khung giá U1-F dự kiến 32 đến 39 triệu đồng (đã gồm VAT) áp dụng cho lô đầu quy mô từ 100 xe trở lên. Lô thử nghiệm dưới 100 xe báo giá riêng. Giá chính thức công bố khi hoàn tất chi phí sản xuất và mở bán.">Planning uses the estimated U1-F fleet price of ₫32,000,000 to ₫39,000,000, including 10% VAT, for the first production batch. That price applies to fleets with 100 or more U1s assigned, and each fleet’s exact price is set in its own agreement. Pilot fleets below 100 units are priced separately. The confirmed price is published when the build cost is locked and ordering opens.</p></div>
 </div>
 <div class="paths">
 <div class="path prime rv d1">
@@ -1114,7 +1119,7 @@ if(bg&&!matchMedia('(prefers-reduced-motion: reduce)').matches){
   function gasEnergy(fp){return KMY/100*L100*fp}
   function upd(){
     var fl=+rFl.value;
-    rFl.style.setProperty('--p',((fl-10)/(1000-10)*100)+'%');
+    rFl.style.setProperty('--p',((fl-100)/(1000-100)*100)+'%');
     document.getElementById('oFl').innerHTML=String(fl).replace(/\B(?=(\d{3})+(?!\d))/g,__t(',','.'))+'<small>'+__t('units','xe')+'</small>';
     var g={energy:gasEnergy(fuel),maint:GAS.maint,depr:GAS.depr,ins:GAS.ins};
     var V=volObj();
