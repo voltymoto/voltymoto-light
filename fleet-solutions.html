@@ -619,6 +619,59 @@ body .fscard p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
 body .fscard .go{margin-top:auto;padding-top:8px;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink)}
 @media(max-width:720px){body .fsgrid{grid-template-columns:1fr}}
 
+/* ---------- brand surface reveal ---------- */
+body .brandfx{cursor:pointer;background:#a6a6a6}
+body .brandfx:focus-visible{outline:3px solid var(--red);outline-offset:4px}
+body .brandfx .bfx{position:relative;container-type:inline-size;aspect-ratio:3840/2575;overflow:hidden}
+body .brandfx .bfx img.b-base{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1),filter .8s}
+body .brandfx .b-dim{position:absolute;inset:0;background:radial-gradient(ellipse at 52% 50%,rgba(10,10,11,.82),rgba(10,10,11,.9) 60%);opacity:0;transition:opacity .7s ease}
+body .brandfx .b-panel{position:absolute;left:33.151%;top:40.738%;width:39.167%;height:19.961%;transform-origin:50% 50%;transition:transform .8s cubic-bezier(.2,.9,.2,1.15),filter .8s}
+body .brandfx .b-panel img.b-cut{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;object-fit:fill;opacity:0;transition:opacity .45s}
+body .brandfx .b-sweep{position:absolute;inset:0;opacity:0;background:linear-gradient(105deg,transparent 30%,rgba(255,255,255,.85) 48%,transparent 62%) no-repeat;background-size:250% 100%;background-position:130% 0;-webkit-mask:url(/fs-brand2-panel.webp) 0 0/100% 100% no-repeat;mask:url(/fs-brand2-panel.webp) 0 0/100% 100% no-repeat;mix-blend-mode:screen}
+body .brandfx .b-edge{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+body .brandfx .b-edge path{fill:none;stroke:var(--red);stroke-width:7;vector-effect:non-scaling-stroke;stroke-width:2.5px;stroke-dasharray:1;stroke-dashoffset:1;stroke-linejoin:round;filter:drop-shadow(0 0 6px rgba(226,35,26,.9))}
+body .brandfx .b-word{position:absolute;left:46.8%;top:46%;transform:translate(-50%,-50%) scale(.85);font-family:'Name Smile',sans-serif;font-size:2.45cqw;letter-spacing:.05em;text-transform:uppercase;color:#E2231A;white-space:nowrap;line-height:1;opacity:0;filter:blur(6px);transition:opacity .5s .35s,transform .7s .35s cubic-bezier(.2,.9,.2,1.2),filter .5s .35s}
+body .brandfx .b-lead{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+body .brandfx .b-lead path{fill:none;stroke:#f5f5f6;stroke-width:1.5px;vector-effect:non-scaling-stroke;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset .7s .45s ease}
+body .brandfx .b-lead circle{fill:var(--red);opacity:0;transition:opacity .3s .4s}
+body .brandfx .b-label{position:absolute;left:6.5%;top:12%;max-width:36%;color:#f5f5f6;opacity:0;transform:translateY(8px);transition:opacity .5s .7s,transform .5s .7s}
+body .brandfx .b-label b{display:block;font-family:var(--disp);font-weight:800;text-transform:uppercase;font-size:clamp(15px,2.6cqw,30px);line-height:1.05;letter-spacing:.01em;color:#f5f5f6}
+body .brandfx .b-label span{display:block;margin-top:6px;font-family:var(--mono);font-size:clamp(9px,1.1cqw,13px);letter-spacing:.1em;text-transform:uppercase;color:rgba(245,245,246,.72)}
+body .brandfx .b-hint{position:absolute;left:3%;bottom:4.5%;display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;background:rgba(21,21,20,.78);color:#f5f5f6;font-family:var(--mono);font-size:clamp(9px,1.05cqw,12px);letter-spacing:.1em;text-transform:uppercase;transition:opacity .4s}
+body .brandfx .b-hint i{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 0 0 rgba(226,35,26,.7);animation:bfxPing 1.8s infinite}
+body .brandfx .h-touch{display:none}
+@media(hover:none){body .brandfx .h-hover{display:none}body .brandfx .h-touch{display:inline}}
+@keyframes bfxPing{0%{box-shadow:0 0 0 0 rgba(226,35,26,.7)}70%{box-shadow:0 0 0 10px rgba(226,35,26,0)}100%{box-shadow:0 0 0 0 rgba(226,35,26,0)}}
+@keyframes bfxSweep{from{background-position:130% 0}to{background-position:-60% 0}}
+@keyframes bfxEdge{to{stroke-dashoffset:0}}
+/* active state: hover (mouse), keyboard focus, tap */
+body .brandfx.on .b-dim{opacity:1}
+body .brandfx.on img.b-base{transform:scale(1.015)}
+body .brandfx.on .b-panel{transform:translateY(-2.5%) scale(1.04);filter:drop-shadow(0 0 1.6cqw rgba(226,35,26,.45)) drop-shadow(0 1.4cqw 1.4cqw rgba(0,0,0,.7))}
+body .brandfx.on img.b-cut{opacity:1}
+body .brandfx.on .b-sweep{opacity:1;animation:bfxSweep 1.3s .25s cubic-bezier(.4,0,.2,1) both}
+body .brandfx.on .b-edge path{animation:bfxEdge 1.1s .15s cubic-bezier(.6,0,.2,1) forwards}
+body .brandfx.on .b-word{opacity:1;filter:blur(0);transform:translate(-50%,-50%) scale(1)}
+body .brandfx.on .b-lead path{stroke-dashoffset:0}
+body .brandfx.on .b-lead circle{opacity:1}
+body .brandfx.on .b-label{opacity:1;transform:none}
+body .brandfx.on .b-hint{opacity:0}
+@media(hover:hover){
+body .brandfx:hover .b-dim,body .brandfx:focus-visible .b-dim{opacity:1}
+body .brandfx:hover img.b-base,body .brandfx:focus-visible img.b-base{transform:scale(1.015)}
+body .brandfx:hover .b-panel,body .brandfx:focus-visible .b-panel{transform:translateY(-2.5%) scale(1.04);filter:drop-shadow(0 0 1.6cqw rgba(226,35,26,.45)) drop-shadow(0 1.4cqw 1.4cqw rgba(0,0,0,.7))}
+body .brandfx:hover img.b-cut,body .brandfx:focus-visible img.b-cut{opacity:1}
+body .brandfx:hover .b-sweep,body .brandfx:focus-visible .b-sweep{opacity:1;animation:bfxSweep 1.3s .25s cubic-bezier(.4,0,.2,1) both}
+body .brandfx:hover .b-edge path,body .brandfx:focus-visible .b-edge path{animation:bfxEdge 1.1s .15s cubic-bezier(.6,0,.2,1) forwards}
+body .brandfx:hover .b-word,body .brandfx:focus-visible .b-word{opacity:1;filter:blur(0);transform:translate(-50%,-50%) scale(1)}
+body .brandfx:hover .b-lead path,body .brandfx:focus-visible .b-lead path{stroke-dashoffset:0}
+body .brandfx:hover .b-lead circle,body .brandfx:focus-visible .b-lead circle{opacity:1}
+body .brandfx:hover .b-label,body .brandfx:focus-visible .b-label{opacity:1;transform:none}
+body .brandfx:hover .b-hint,body .brandfx:focus-visible .b-hint{opacity:0}
+}
+@media(max-width:640px){body .brandfx .b-label{top:6%;max-width:60%}body .brandfx .b-label span{display:none}}
+@media(prefers-reduced-motion:reduce){body .brandfx *{transition-duration:.01s!important;transition-delay:0s!important;animation:none!important}body .brandfx.on .b-edge path,body .brandfx:hover .b-edge path{stroke-dashoffset:0}}
+
 
 /* =====================================================================
    VOLTY LIGHT EDITION: index card system carried to every inner page.
@@ -991,7 +1044,7 @@ body .navlinks a,body .navlinks .soon,body .navlinks .drop>button,body .navcta{w
   <img class="poster" src="/fs-hero-1400.webp" srcset="/fs-hero-800.webp 800w, /fs-hero-1400.webp 1400w, /fs-hero-2000.webp 2000w" sizes="(max-width:960px) 100vw, 60vw" width="2000" height="1116" alt="Volty U1-F in a yellow delivery livery on a Ho Chi Minh City street, rear top box and stacked parcels strapped to the rack">
   <div class="wrap"><div class="hero-copy">
     <div class="crumb" data-en="Volty U1-F | Fleet Solutions" data-vi="Volty U1-F | Giải pháp đội xe">Volty U1-F | Fleet Solutions</div>
-    <h1 data-en="Built around the job a fleet actually runs" data-vi="Thiết kế quanh đúng công việc đội xe đang vận hành">Built around the job a fleet actually runs</h1>
+    <h1 data-en="<span style=&quot;color:var(--red)&quot;>Built around the job</span> a fleet actually runs" data-vi="<span style=&quot;color:var(--red)&quot;>Thiết kế quanh đúng công việc</span> đội xe đang vận hành"><span style="color:var(--red)">Built around the job</span> a fleet actually runs</h1>
     <p class="sub" data-en="The U1-F is the fleet build of the U1. On top of the platform it carries solutions a standard motorcycle cannot: cold transport powered by the bike&#x27;s own pack, and a body made to carry a brand. Each one answers a specific cost or revenue line for the operator." data-vi="U1-F là phiên bản đội xe của U1. Trên cùng một nền tảng, xe mang theo những giải pháp mà xe máy thông thường không làm được: vận chuyển lạnh chạy bằng chính pin của xe, và thân xe được thiết kế để mang thương hiệu. Mỗi giải pháp gắn với một khoản chi phí hoặc nguồn thu cụ thể của nhà vận hành.">The U1-F is the fleet build of the U1. On top of the platform it carries solutions a standard motorcycle cannot: cold transport powered by the bike's own pack, and a body made to carry a brand. Each one answers a specific cost or revenue line for the operator.</p>
   </div></div>
 </section>
@@ -1046,9 +1099,21 @@ body .navlinks a,body .navlinks .soon,body .navlinks .drop>button,body .navcta{w
       <h2 data-en="Every unit is a brand surface on the street" data-vi="Mỗi chiếc xe là một mặt tiền thương hiệu trên phố">Every unit is a brand surface on the street</h2>
       <p class="lead" data-en="A delivery bike spends its shift in the busiest streets of the city, parked at shop fronts and moving through traffic at eye level. The U1-F body was drawn with flat side panels, and its boxes have flat faces, so the fleet can use that surface for its own livery or sell it as advertising space." data-vi="Một chiếc xe giao hàng dành cả ca làm trên những con phố đông đúc nhất thành phố, dừng trước các cửa hàng và di chuyển giữa dòng xe ngang tầm mắt người đi đường. Thân U1-F được thiết kế với tấm hông phẳng, các thùng hàng có mặt phẳng, nên đội xe có thể dùng bề mặt đó cho nhận diện của mình hoặc bán làm không gian quảng cáo.">A delivery bike spends its shift in the busiest streets of the city, parked at shop fronts and moving through traffic at eye level. The U1-F body was drawn with flat side panels, and its boxes have flat faces, so the fleet can use that surface for its own livery or sell it as advertising space.</p>
     </div>
-    <figure class="coldfig rv d1">
-      <img src="/u1f-livery-studio-1400.webp" srcset="/u1f-livery-studio-800.webp 800w, /u1f-livery-studio-1400.webp 1400w" sizes="(max-width:1100px) 100vw, 1100px" alt="Volty U1-F side view with a two-tone sample livery on the flat side panel" width="1400" height="788" loading="lazy">
-      <figcaption data-en="Render of the U1-F with a sample livery on the side panel." data-vi="Hình dựng U1-F với mẫu nhận diện trên tấm hông.">Render of the U1-F with a sample livery on the side panel.</figcaption>
+    <figure class="coldfig brandfx rv d1" tabindex="0" aria-label="Volty U1-F side view. The flat white side panel is the surface a fleet can brand.">
+      <div class="bfx">
+        <img class="b-base" src="/fs-brand2-1400.webp" srcset="/fs-brand2-800.webp 800w, /fs-brand2-1400.webp 1400w, /fs-brand2-2000.webp 2000w" sizes="(max-width:1100px) 100vw, 1100px" alt="Volty U1-F side view in studio, with a flat white side panel between the seat and the battery bay" width="2000" height="1341" loading="lazy">
+        <div class="b-dim" aria-hidden="true"></div>
+        <svg class="b-lead" viewBox="0 0 3840 2575" preserveAspectRatio="none" aria-hidden="true"><path d="M1330 1070 L1020 660 L250 660" pathLength="1"/><circle cx="1330" cy="1070" r="16"/></svg>
+        <div class="b-panel" aria-hidden="true">
+          <img class="b-cut" src="/fs-brand2-panel.webp" alt="" width="783" height="268" loading="lazy">
+          <div class="b-sweep"></div>
+          <svg class="b-edge" viewBox="1273 1049 1504 514" preserveAspectRatio="none"><path d="M2768,1065 L2762,1060 L2747,1057 L2616,1062 L2564,1071 L2482,1097 L2466,1097 L2451,1088 L2410,1095 L2374,1096 L2292,1071 L1578,1092 L1568,1100 L1549,1105 L1529,1105 L1496,1121 L1473,1125 L1387,1122 L1347,1115 L1300,1101 L1295,1109 L1281,1191 L1283,1293 L1295,1331 L1419,1555 L2013,1540 L2029,1536 L2761,1103 L2769,1096Z" pathLength="1"/></svg>
+          <span class="b-word">Your brand</span>
+        </div>
+        <div class="b-label"><b data-en="Wrap-ready side panel" data-vi="Tấm hông sẵn sàng dán decal">Wrap-ready side panel</b><span data-en="Your livery or paid advertising, on every unit" data-vi="Nhận diện của bạn hoặc quảng cáo có trả phí, trên từng chiếc xe">Your livery or paid advertising, on every unit</span></div>
+        <div class="b-hint" aria-hidden="true"><i></i><span class="h-hover" data-en="Hover to reveal the brand surface" data-vi="Di chuột để xem bề mặt thương hiệu">Hover to reveal the brand surface</span><span class="h-touch" data-en="Tap to reveal the brand surface" data-vi="Chạm để xem bề mặt thương hiệu">Tap to reveal the brand surface</span></div>
+      </div>
+      <figcaption data-en="Render of the U1-F. The flat side panel is the surface a fleet can brand." data-vi="Hình dựng U1-F. Tấm hông phẳng là bề mặt đội xe có thể gắn thương hiệu.">Render of the U1-F. The flat side panel is the surface a fleet can brand.</figcaption>
     </figure>
     <div class="prin rv d1" style="margin-top:40px"><div><span class="k">01</span><h3 data-en="Flat panels, wrap-ready" data-vi="Tấm thân phẳng, sẵn sàng dán decal">Flat panels, wrap-ready</h3><p data-en="The side panels are flat and bolt on, so a vinyl wrap goes on flat, with no cutting around curves. A worn or damaged wrap is fixed by replacing one panel, not by repainting the bike." data-vi="Tấm thân hai bên phẳng và bắt bằng bu lông, nên decal được dán phẳng, không phải cắt quanh các đường cong. Decal bị mòn hay hư chỉ cần thay một tấm, không phải sơn lại cả xe.">The side panels are flat and bolt on, so a vinyl wrap goes on flat, with no cutting around curves. A worn or damaged wrap is fixed by replacing one panel, not by repainting the bike.</p></div><div><span class="k">02</span><h3 data-en="The operator&#x27;s livery" data-vi="Nhận diện của nhà vận hành">The operator's livery</h3><p data-en="Every unit in a fleet program can carry the operator&#x27;s brand, the way a van fleet does, at motorcycle cost. The customer at the door sees who delivered." data-vi="Mỗi chiếc xe trong chương trình đội xe có thể mang thương hiệu của nhà vận hành, như một đội xe tải, với chi phí của xe máy. Khách hàng nhận hàng trước cửa biết ai đã giao.">Every unit in a fleet program can carry the operator's brand, the way a van fleet does, at motorcycle cost. The customer at the door sees who delivered.</p></div><div><span class="k">03</span><h3 data-en="Paid advertising" data-vi="Quảng cáo có trả phí">Paid advertising</h3><p data-en="The same surfaces can carry third-party advertising. For a fleet, that turns part of the vehicle into a revenue line. For a rider, it can offset running costs. Placement and terms are set in each fleet agreement." data-vi="Cùng các bề mặt đó có thể mang quảng cáo của bên thứ ba. Với đội xe, một phần chiếc xe trở thành nguồn thu. Với tài xế, khoản này có thể bù một phần chi phí vận hành. Vị trí và điều khoản được thống nhất trong từng thỏa thuận đội xe.">The same surfaces can carry third-party advertising. For a fleet, that turns part of the vehicle into a revenue line. For a rider, it can offset running costs. Placement and terms are set in each fleet agreement.</p></div></div>
     <div class="batnote rv d1">
@@ -1149,7 +1214,7 @@ body .navlinks a,body .navlinks .soon,body .navlinks .drop>button,body .navcta{w
       <a href="https://volty.info/company-overview" target="_blank" rel="noopener" data-en="For Investors" data-vi="Dành cho nhà đầu tư">For Investors</a>
     </div>
     <div class="fmeta"><span data-en="A brand by" data-vi="Một thương hiệu của Công ty TNHH">A brand by</span> <a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a><span data-en=" Company Limited. 2026." data-vi=". 2026."> Company Limited. 2026.</span></div>
-    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T14:00+07:00" data-en="Last updated 30 Sep 2026, 14:00 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 14:00 (GMT+7)">Last updated 30 Sep 2026, 14:00 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
+    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T14:28+07:00" data-en="Last updated 30 Sep 2026, 14:28 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 14:28 (GMT+7)">Last updated 30 Sep 2026, 14:28 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
   </div>
 </footer>
 
@@ -1198,6 +1263,13 @@ mp.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function
    has no loose text nodes to translate, so the title is its only entry. */
 var __VI_LABELS={"Our Design | Volty by NUEN MOTO":"Thiết kế | Volty by NUEN MOTO"};window.__VI_LABELS=__VI_LABELS;
 </script>
+<script data-k="BFX">(function(){var f=document.querySelector('.brandfx');if(!f)return;
+var touch=window.matchMedia('(hover:none)').matches;
+f.addEventListener('click',function(){f.classList.toggle('on');f.classList.add('seen')});
+f.addEventListener('mouseenter',function(){f.classList.add('seen')});
+f.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();f.classList.toggle('on');f.classList.add('seen')}});
+if(touch&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(x){if(x.intersectionRatio>=.6&&!f.classList.contains('seen')){f.classList.add('on','seen')}else if(x.intersectionRatio<.2){f.classList.remove('on')}})},{threshold:[0,.2,.6]});io.observe(f)}
+})();</script>
 <script data-k="VOLTY-LANG-INLINE">
 /* =====================================================================
    Volty language switch. One implementation, loaded by every page.
