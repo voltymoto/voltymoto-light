@@ -842,6 +842,10 @@ html[lang="vi"] body .vi-drop{display:none!important}
 html:not([lang="vi"]) body .en-drop{display:none!important}
 body .path p.en-drop{margin-top:10px}
 body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(--ink)}
+/* ---------- nav fit: labels never wrap; compact 1220 to 1379; burger below 1220 ---------- */
+body .navlinks a,body .navlinks .soon,body .navlinks .drop>button,body .navcta{white-space:nowrap}
+@media(max-width:1379px){body .navlinks{gap:2px}body .navlinks a,body .navlinks .soon,body .navlinks .drop>button{padding-left:7px!important;padding-right:7px!important;letter-spacing:.06em!important}}
+@media(max-width:1219px){body .navlinks,body .navcta{display:none!important}body .burger{display:flex!important}}
 
 </style>
 </head><body>
@@ -853,6 +857,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
     <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
     <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
     <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
+    <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
     <div class="drop" id="drop">
       <button type="button" aria-haspopup="true" aria-expanded="false" data-en="Economics" data-vi="Bài toán chi phí">Economics</button>
       <div class="dropmenu">
@@ -879,6 +884,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
   <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
   <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
   <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
+  <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
   <div class="grp" data-en="Economics" data-vi="Bài toán chi phí">Economics</div>
   <a class="sub" href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
   <a class="sub" href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
@@ -944,6 +950,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
       </div>
       <div>
         <h4 data-en="Business" data-vi="Doanh nghiệp">Business</h4>
+        <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
         <a href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
         <a href="/contact.html#pilot" data-en="Partner with us" data-vi="Hợp tác cùng chúng tôi">Partner with us</a>
         <a href="/contact.html" data-en="Contact us" data-vi="Liên hệ">Contact us</a>
@@ -970,7 +977,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
       <a href="https://volty.info/company-overview" target="_blank" rel="noopener" data-en="For Investors" data-vi="Dành cho nhà đầu tư">For Investors</a>
     </div>
     <div class="fmeta"><span data-en="A brand by" data-vi="Một thương hiệu của Công ty TNHH">A brand by</span> <a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a><span data-en=" Company Limited. 2026." data-vi=". 2026."> Company Limited. 2026.</span></div>
-    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T07:49+07:00" data-en="Last updated 30 Sep 2026, 07:49 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 07:49 (GMT+7)">Last updated 30 Sep 2026, 07:49 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
+    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T13:40+07:00" data-en="Last updated 30 Sep 2026, 13:40 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 13:40 (GMT+7)">Last updated 30 Sep 2026, 13:40 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
   </div>
 </footer>
 
@@ -1204,7 +1211,7 @@ window.__VI_LABELS=__VI_LABELS;
 #ckb .ckr button:hover,#ckb .ckr button:focus-visible{background:#f5f5f6;color:#0a0a0b;outline:none}
 @media(max-width:640px){#ckb{left:0;right:0;bottom:0;max-width:none;border-radius:12px 12px 0 0;padding:16px}}</style>
 <div id="ckb" role="dialog" aria-label="Cookie consent" hidden><b data-en="Cookies and analytics" data-vi="Cookie và phân tích">Cookies and analytics</b><p data-en="We use Google Analytics to count visits and see which pages are useful. It sets cookies and sends data to Google only if you accept. Declining changes nothing about how the site works." data-vi="Chúng tôi dùng Google Analytics để đếm lượt truy cập và biết trang nào hữu ích. Công cụ này chỉ đặt cookie và gửi dữ liệu tới Google nếu bạn chấp nhận. Từ chối không ảnh hưởng đến cách trang web hoạt động.">We use Google Analytics to count visits and see which pages are useful. It sets cookies and sends data to Google only if you accept. Declining changes nothing about how the site works.</p><p style="margin-top:-6px"><a href="/privacy.html" data-en="Privacy Policy" data-vi="Chính sách bảo mật">Privacy Policy</a></p><div class="ckr"><button type="button" id="ck-n" data-en="Decline" data-vi="Từ chối">Decline</button><button type="button" id="ck-y" data-en="Accept" data-vi="Chấp nhận">Accept</button></div></div>
-<script>(function(){var ID='G-D0ERKZSXRQ',K='voltyConsent',TTL=180*864e5,W=window,D=document;
+<script>(function(){var ID='G-S5KEVS1E0L',K='voltyConsent',TTL=180*864e5,W=window,D=document;
 W.dataLayer=W.dataLayer||[];function gtag(){W.dataLayer.push(arguments)}W.gtag=gtag;
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
 function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(o&&o.t&&Date.now()-o.t<TTL&&(o.v==='granted'||o.v==='denied'))return o.v}catch(e){}return null}

@@ -843,6 +843,10 @@ html[lang="vi"] body .vi-drop{display:none!important}
 html:not([lang="vi"]) body .en-drop{display:none!important}
 body .path p.en-drop{margin-top:10px}
 body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(--ink)}
+/* ---------- nav fit: labels never wrap; compact 1220 to 1379; burger below 1220 ---------- */
+body .navlinks a,body .navlinks .soon,body .navlinks .drop>button,body .navcta{white-space:nowrap}
+@media(max-width:1379px){body .navlinks{gap:2px}body .navlinks a,body .navlinks .soon,body .navlinks .drop>button{padding-left:7px!important;padding-right:7px!important;letter-spacing:.06em!important}}
+@media(max-width:1219px){body .navlinks,body .navcta{display:none!important}body .burger{display:flex!important}}
 
 </style>
 </head><body>
@@ -854,6 +858,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
     <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
     <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
     <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
+    <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
     <div class="drop" id="drop">
       <button type="button" aria-haspopup="true" aria-expanded="false" data-en="Economics" data-vi="Bài toán chi phí">Economics</button>
       <div class="dropmenu">
@@ -880,6 +885,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
   <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
   <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
   <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
+  <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
   <div class="grp" data-en="Economics" data-vi="Bài toán chi phí">Economics</div>
   <a class="sub" href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
   <a class="sub" href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
@@ -902,7 +908,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
 <ul><li data-vi="Để trả lời yêu cầu của bạn và giữ bạn trong danh sách bạn đã đăng ký.">To answer your enquiry and keep you on the list you joined.</li><li data-vi="Để gửi tin sản phẩm, ngày ra mắt và thông tin đặt hàng, chỉ khi bạn đã đồng ý nhận.">To send product news, release dates and ordering updates, only if you asked for them.</li><li data-vi="Để chuẩn bị và triển khai chương trình chạy thử nếu bạn là đơn vị vận hành đã đề nghị.">To prepare and run a fleet pilot if you are an operator who requested one.</li><li data-vi="Để hiểu nhu cầu theo khu vực và mục đích sử dụng, dựa trên số liệu tổng hợp không nhận diện được cá nhân bạn.">To understand demand by district and use case, using combined figures that do not identify you.</li></ul>
 <p data-vi="Chúng tôi xử lý dữ liệu của bạn trên cơ sở sự đồng ý bạn đưa ra khi gửi biểu mẫu. Công cụ phân tích chạy trên cơ sở sự đồng ý của bạn trên biểu ngữ cookie. Bạn có thể rút lại sự đồng ý bất cứ lúc nào, và việc rút lại không ảnh hưởng đến các hoạt động xử lý trước đó.">We process your data on the basis of the consent you give when you send the form. Analytics runs on the basis of your consent on the cookie banner. You can withdraw consent at any time, and withdrawing does not affect anything done before.</p>
 <h2 data-vi="Cookie, bộ nhớ cục bộ và phân tích">Cookies, local storage and analytics</h2>
-<p data-vi="Trang web này dùng Google Analytics (do Google LLC cung cấp) để đếm lượt truy cập và biết trang nào hữu ích. Công cụ này chỉ chạy nếu bạn bấm Chấp nhận trên biểu ngữ. Nếu bạn chấp nhận, Google sẽ đặt các cookie tên _ga và _ga_D0ERKZSXRQ trên trình duyệt của bạn và nhận dữ liệu kỹ thuật như thiết bị, trình duyệt, vị trí gần đúng và các trang bạn xem. Google có thể xử lý dữ liệu này trên máy chủ đặt ngoài Việt Nam. Chúng tôi không bật tính năng quảng cáo hay Google signals, và lưu dữ liệu phân tích tối đa 14 tháng.">This website uses Google Analytics (provided by Google LLC) to count visits and understand which pages are useful. It runs only if you click Accept on the banner. If you accept, Google sets cookies named _ga and _ga_D0ERKZSXRQ in your browser and receives technical data such as your device, browser, approximate location and the pages you view. Google may process this data on servers outside Vietnam. We do not switch on Google advertising features or Google signals, and we keep analytics data for up to 14 months.</p>
+<p data-vi="Trang web này dùng Google Analytics (do Google LLC cung cấp) để đếm lượt truy cập và biết trang nào hữu ích. Công cụ này chỉ chạy nếu bạn bấm Chấp nhận trên biểu ngữ. Nếu bạn chấp nhận, Google sẽ đặt các cookie tên _ga và _ga_S5KEVS1E0L trên trình duyệt của bạn và nhận dữ liệu kỹ thuật như thiết bị, trình duyệt, vị trí gần đúng và các trang bạn xem. Google có thể xử lý dữ liệu này trên máy chủ đặt ngoài Việt Nam. Chúng tôi không bật tính năng quảng cáo hay Google signals, và lưu dữ liệu phân tích tối đa 14 tháng.">This website uses Google Analytics (provided by Google LLC) to count visits and understand which pages are useful. It runs only if you click Accept on the banner. If you accept, Google sets cookies named _ga and _ga_S5KEVS1E0L in your browser and receives technical data such as your device, browser, approximate location and the pages you view. Google may process this data on servers outside Vietnam. We do not switch on Google advertising features or Google signals, and we keep analytics data for up to 14 months.</p>
 <p data-vi="Nếu bạn từ chối, hoặc không trả lời, không có gì từ Google Analytics được tải và không có cookie phân tích nào được đặt. Bạn có thể đổi lựa chọn bất cứ lúc nào bằng mục &quot;Cài đặt cookie&quot; ở chân mỗi trang. Lựa chọn của bạn được ghi nhớ 6 tháng, ngay trên trình duyệt của bạn.">If you decline, or do not answer, nothing from Google Analytics loads and no analytics cookie is set. You can change your choice at any time with "Cookie settings" in the footer of every page. Your choice is remembered for 6 months, in your own browser.</p>
 <p data-vi="Ngoài phần phân tích, trang web chỉ lưu lựa chọn ngôn ngữ của bạn (tiếng Anh hoặc tiếng Việt) trên trình duyệt để trang tiếp theo mở đúng ngôn ngữ. Thiết lập này ở lại trên thiết bị của bạn.">Apart from analytics, the website stores only your language choice (English or Vietnamese) in your browser so the next page opens in the same language. That setting stays on your device.</p>
 <h2 data-vi="Chia sẻ dữ liệu">Who we share it with</h2>
@@ -954,6 +960,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
       </div>
       <div>
         <h4 data-en="Business" data-vi="Doanh nghiệp">Business</h4>
+        <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
         <a href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
         <a href="/contact.html#pilot" data-en="Partner with us" data-vi="Hợp tác cùng chúng tôi">Partner with us</a>
         <a href="/contact.html" data-en="Contact us" data-vi="Liên hệ">Contact us</a>
@@ -980,7 +987,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
       <a href="https://volty.info/company-overview" target="_blank" rel="noopener" data-en="For Investors" data-vi="Dành cho nhà đầu tư">For Investors</a>
     </div>
     <div class="fmeta"><span data-en="A brand by" data-vi="Một thương hiệu của Công ty TNHH">A brand by</span> <a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a><span data-en=" Company Limited. 2026." data-vi=". 2026."> Company Limited. 2026.</span></div>
-    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T07:49+07:00" data-en="Last updated 30 Sep 2026, 07:49 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 07:49 (GMT+7)">Last updated 30 Sep 2026, 07:49 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
+    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T13:40+07:00" data-en="Last updated 30 Sep 2026, 13:40 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 13:40 (GMT+7)">Last updated 30 Sep 2026, 13:40 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
   </div>
 </footer>
 
@@ -1214,7 +1221,7 @@ window.__VI_LABELS=__VI_LABELS;
 #ckb .ckr button:hover,#ckb .ckr button:focus-visible{background:#f5f5f6;color:#0a0a0b;outline:none}
 @media(max-width:640px){#ckb{left:0;right:0;bottom:0;max-width:none;border-radius:12px 12px 0 0;padding:16px}}</style>
 <div id="ckb" role="dialog" aria-label="Cookie consent" hidden><b data-en="Cookies and analytics" data-vi="Cookie và phân tích">Cookies and analytics</b><p data-en="We use Google Analytics to count visits and see which pages are useful. It sets cookies and sends data to Google only if you accept. Declining changes nothing about how the site works." data-vi="Chúng tôi dùng Google Analytics để đếm lượt truy cập và biết trang nào hữu ích. Công cụ này chỉ đặt cookie và gửi dữ liệu tới Google nếu bạn chấp nhận. Từ chối không ảnh hưởng đến cách trang web hoạt động.">We use Google Analytics to count visits and see which pages are useful. It sets cookies and sends data to Google only if you accept. Declining changes nothing about how the site works.</p><p style="margin-top:-6px"><a href="/privacy.html" data-en="Privacy Policy" data-vi="Chính sách bảo mật">Privacy Policy</a></p><div class="ckr"><button type="button" id="ck-n" data-en="Decline" data-vi="Từ chối">Decline</button><button type="button" id="ck-y" data-en="Accept" data-vi="Chấp nhận">Accept</button></div></div>
-<script>(function(){var ID='G-D0ERKZSXRQ',K='voltyConsent',TTL=180*864e5,W=window,D=document;
+<script>(function(){var ID='G-S5KEVS1E0L',K='voltyConsent',TTL=180*864e5,W=window,D=document;
 W.dataLayer=W.dataLayer||[];function gtag(){W.dataLayer.push(arguments)}W.gtag=gtag;
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
 function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(o&&o.t&&Date.now()-o.t<TTL&&(o.v==='granted'||o.v==='denied'))return o.v}catch(e){}return null}

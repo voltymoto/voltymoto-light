@@ -871,6 +871,10 @@ html[lang="vi"] body .vi-drop{display:none!important}
 html:not([lang="vi"]) body .en-drop{display:none!important}
 body .path p.en-drop{margin-top:10px}
 body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(--ink)}
+/* ---------- nav fit: labels never wrap; compact 1220 to 1379; burger below 1220 ---------- */
+body .navlinks a,body .navlinks .soon,body .navlinks .drop>button,body .navcta{white-space:nowrap}
+@media(max-width:1379px){body .navlinks{gap:2px}body .navlinks a,body .navlinks .soon,body .navlinks .drop>button{padding-left:7px!important;padding-right:7px!important;letter-spacing:.06em!important}}
+@media(max-width:1219px){body .navlinks,body .navcta{display:none!important}body .burger{display:flex!important}}
 
 </style>
 </head><body>
@@ -882,6 +886,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
     <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
     <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
     <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
+    <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
     <div class="drop on" id="drop">
       <button type="button" aria-haspopup="true" aria-expanded="false" data-en="Economics" data-vi="Bài toán chi phí">Economics</button>
       <div class="dropmenu">
@@ -906,7 +911,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
   <a href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
   <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
   <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
-  <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
+  <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
   <div class="grp" data-en="Economics" data-vi="Bài toán chi phí">Economics</div>
   <a class="sub" href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
   <a class="sub" href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
@@ -963,10 +968,10 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
 </div>
 <div class="sim-out">
 <div class="stats">
-<div class="stat hi"><div class="v" id="sSave">₫2.9M</div><div class="k" data-vi="Tiết kiệm mỗi tháng">Saved per month</div></div>
-<div class="stat"><div class="v" id="sLift">+38<small>%</small></div><div class="k" data-vi="Thu nhập thực tăng&lt;br/&gt;trên doanh thu ₫12M">Take home lift<br/>on ₫12M gross</div></div>
-<div class="stat"><div class="v" id="sDay">₫110k</div><div class="k" data-vi="Thu nhập thêm&lt;br/&gt;mỗi ngày làm việc">Extra take home<br/>every working day</div></div>
-<div class="stat"><div class="v" id="sYear">₫34.4M</div><div class="k" data-vi="Giữ lại mỗi năm">Kept per year</div></div>
+<div class="stat hi"><div class="v" id="sSave">₫3.1M</div><div class="k" data-vi="Tiết kiệm mỗi tháng">Saved per month</div></div>
+<div class="stat"><div class="v" id="sLift">+42<small>%</small></div><div class="k" data-vi="Thu nhập thực tăng&lt;br/&gt;trên doanh thu ₫12M">Take home lift<br/>on ₫12M gross</div></div>
+<div class="stat"><div class="v" id="sDay">₫117,492</div><div class="k" data-vi="Thu nhập thêm&lt;br/&gt;mỗi ngày làm việc">Extra take home<br/>every working day</div></div>
+<div class="stat"><div class="v" id="sYear">₫36.7M</div><div class="k" data-vi="Giữ lại mỗi năm">Kept per year</div></div>
 </div>
 <svg aria-hidden="true" class="chart" id="chBars" viewbox="0 0 720 190"></svg>
 <svg aria-hidden="true" class="chart" id="chCurve" viewbox="0 0 720 240"></svg>
@@ -981,7 +986,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
 <div class="story rv d1">
 <div><div class="v red" id="stGas">₫6.6M</div><div class="k" data-vi="Thu nhập ròng của tài xế xe xăng tháng đó,&lt;br/&gt;giảm từ ₫7,9tr">Petrol rider’s net that month,<br/>down from ₫7.9M</div></div>
 <div><div class="v grn" id="stVol">₫10.3M</div><div class="k" data-vi="Thu nhập ròng của tài xế Volty,&lt;br/&gt;gần như không đổi">Volty rider’s net,<br/>barely moved</div></div>
-<div><div class="v" id="stGap">+55.7<small style="font-size:.5em">%</small></div><div class="k" data-vi="Chênh lệch tháng đó:&lt;br/&gt;&lt;span id=&quot;stGapV&quot;&gt;&lt;/span&gt;">The gap that month:<br/><span id="stGapV">₫3,694,000 of advantage</span></div></div>
+<div><div class="v" id="stGap">+55.7<small style="font-size:.5em">%</small></div><div class="k" data-vi="Chênh lệch tháng đó:&lt;br/&gt;&lt;span id=&quot;stGapV&quot;&gt;&lt;/span&gt;">The gap that month:<br/><span id="stGapV">₫3,694,742 of advantage</span></div></div>
 </div>
 </div></section>
 <section class="pad band-k"><div class="wrap">
@@ -996,15 +1001,15 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
 <section class="pad band-w" id="payback" style="background:#FFFFFF;border-top:1px solid var(--line);border-bottom:1px solid var(--line)"><div class="wrap">
 <div class="shead"><div class="eyebrow green rv" data-vi="Trả tiền cho chiếc xe">Paying For The Bike</div>
 <h2 class="rv d1" data-vi="Khoản tiền tiết kiệm sẽ tự chi trả cho chiếc xe.">The savings buy the bike.</h2>
-<p class="lead rv d2" data-vi="Ở mức di chuyển 200 km/ngày, lượng tiền xăng tiết kiệm hằng tháng sẽ giúp bạn hòa vốn 100% chi phí mua U1-R (40 đến 49 triệu đồng) trong khoảng 17 đến 20 tháng, và tiếp tục sinh lời sau đó. Đối với U1-F mua theo chính sách giá đối tác giao vận (33 đến 39 triệu đồng), thời gian hoàn vốn chỉ còn 13 đến 16 tháng.&lt;br&gt;Nhập số km di chuyển ở trên để xem biểu đồ tính toán thực tế.">At the 200 km basis, the monthly saving covers the ₫40M to ₫49M U1-R retail range in roughly 17 to 20 months, then keeps arriving every month after. Bought through a fleet at the U1-F price of ₫33M to ₫39M, it takes about 13 to 16 months. Your distance above changes this chart live.</p></div>
+<p class="lead rv d2" data-vi="Ở mức di chuyển 200 km/ngày, lượng tiền xăng tiết kiệm hằng tháng sẽ giúp bạn hòa vốn 100% chi phí mua U1-R (40 đến 49 triệu đồng) trong khoảng 14 đến 17 tháng, và tiếp tục sinh lời sau đó. Đối với U1-F mua theo chính sách giá đối tác giao vận (33 đến 39 triệu đồng), thời gian hoàn vốn chỉ còn 11 đến 13 tháng.&lt;br&gt;Nhập số km di chuyển ở trên để xem biểu đồ tính toán thực tế.">At the 200 km basis, the monthly saving covers the ₫40M to ₫49M U1-R retail range in roughly 14 to 17 months, then keeps arriving every month after. Bought through a fleet at the U1-F price of ₫33M to ₫39M, it takes about 11 to 13 months. Your distance above changes this chart live.</p></div>
 <svg aria-hidden="true" class="chart rv d1" id="chPay" viewbox="0 0 720 260"></svg>
 <div class="story rv d1" style="margin-top:26px">
-<div><div class="v" id="pbMo">~17 to 20<small style="font-size:.4em">mo</small></div><div class="k" data-vi="Khoảng giá dự kiến được hoàn lại&lt;br/&gt;bằng tiền tiết kiệm, ở quãng đường của bạn">Estimated range paid back<br/>by savings, at your distance</div></div>
-<div><div class="v" id="pb24">₫68.9M</div><div class="k" data-vi="Tiết kiệm cộng dồn&lt;br/&gt;đến tháng 24">Cumulative savings<br/>by month 24</div></div>
+<div><div class="v" id="pbMo">~14 to 17<small style="font-size:.4em">mo</small></div><div class="k" data-vi="Khoảng giá dự kiến được hoàn lại&lt;br/&gt;bằng tiền tiết kiệm, ở quãng đường của bạn">Estimated range paid back<br/>by savings, at your distance</div></div>
+<div><div class="v" id="pb24">₫73.3M</div><div class="k" data-vi="Tiết kiệm cộng dồn&lt;br/&gt;đến tháng 24">Cumulative savings<br/>by month 24</div></div>
 <div><div class="v grn" data-vi="≈₫148tr">≈₫148M</div><div class="k" data-vi="Giữ lại sau 5 năm chạy xe&lt;br/&gt;ở mức cơ sở 200 km">Kept over 5 years of riding<br/>at the 200 km basis</div></div>
 </div>
 <div class="hlist rv d1" style="margin-top:34px">
-<div><b data-vi="Mua trả góp">On installments</b><p data-vi="Chỉ để minh họa: với khoảng giá bán lẻ U1-R ₫40 đến ₫49 triệu, trả trước 20% là ₫8.000.000 đến ₫9.800.000, phần còn lại trả trong 24 tháng với lãi suất 15%/năm là khoảng ₫1.550.000 đến ₫1.900.000 mỗi tháng. Khoản tiết kiệm ₫2.470.000 mỗi tháng ở mức cơ sở bù được khoản đó khoảng 1,3 đến 1,6 lần, nên một tài xế chạy toàn thời gian có thể dư tiền mặt ngay từ tháng đầu trong lúc trả dần tiền xe. Điều kiện vay do bên cho vay quyết định, không phải chúng tôi.">Illustration only: on the ₫40M to ₫49M U1-R range, 20% down is ₫8,000,000 to ₫9,800,000 and the balance over 24 months at 15% APR is about ₫1,550,000 to ₫1,900,000 a month. The ₫2,470,000 monthly saving at the basis covers that roughly 1.3 to 1.6 times over, so a full-time rider can be cash positive from the first month while paying the bike off. Financing terms are set by lenders, not by us.</p></div>
+<div><b data-vi="Mua trả góp">On installments</b><p data-vi="Chỉ để minh họa: với khoảng giá bán lẻ U1-R ₫40 đến ₫49 triệu, trả trước 20% là ₫8.000.000 đến ₫9.800.000, phần còn lại trả trong 24 tháng với lãi suất 15%/năm là khoảng ₫1.550.000 đến ₫1.900.000 mỗi tháng. Khoản tiết kiệm ₫3.050.000 mỗi tháng ở mức cơ sở bù được khoản đó khoảng 1,6 đến 2,0 lần, nên một tài xế chạy toàn thời gian có thể dư tiền mặt ngay từ tháng đầu trong lúc trả dần tiền xe. Điều kiện vay do bên cho vay quyết định, không phải chúng tôi.">Illustration only: on the ₫40M to ₫49M U1-R range, 20% down is ₫8,000,000 to ₫9,800,000 and the balance over 24 months at 15% APR is about ₫1,550,000 to ₫1,900,000 a month. The ₫3,050,000 monthly saving at the basis covers that roughly 1.6 to 2.0 times over, so a full-time rider can be cash positive from the first month while paying the bike off. Financing terms are set by lenders, not by us.</p></div>
 </div>
 </div></section>
 <section class="pad band-b"><div class="wrap">
@@ -1032,7 +1037,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
 </div>
 </div></section>
 <section class="notewrap"><div class="wrap"><p class="chart-cap footnote" data-vi="Mô hình dựa trên thông số U1 đã công bố và giá hiện tại của đối tác. Cơ sở tính, trừ khi bạn thay đổi ở trên: 200 km mỗi ngày làm việc, 26 ngày làm việc mỗi tháng, RON92 giá ₫26.390 một lít, gói pin Selex TP3U không giới hạn quãng đường giá ₫918.000 mỗi tháng đã gồm VAT, đổi pin tại trạm tính ₫8.000 mỗi cục, sạc tại nhà khoảng ₫6.600 mỗi cục, quãng đường thực tế khi chở tải 75 km mỗi cục pin, và doanh thu của tài xế ₫12.000.000 mỗi tháng. Thời gian hoàn vốn được tính theo khoảng giá bán lẻ dự kiến của U1-R từ ₫40.000.000 đến ₫49.000.000, đã bao gồm VAT 10%, cho lô sản xuất đầu tiên. Khoảng giá đó không phải giá đã xác nhận: giá chính thức được công bố khi chi phí sản xuất được chốt và mở đặt xe. Mọi con số hoàn vốn trên trang này đều được tính ở cả hai đầu của khoảng giá và hiển thị dưới dạng một khoảng, nên không có mức giá giả định nào bị giấu trong kết quả. Selex là đối tác đổi pin hiện tại của chúng tôi và là một trong nhiều nhà cung cấp mà khoang pin U1 tương thích. Các gói tính số cục pin luân chuyển trong mạng lưới đổi pin. Bản thân xe chở một hoặc hai cục. Giá thuê bao phản ánh điều khoản hiện tại của đối tác và mang tính hợp đồng, không phải giá thị trường cố định. Kết quả thực tế thay đổi theo tuyến đường, tải trọng, thời tiết và cách bạn chạy xe. Đây là công cụ lập kế hoạch, không phải cam kết bảo hành.">Modeled from published U1 specifications and current partner pricing. Basis unless changed above: 200 km per working day, 26 working days per month, RON92 at ₫26,390 per liter, the Selex TP3U unlimited-distance battery plan at ₫918,000 per month with VAT, station swaps billed at ₫8,000 per battery, home charging at about ₫6,600 per pack, a real loaded range of 75 km per pack, and gross rider revenue of ₫12,000,000 per month. Payback is modeled against the ₫40,000,000 to ₫49,000,000 estimated U1-R retail range, including 10% VAT, for the first production batch. That range is not a confirmed price: the confirmed price is published when the build cost is locked and ordering opens. Every payback figure on this page is calculated at both ends of that range and shown as a span, so no single assumed price is hidden inside the result. Selex is our current swap partner and one of several providers the U1 bay accepts. Plan tiers count packs in rotation across the swap network. The bike itself carries one or two. Subscription pricing reflects current partner terms and is contractual, not a permanent market price. Real results vary with routes, load, weather, and how you ride. This is a planning tool, not a warranty.</p></div></section>
-<section class="pager"><div class="wrap"><a class="prev" href="/audience.html"><span class="k" data-en="← Previous" data-vi="← Trang trước">← Previous</span><b data-en="Audience" data-vi="Khách hàng">Audience</b></a><a class="next" href="/fleet-economics.html"><span class="k" data-en="Next →" data-vi="Trang sau →">Next →</span><b data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</b></a></div></section>
+<section class="pager"><div class="wrap"><a class="prev" href="/fleet-solutions.html"><span class="k" data-en="← Previous" data-vi="← Trang trước">← Previous</span><b data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</b></a><a class="next" href="/fleet-economics.html"><span class="k" data-en="Next →" data-vi="Trang sau →">Next →</span><b data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</b></a></div></section>
 <!-- ================= CONTACT + FOOTER ================= -->
 <section class="contact pad" id="contact">
   <div class="wrap">
@@ -1067,6 +1072,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
       </div>
       <div>
         <h4 data-en="Business" data-vi="Doanh nghiệp">Business</h4>
+        <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
         <a href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
         <a href="/contact.html#pilot" data-en="Partner with us" data-vi="Hợp tác cùng chúng tôi">Partner with us</a>
         <a href="/contact.html" data-en="Contact us" data-vi="Liên hệ">Contact us</a>
@@ -1093,7 +1099,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
       <a href="https://volty.info/company-overview" target="_blank" rel="noopener" data-en="For Investors" data-vi="Dành cho nhà đầu tư">For Investors</a>
     </div>
     <div class="fmeta"><span data-en="A brand by" data-vi="Một thương hiệu của Công ty TNHH">A brand by</span> <a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a><span data-en=" Company Limited. 2026." data-vi=". 2026."> Company Limited. 2026.</span></div>
-    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T08:04+07:00" data-en="Last updated 30 Sep 2026, 08:04 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 08:04 (GMT+7)">Last updated 30 Sep 2026, 08:04 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
+    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T13:40+07:00" data-en="Last updated 30 Sep 2026, 13:40 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 13:40 (GMT+7)">Last updated 30 Sep 2026, 13:40 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
   </div>
 </footer>
 
@@ -1425,7 +1431,7 @@ addEventListener('resize',place);v.addEventListener('loadedmetadata',place);addE
 #ckb .ckr button:hover,#ckb .ckr button:focus-visible{background:#f5f5f6;color:#0a0a0b;outline:none}
 @media(max-width:640px){#ckb{left:0;right:0;bottom:0;max-width:none;border-radius:12px 12px 0 0;padding:16px}}</style>
 <div id="ckb" role="dialog" aria-label="Cookie consent" hidden><b data-en="Cookies and analytics" data-vi="Cookie và phân tích">Cookies and analytics</b><p data-en="We use Google Analytics to count visits and see which pages are useful. It sets cookies and sends data to Google only if you accept. Declining changes nothing about how the site works." data-vi="Chúng tôi dùng Google Analytics để đếm lượt truy cập và biết trang nào hữu ích. Công cụ này chỉ đặt cookie và gửi dữ liệu tới Google nếu bạn chấp nhận. Từ chối không ảnh hưởng đến cách trang web hoạt động.">We use Google Analytics to count visits and see which pages are useful. It sets cookies and sends data to Google only if you accept. Declining changes nothing about how the site works.</p><p style="margin-top:-6px"><a href="/privacy.html" data-en="Privacy Policy" data-vi="Chính sách bảo mật">Privacy Policy</a></p><div class="ckr"><button type="button" id="ck-n" data-en="Decline" data-vi="Từ chối">Decline</button><button type="button" id="ck-y" data-en="Accept" data-vi="Chấp nhận">Accept</button></div></div>
-<script>(function(){var ID='G-D0ERKZSXRQ',K='voltyConsent',TTL=180*864e5,W=window,D=document;
+<script>(function(){var ID='G-S5KEVS1E0L',K='voltyConsent',TTL=180*864e5,W=window,D=document;
 W.dataLayer=W.dataLayer||[];function gtag(){W.dataLayer.push(arguments)}W.gtag=gtag;
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
 function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(o&&o.t&&Date.now()-o.t<TTL&&(o.v==='granted'||o.v==='denied'))return o.v}catch(e){}return null}

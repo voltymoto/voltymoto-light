@@ -903,6 +903,10 @@ html[lang="vi"] body .vi-drop{display:none!important}
 html:not([lang="vi"]) body .en-drop{display:none!important}
 body .path p.en-drop{margin-top:10px}
 body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(--ink)}
+/* ---------- nav fit: labels never wrap; compact 1220 to 1379; burger below 1220 ---------- */
+body .navlinks a,body .navlinks .soon,body .navlinks .drop>button,body .navcta{white-space:nowrap}
+@media(max-width:1379px){body .navlinks{gap:2px}body .navlinks a,body .navlinks .soon,body .navlinks .drop>button{padding-left:7px!important;padding-right:7px!important;letter-spacing:.06em!important}}
+@media(max-width:1219px){body .navlinks,body .navcta{display:none!important}body .burger{display:flex!important}}
 
 </style>
 </head>
@@ -917,6 +921,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
     <a class="on" href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
     <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
     <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
+    <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
     <div class="drop" id="drop">
       <button type="button" aria-haspopup="true" aria-expanded="false" data-en="Economics" data-vi="Bài toán chi phí">Economics</button>
       <div class="dropmenu">
@@ -944,6 +949,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
   <a class="on" href="/design.html" data-en="Our Design" data-vi="Thiết kế">Our Design</a>
   <span class="soon" data-en="Accessories" data-vi="Phụ kiện">Accessories<span class="tag" data-en="Soon" data-vi="Sắp có">Soon</span></span>
   <a href="/audience.html" data-en="Audience" data-vi="Khách hàng">Audience</a>
+  <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
   <div class="grp" data-en="Economics" data-vi="Bài toán chi phí">Economics</div>
   <a class="sub" href="/rider-economics.html" data-en="Rider Economics" data-vi="Bài toán của tài xế">Rider Economics</a>
   <a class="sub" href="/fleet-economics.html" data-en="Fleet Economics" data-vi="Bài toán của đội xe">Fleet Economics</a>
@@ -1018,38 +1024,8 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
   </div>
 </section>
 
-<!-- ================= COLD DELIVERY ================= -->
-<section class="pad cold band-b" id="cold" style="border-top:1px solid var(--line)">
-  <div class="wrap">
-    <div class="shead rv">
-      <div class="eyebrow rv" data-en="Cold-chain transport" data-vi="Vận chuyển bảo quản lạnh">Cold-chain transport</div>
-      <h2 data-en="A mobile cold store for the urban supply chain" data-vi="Kho lạnh di động cho chuỗi cung ứng đô thị">A mobile cold store for the urban supply chain</h2>
-      <p class="lead" data-en="Fresh food, seafood and frozen goods need strict handling in harsh tropical weather. The Volty U1-F carries a dual cooling system, with chilled and frozen compartments, on the rear deck. It runs in parallel with the drive from the same removable pack: on one battery, the cold holds for 5 to 6 hours of deliveries while the bike covers 52 km." data-vi="Thực phẩm tươi sống, hải sản và đồ đông lạnh đòi hỏi quy trình bảo quản nghiêm ngặt trước thời tiết nhiệt đới gay gắt. Volty U1-F mang theo hệ thống làm lạnh kép (ngăn mát &amp;amp; ngăn đông) trên sàn sau, vận hành song song với động cơ và dùng chung khối pin tháo rời: với một khối pin, độ lạnh được giữ trong 5 đến 6 giờ giao hàng trong khi xe vẫn chạy được 52 km.">Fresh food, seafood and frozen goods need strict handling in harsh tropical weather. The Volty U1-F carries a dual cooling system, with chilled and frozen compartments, on the rear deck. It runs in parallel with the drive from the same removable pack: on one battery, the cold holds for 5 to 6 hours of deliveries while the bike covers 52 km.</p>
-    </div>
-    <figure class="coldfig rv d1">
-      <img src="/dsn-cold-1200.webp" srcset="/dsn-cold-800.webp 800w, /dsn-cold-1200.webp 1200w, /dsn-cold-1600.webp 1600w" sizes="(max-width:1100px) 100vw, 1100px" alt="Volty U1-F from the rear three-quarter view with a white chilled and freezer module mounted on the rear deck" width="1600" height="1000" loading="lazy">
-      <figcaption data-en="Render of the U1-F with the cold module on the rear deck." data-vi="Hình dựng U1-F với mô-đun lạnh trên sàn sau.">Render of the U1-F with the cold module on the rear deck.</figcaption>
-    </figure>
-    <div class="batstats rv d1"><div><b><span data-en="5 to 6 hrs" data-vi="5 đến 6 giờ">5 to 6 hrs</span></b><span class="k" data-en="of cold on a single battery pack, running while the bike rides" data-vi="giữ lạnh với một khối pin, hoạt động song song khi xe đang chạy">of cold on a single battery pack, running while the bike rides</span></div><div><b><span data-en="52 km" data-vi="52 km">52 km</span></b><span class="k" data-en="of riding on that same pack during the cold hold" data-vi="xe vẫn chạy được trên chính khối pin đó trong suốt thời gian giữ lạnh">of riding on that same pack during the cold hold</span></div><div><b><span data-en="Up to 2 days" data-vi="Tối đa 2 ngày">Up to 2 days</span></b><span class="k" data-en="of cold on one pack when the bike is parked" data-vi="giữ lạnh với một khối pin khi xe đứng yên">of cold on one pack when the bike is parked</span></div></div>
-    <div class="shead rv" style="margin-top:56px"><h3 class="bath" data-en="The challenges of cold-chain logistics" data-vi="Thách thức trong logistics chuỗi cung ứng lạnh">The challenges of cold-chain logistics</h3></div>
-    <div class="ccomp rv d1"><div class="cc-row"><b data-en="Traditional foam box and ice" data-vi="Thùng xốp &amp;amp; đá lạnh truyền thống">Traditional foam box and ice</b><p data-en="Poor insulation that depends entirely on how fast the ice melts. Opening the lid again and again in the heat loses cold fast, degrades product quality and ruins packaging with condensation." data-vi="Khả năng giữ nhiệt kém và phụ thuộc hoàn toàn vào tốc độ tan của đá. Việc mở nắp liên tục dưới thời tiết nóng gây thất thoát nhiệt nhanh chóng, làm suy giảm chất lượng sản phẩm và hư hỏng bao bì do đọng nước.">Poor insulation that depends entirely on how fast the ice melts. Opening the lid again and again in the heat loses cold fast, degrades product quality and ruins packaging with condensation.</p></div><div class="cc-row"><b data-en="Refrigerated truck" data-vi="Xe tải lạnh">Refrigerated truck</b><p data-en="Oversized for small alleys and easily stuck in rush-hour traffic. Major cities are tightening the rules: Hanoi has barred trucks of 2 tons and above in daytime since January 2026, and a May 2026 Ho Chi Minh City draft would lower its threshold to 1 ton, sharply limiting fleet mobility." data-vi="Kích thước quá khổ khó tiếp cận hẻm nhỏ và dễ bị ùn tắc giờ cao điểm. Các đô thị lớn đang thắt chặt khung pháp lý: Hà Nội cấm xe từ 2 tấn trở lên vào ban ngày từ tháng 1 năm 2026, và dự thảo tháng 5 năm 2026 của TP.HCM đề xuất hạ ngưỡng xuống 1 tấn, làm hạn chế đáng kể tính cơ động của đội xe.">Oversized for small alleys and easily stuck in rush-hour traffic. Major cities are tightening the rules: Hanoi has barred trucks of 2 tons and above in daytime since January 2026, and a May 2026 Ho Chi Minh City draft would lower its threshold to 1 ton, sharply limiting fleet mobility.</p></div><div class="cc-row"><b data-en="Improvised bolt-on cooler" data-vi="Thùng lạnh lắp rời tự chế">Improvised bolt-on cooler</b><p data-en="Overloads a frame that was never built for it. A standard motorcycle&#x27;s electrical system cannot keep up, forcing a separate auxiliary battery that adds technical risk and interrupts operations." data-vi="Gây quá tải cho kết cấu khung gầm không chuyên dụng. Hệ thống điện nguyên bản của xe máy không đủ đáp ứng, buộc phải sử dụng nguồn pin phụ rời phức tạp, làm gia tăng rủi ro kỹ thuật và gián đoạn vận hành.">Overloads a frame that was never built for it. A standard motorcycle's electrical system cannot keep up, forcing a separate auxiliary battery that adds technical risk and interrupts operations.</p></div><div class="cc-row"><b data-en="Radius-limited delivery" data-vi="Giao hàng bị giới hạn bán kính">Radius-limited delivery</b><p data-en="Businesses are held to a short service radius or forced to drop frozen goods from the catalog. The delivery vehicle becomes the barrier that stops the business from scaling." data-vi="Doanh nghiệp bị bó hẹp phạm vi phục vụ trong bán kính ngắn hoặc buộc phải loại bỏ mặt hàng đông lạnh khỏi danh mục. Phương tiện giao hàng vô tình trở thành rào cản hạn chế khả năng mở rộng quy mô kinh doanh.">Businesses are held to a short service radius or forced to drop frozen goods from the catalog. The delivery vehicle becomes the barrier that stops the business from scaling.</p></div><div class="cc-row us"><b data-en="Volty U1-F" data-vi="Volty U1-F">Volty U1-F</b><p data-en="Cooling integrated into the chassis structure, running in parallel with the drive from the same removable pack, and restored with a single swap." data-vi="Hệ thống làm lạnh được tích hợp vào kết cấu gầm xe, vận hành song song với động cơ từ cùng một khối pin tháo rời và được khôi phục chỉ sau một lần đổi pin.">Cooling integrated into the chassis structure, running in parallel with the drive from the same removable pack, and restored with a single swap.</p></div></div>
-    <div class="shead batwhy rv" style="margin-top:64px"><h3 class="bath" data-en="Volty U1-F: value built in by design" data-vi="Volty U1-F giá trị khác biệt từ thiết kế">Volty U1-F: value built in by design</h3></div>
-    <div class="prin rv d1"><div><span class="k">01</span><h3 data-en="Fully integrated design" data-vi="Thiết kế tích hợp đồng bộ">Fully integrated design</h3><p data-en="The cooling system mounts to reinforced load points at the rear of the frame (200 kg maximum payload, rider included). The cooler&#x27;s weight is already engineered into the standard structure, so the frame is not overloaded." data-vi="Hệ thống làm lạnh được gá lắp vào các điểm chịu tải gia cố phía sau khung xe (sức tải tối đa 200 kg bao gồm người lái). Trọng lượng thùng lạnh đã được tính sẵn trong kết cấu tiêu chuẩn, nên khung xe không bị quá tải.">The cooling system mounts to reinforced load points at the rear of the frame (200 kg maximum payload, rider included). The cooler's weight is already engineered into the standard structure, so the frame is not overloaded.</p></div><div><span class="k">02</span><h3 data-en="Runs in parallel with the drive" data-vi="Vận hành song song với động cơ">Runs in parallel with the drive</h3><p data-en="The cooler draws on the same removable pack as the motor and works at the same time. While the bike rides, the cold keeps running. When the bike is parked, one pack holds the cold for up to two days. No ice to buy, no auxiliary battery to charge, no power outlet needed at the store." data-vi="Hệ thống làm lạnh lấy điện từ cùng khối pin tháo rời với động cơ và hoạt động đồng thời. Khi xe chạy, độ lạnh vẫn được duy trì. Khi xe đứng yên, một khối pin giữ lạnh được tối đa 2 ngày. Không cần mua đá, không cần sạc pin phụ, không cần ổ cắm tại điểm bán.">The cooler draws on the same removable pack as the motor and works at the same time. While the bike rides, the cold keeps running. When the bike is parked, one pack holds the cold for up to two days. No ice to buy, no auxiliary battery to charge, no power outlet needed at the store.</p></div><div><span class="k">03</span><h3 data-en="Fast swap restores operation" data-vi="Đổi pin nhanh khôi phục vận hành">Fast swap restores operation</h3><p data-en="When the packs run low, one swap under two minutes restores both drive power and cooling. The swap station network becomes the continuous energy supply for the business&#x27;s cold chain." data-vi="Khi lượng pin giảm, chỉ với một thao tác đổi pin dưới 2 phút, xe khôi phục cả công suất di chuyển lẫn hiệu suất làm lạnh. Mạng lưới trạm đổi pin chính là hạ tầng cấp năng lượng liên tục cho chuỗi cung ứng lạnh của doanh nghiệp.">When the packs run low, one swap under two minutes restores both drive power and cooling. The swap station network becomes the continuous energy supply for the business's cold chain.</p></div></div>
-    <div class="cimpact rv d1"><div><span class="ck" data-en="For businesses and retail" data-vi="Với doanh nghiệp &amp;amp; bán lẻ">For businesses and retail</span><p data-en="A wider delivery radius, because the cold is actively controlled. Businesses can add fresh and frozen goods to their in-city delivery range." data-vi="Bán kính giao hàng rộng hơn nhờ độ lạnh được kiểm soát chủ động. Doanh nghiệp có thể bổ sung hàng tươi sống và đông lạnh vào danh mục giao vận nội đô.">A wider delivery radius, because the cold is actively controlled. Businesses can add fresh and frozen goods to their in-city delivery range.</p></div><div><span class="ck" data-en="For delivery teams" data-vi="Với đội ngũ giao hàng">For delivery teams</span><p data-en="More order capacity, with the flexibility to take chilled and frozen food deliveries that conventional vehicles cannot handle. The cold keeps running at pickups and stops." data-vi="Nâng cao năng lực đáp ứng đơn hàng, cho phép nhận linh hoạt các đơn giao thực phẩm mát và đông lạnh mà phương tiện truyền thống không thể đảm nhận. Độ lạnh vẫn được duy trì khi xe dừng lấy hàng hoặc dừng chờ.">More order capacity, with the flexibility to take chilled and frozen food deliveries that conventional vehicles cannot handle. The cold keeps running at pickups and stops.</p></div><div><span class="ck" data-en="For supply chains and brands" data-vi="Với chuỗi cung ứng &amp;amp; thương hiệu">For supply chains and brands</span><p data-en="Lowers the risk of spoiled goods, compensation costs and lost customer trust caused by temperature loss, by holding temperature across the whole delivery route." data-vi="Giảm rủi ro hỏng hàng, chi phí đền bù và mất niềm tin từ khách hàng do suy giảm nhiệt độ, nhờ giữ nhiệt độ xuyên suốt lộ trình giao nhận.">Lowers the risk of spoiled goods, compensation costs and lost customer trust caused by temperature loss, by holding temperature across the whole delivery route.</p></div></div>
-    <div class="batnote rv d1">
-      <h3 data-en="From a real operating problem to a purpose-built answer" data-vi="Từ bài toán vận hành thực tế đến giải pháp chuyên dụng">From a real operating problem to a purpose-built answer</h3>
-      <p data-en="Load capacity is not only the weight of the goods. It is also temperature. This is the clearest example of Volty&#x27;s design approach: take a real operating bottleneck and solve it with a purpose-built vehicle." data-vi="Sức tải không chỉ là trọng lượng hàng hóa, mà còn là khả năng kiểm soát nhiệt độ. Đây là ví dụ rõ nhất cho cách tiếp cận thiết kế của Volty: chọn một điểm nghẽn vận hành thực tế và giải quyết bằng một phương tiện chuyên dụng.">Load capacity is not only the weight of the goods. It is also temperature. This is the clearest example of Volty's design approach: take a real operating bottleneck and solve it with a purpose-built vehicle.</p>
-      <div class="coldbtns">
-        <a class="btn prime" href="/contact.html#routes" data-en="Talk to our business team" data-vi="Liên hệ tư vấn doanh nghiệp">Talk to our business team</a>
-        <a class="btn" href="/audience.html#r-cold" data-en="View cold-chain capability profile" data-vi="Xem hồ sơ năng lực chuỗi lạnh">View cold-chain capability profile</a>
-      </div>
-      <p class="bsmall" data-en="The dedicated cooling system is offered as an option on the Volty U1-F business build and priced separately. It shares power with the bike&#x27;s main packs, so range with cooling running is lower than the standard loaded reference of 140 to 160 km: about 52 km on a single pack during a 5 to 6 hour cold hold. Hold times and range vary with the temperature setting, the load and how often the lid is opened. All figures are estimates; detailed measured figures come with the fleet contract documents.&lt;br&gt;Sources: VietNamNet (January 2026: Hanoi truck restriction) and Saigon Times (May 2026: Ho Chi Minh City traffic draft)." data-vi="Hệ thống làm lạnh chuyên dụng được cung cấp dưới dạng tùy chọn trên phiên bản Volty U1-F dành cho doanh nghiệp và có chính sách báo giá riêng. Do hệ thống dùng chung nguồn điện với cụm pin chính của xe, quãng đường khi vận hành chức năng làm lạnh thấp hơn mức tham chiếu tiêu chuẩn 140 đến 160 km khi chở tải: khoảng 52 km trên một khối pin trong 5 đến 6 giờ giữ lạnh. Thời gian giữ lạnh và quãng đường thay đổi tùy cài đặt nhiệt độ, tải hàng và tần suất đóng/mở nắp thùng. Mọi con số là ước tính; số liệu đo lường chi tiết sẽ được cung cấp trong hồ sơ hợp đồng đội xe.&lt;br&gt;Ghi chú nguồn: Tham khảo từ VietNamNet (tháng 01/2026: Quy định hạn chế xe tải tại Hà Nội) và Saigon Times (tháng 05/2026: Dự thảo điều chỉnh lưu thông tại TP.HCM).">The dedicated cooling system is offered as an option on the Volty U1-F business build and priced separately. It shares power with the bike's main packs, so range with cooling running is lower than the standard loaded reference of 140 to 160 km: about 52 km on a single pack during a 5 to 6 hour cold hold. Hold times and range vary with the temperature setting, the load and how often the lid is opened. All figures are estimates; detailed measured figures come with the fleet contract documents.<br>Sources: VietNamNet (January 2026: Hanoi truck restriction) and Saigon Times (May 2026: Ho Chi Minh City traffic draft).</p>
-    </div>
-  </div>
-</section>
-
 <!-- ================= PRINCIPLES ================= -->
-<section class="pad band-k" style="border-top:1px solid var(--line)">
+<section class="pad band-b" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
       <div class="eyebrow rv" data-en="What we hold to" data-vi="Nguyên tắc">What we hold to</div>
@@ -1073,7 +1049,7 @@ body .lead b,body .frow p b,body .state p b{font-weight:600!important;color:var(
 </section>
 
 <!-- ================= BATTERY ================= -->
-<section class="pad battery band-w" id="battery" style="border-top:1px solid var(--line)">
+<section class="pad battery band-k" id="battery" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="shead rv">
       <div class="eyebrow rv" data-en="The battery" data-vi="Pin">The battery</div>
@@ -1143,7 +1119,7 @@ b.addEventListener('click',function(){if(v.paused){v.play();set(false)}else{v.pa
 if('IntersectionObserver'in window){new IntersectionObserver(function(e){e.forEach(function(x){if(w.classList.contains('paused'))return;x.isIntersecting?v.play().catch(function(){}):v.pause()})},{threshold:.2}).observe(w)}})();</script>
 
 <!-- ================= CONFIGURATIONS ================= -->
-<section class="pad band-b" style="border-top:1px solid var(--line)">
+<section class="pad band-w" style="border-top:1px solid var(--line)">
   <div class="wrap">
     <div class="note">
       <h3 data-en="Current status and development" data-vi="Thông tin và tiến độ dự án">Current status and development</h3>
@@ -1153,7 +1129,7 @@ if('IntersectionObserver'in window){new IntersectionObserver(function(e){e.forEa
 </section>
 
 <!-- ================= CTA ================= -->
-<section class="ucta pad band-k">
+<section class="ucta pad band-b">
   <div class="wrap">
     <div class="in">
       <div>
@@ -1207,9 +1183,10 @@ if('IntersectionObserver'in window){new IntersectionObserver(function(e){e.forEa
       </div>
       <div>
         <h4 data-en="Business" data-vi="Doanh nghiệp">Business</h4>
+        <a href="/fleet-solutions.html" data-en="Fleet Solutions" data-vi="Giải pháp đội xe">Fleet Solutions</a>
         <a href="/contact.html#partner" data-en="Partner with us" data-vi="Hợp tác cùng chúng tôi">Partner with us</a>
         <a href="/contact.html" data-en="Contact us" data-vi="Liên hệ">Contact us</a>
-        <a href="/faq.html" data-en="FAQ" data-vi="Câu hỏi thường gặp">FAQ</a>
+        <a href="/contact.html#faq" data-en="FAQ" data-vi="Câu hỏi thường gặp">FAQ</a>
       </div>
       <div>
         <h4 data-en="Legal" data-vi="Pháp lý">Legal</h4>
@@ -1232,7 +1209,7 @@ if('IntersectionObserver'in window){new IntersectionObserver(function(e){e.forEa
       <a href="https://volty.info/company-overview" target="_blank" rel="noopener" data-en="For Investors" data-vi="Dành cho nhà đầu tư">For Investors</a>
     </div>
     <div class="fmeta"><span data-en="A brand by" data-vi="Một thương hiệu của Công ty TNHH">A brand by</span> <a class="corp" href="https://www.nuenmoto.com" target="_blank" rel="noopener">NUEN MOTO</a><span data-en=" Company Limited. 2026." data-vi=". 2026."> Company Limited. 2026.</span></div>
-    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T08:07+07:00" data-en="Last updated 30 Sep 2026, 08:07 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 08:07 (GMT+7)">Last updated 30 Sep 2026, 08:07 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
+    <div class="fstamp" style="flex:1 0 100%;width:100%;margin-top:14px;padding-top:12px;border-top:1px solid rgba(255,255,255,.1);font-family:var(--mono,monospace);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:rgba(238,231,218,.55)"><time datetime="2026-09-30T13:40+07:00" data-en="Last updated 30 Sep 2026, 13:40 (GMT+7)" data-vi="Cập nhật lần cuối: 30/09/2026, 13:40 (GMT+7)">Last updated 30 Sep 2026, 13:40 (GMT+7)</time><button type="button" class="ck-open" style="margin-left:16px;padding:0;background:none;border:0;color:inherit;font:inherit;letter-spacing:inherit;text-transform:inherit;text-decoration:underline;cursor:pointer" data-en="Cookie settings" data-vi="Cài đặt cookie">Cookie settings</button></div>
   </div>
 </footer>
 
@@ -1409,7 +1386,7 @@ var __VI_LABELS={"Our Design | Volty by NUEN MOTO":"Thiết kế | Volty by NUEN
 #ckb .ckr button:hover,#ckb .ckr button:focus-visible{background:#f5f5f6;color:#0a0a0b;outline:none}
 @media(max-width:640px){#ckb{left:0;right:0;bottom:0;max-width:none;border-radius:12px 12px 0 0;padding:16px}}</style>
 <div id="ckb" role="dialog" aria-label="Cookie consent" hidden><b data-en="Cookies and analytics" data-vi="Cookie và phân tích">Cookies and analytics</b><p data-en="We use Google Analytics to count visits and see which pages are useful. It sets cookies and sends data to Google only if you accept. Declining changes nothing about how the site works." data-vi="Chúng tôi dùng Google Analytics để đếm lượt truy cập và biết trang nào hữu ích. Công cụ này chỉ đặt cookie và gửi dữ liệu tới Google nếu bạn chấp nhận. Từ chối không ảnh hưởng đến cách trang web hoạt động.">We use Google Analytics to count visits and see which pages are useful. It sets cookies and sends data to Google only if you accept. Declining changes nothing about how the site works.</p><p style="margin-top:-6px"><a href="/privacy.html" data-en="Privacy Policy" data-vi="Chính sách bảo mật">Privacy Policy</a></p><div class="ckr"><button type="button" id="ck-n" data-en="Decline" data-vi="Từ chối">Decline</button><button type="button" id="ck-y" data-en="Accept" data-vi="Chấp nhận">Accept</button></div></div>
-<script>(function(){var ID='G-D0ERKZSXRQ',K='voltyConsent',TTL=180*864e5,W=window,D=document;
+<script>(function(){var ID='G-S5KEVS1E0L',K='voltyConsent',TTL=180*864e5,W=window,D=document;
 W.dataLayer=W.dataLayer||[];function gtag(){W.dataLayer.push(arguments)}W.gtag=gtag;
 gtag('consent','default',{ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',analytics_storage:'denied'});
 function get(){try{var o=JSON.parse(localStorage.getItem(K)||'null');if(o&&o.t&&Date.now()-o.t<TTL&&(o.v==='granted'||o.v==='denied'))return o.v}catch(e){}return null}
